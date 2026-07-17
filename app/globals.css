@@ -96,4 +96,17 @@
     opacity: 1;
     transform: translateY(0);
   }
+  /* Never hide content when JS is off or motion is reduced */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}
+
+.no-js .reveal {
+  opacity: 1;
+  transform: none;
 }

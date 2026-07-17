@@ -27,10 +27,13 @@ export async function adminLogin(_prev: unknown, formData: FormData) {
     return { error: 'Incorrect password.' }
   }
   const store = await cookies()
+  // In the v0 preview the app runs inside a cross-site iframe, so the session
+  // cookie must be SameSite=None; Secure or the browser silently drops it.
+  const isDev = process.env.NODE_ENV !== 'production'
   store.set(COOKIE, token(password), {
     httpOnly: true,
-    sameSite: 'lax',
-    secure: process.env.NODE_ENV === 'production',
+    sameSite: isDev ? 'none' : 'lax',
+    secure: true,
     path: '/',
     maxAge: 60 * 60 * 8,
   })
