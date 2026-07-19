@@ -13,7 +13,9 @@ type Project = {
   gradient?: string
 }
 
-const DESKTOP_VW = 1280 // the desktop viewport width we emulate
+const DESKTOP_VW = 1440 // emulate a standard laptop screen width
+const DESKTOP_VH = 900 // one laptop "screen" height (16:10)
+const PAGE_VH = 6000 // tall enough to scroll the full landing page
 
 const projects: Project[] = [
   {
@@ -75,10 +77,11 @@ function PortfolioCard({ project }: { project: Project }) {
     return () => ro.disconnect()
   }, [])
 
-  // Scale the emulated 1280px desktop viewport down to fit the card width.
+  // Scale the emulated laptop viewport down to fit the card width, so the site
+  // renders exactly as it would on a 1440px-wide laptop, just zoomed out.
   const scale = width > 0 ? width / DESKTOP_VW : 0
-  // 16:10 landscape desktop window.
-  const windowHeight = Math.round(width * 0.625)
+  // The visible window shows exactly one laptop screen (1440x900) scaled down.
+  const windowHeight = Math.round(DESKTOP_VH * scale)
 
   return (
     <div
@@ -99,20 +102,24 @@ function PortfolioCard({ project }: { project: Project }) {
       >
         {project.live ? (
           scale > 0 && (
-            <iframe
-              src={project.url}
-              title={project.label}
-              scrolling="yes"
-              className="border-0"
-              style={{
-                width: DESKTOP_VW,
-                height: 3600,
-                transform: `scale(${scale})`,
-                transformOrigin: 'top left',
-                pointerEvents: 'none',
-                border: 'none',
-              }}
-            />
+            // Sizer height = scaled iframe height, so the scroll range matches
+            // the visible page exactly (no empty space, no cut-off).
+            <div style={{ width: '100%', height: Math.round(PAGE_VH * scale) }}>
+              <iframe
+                src={project.url}
+                title={project.label}
+                scrolling="no"
+                className="border-0"
+                style={{
+                  width: DESKTOP_VW,
+                  height: PAGE_VH,
+                  transform: `scale(${scale})`,
+                  transformOrigin: 'top left',
+                  pointerEvents: 'none',
+                  border: 'none',
+                }}
+              />
+            </div>
           )
         ) : (
           <div
@@ -180,7 +187,7 @@ function PortfolioCard({ project }: { project: Project }) {
 export function Portfolio() {
   return (
     <section id="portfolio" className="bg-white">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
         <Reveal>
           <SectionLabel>Our Work</SectionLabel>
           <h2 className="mt-4 max-w-2xl font-serif text-3xl italic text-charcoal text-balance md:text-4xl">
