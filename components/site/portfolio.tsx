@@ -48,11 +48,11 @@ function BrowserChrome({ displayUrl }: { displayUrl: string }) {
         <span className="h-3 w-3 rounded-full" style={{ backgroundColor: '#28C840' }} />
       </div>
       <div
-        className="mx-auto flex h-5 w-[280px] max-w-[60%] items-center justify-center gap-1.5 rounded-full"
+        className="mx-auto flex h-5 min-w-0 max-w-[70%] items-center justify-center gap-1 rounded-full px-3"
         style={{ backgroundColor: '#EBEBEB' }}
       >
-        <Lock size={11} color="#888888" aria-hidden="true" />
-        <span className="text-[11px]" style={{ color: '#888888' }}>
+        <Lock size={10} color="#888888" aria-hidden="true" className="shrink-0" />
+        <span className="truncate text-[10px]" style={{ color: '#888888' }}>
           {displayUrl}
         </span>
       </div>
@@ -154,12 +154,12 @@ function PortfolioCard({ project }: { project: Project }) {
         </span>
       </div>
 
-      <div className="flex items-center justify-between px-6 py-4">
-        <div>
-          <p className="text-sm font-semibold" style={{ color: '#333333' }}>
+      <div className="flex items-center justify-between gap-2 px-4 py-3">
+        <div className="min-w-0">
+          <p className="truncate text-xs font-semibold" style={{ color: '#333333' }}>
             {project.label}
           </p>
-          <p className="text-xs" style={{ color: '#A8BDD0' }}>
+          <p className="truncate text-[11px]" style={{ color: '#A8BDD0' }}>
             {project.displayUrl}
           </p>
         </div>
@@ -180,7 +180,7 @@ function PortfolioCard({ project }: { project: Project }) {
 export function Portfolio() {
   return (
     <section id="portfolio" className="bg-white">
-      <div className="mx-auto max-w-5xl px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <Reveal>
           <SectionLabel>Our Work</SectionLabel>
           <h2 className="mt-4 max-w-2xl font-serif text-3xl italic text-charcoal text-balance md:text-4xl">
@@ -188,7 +188,7 @@ export function Portfolio() {
           </h2>
         </Reveal>
 
-        <div className="mt-12 flex flex-col gap-10">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((p, i) => (
             <Reveal key={p.label} delay={i * 100}>
               <PortfolioCard project={p} />
