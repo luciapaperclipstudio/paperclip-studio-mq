@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { ArrowUpDown, ExternalLink, Lock } from 'lucide-react'
 import { Reveal } from './reveal'
 import { SectionLabel } from './section-label'
@@ -12,6 +12,8 @@ type Project = {
   live?: boolean
   gradient?: string
 }
+
+const DESKTOP_VW = 1280 // the desktop viewport width we emulate
 
 const projects: Project[] = [
   {
@@ -37,20 +39,20 @@ const projects: Project[] = [
 function BrowserChrome({ displayUrl }: { displayUrl: string }) {
   return (
     <div
-      className="flex h-8 items-center gap-3 border-b px-3"
+      className="flex h-9 items-center gap-3 border-b px-4"
       style={{ backgroundColor: '#F5F5F5', borderColor: '#E0DDDA' }}
     >
-      <div className="flex items-center gap-1.5">
-        <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: '#FF5F57' }} />
-        <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: '#FEBC2E' }} />
-        <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: '#28C840' }} />
+      <div className="flex items-center gap-2">
+        <span className="h-3 w-3 rounded-full" style={{ backgroundColor: '#FF5F57' }} />
+        <span className="h-3 w-3 rounded-full" style={{ backgroundColor: '#FEBC2E' }} />
+        <span className="h-3 w-3 rounded-full" style={{ backgroundColor: '#28C840' }} />
       </div>
       <div
-        className="mx-auto flex h-[18px] w-[200px] items-center justify-center gap-1 rounded-full"
+        className="mx-auto flex h-5 w-[280px] max-w-[60%] items-center justify-center gap-1.5 rounded-full"
         style={{ backgroundColor: '#EBEBEB' }}
       >
-        <Lock size={10} color="#888888" aria-hidden="true" />
-        <span className="text-[10px]" style={{ color: '#888888' }}>
+        <Lock size={11} color="#888888" aria-hidden="true" />
+        <span className="text-[11px]" style={{ color: '#888888' }}>
           {displayUrl}
         </span>
       </div>
@@ -60,10 +62,27 @@ function BrowserChrome({ displayUrl }: { displayUrl: string }) {
 
 function PortfolioCard({ project }: { project: Project }) {
   const [scrolled, setScrolled] = useState(false)
+  const [width, setWidth] = useState(0)
+  const frameRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const el = frameRef.current
+    if (!el) return
+    const update = () => setWidth(el.clientWidth)
+    update()
+    const ro = new ResizeObserver(update)
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [])
+
+  // Scale the emulated 1280px desktop viewport down to fit the card width.
+  const scale = width > 0 ? width / DESKTOP_VW : 0
+  // 16:10 landscape desktop window.
+  const windowHeight = Math.round(width * 0.625)
 
   return (
     <div
-      className="group flex flex-col border bg-white transition-all duration-300 hover:-translate-y-[3px]"
+      className="group flex flex-col overflow-hidden border bg-white shadow-sm transition-all duration-300 hover:-translate-y-[3px]"
       style={{ borderColor: '#E0DDDA' }}
       onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#A8BDD0')}
       onMouseLeave={(e) => (e.currentTarget.style.borderColor = '#E0DDDA')}
@@ -71,39 +90,47 @@ function PortfolioCard({ project }: { project: Project }) {
       <BrowserChrome displayUrl={project.displayUrl} />
 
       <div
+        ref={frameRef}
         className="relative w-full overflow-y-scroll overflow-x-hidden bg-white"
-        style={{ height: 380 }}
+        style={{ height: windowHeight || 400 }}
         onScroll={(e) => {
           if (e.currentTarget.scrollTop > 4 && !scrolled) setScrolled(true)
         }}
       >
         {project.live ? (
-          <iframe
-            src={project.url}
-            title={project.label}
-            scrolling="yes"
-            className="border-0"
-            style={{
-              width: 1280,
-              height: 3200,
-              transform: 'scale(0.28)',
-              transformOrigin: 'top left',
-              pointerEvents: 'none',
-              border: 'none',
-            }}
-          />
+          scale > 0 && (
+            <iframe
+              src={project.url}
+              title={project.label}
+              scrolling="yes"
+              className="border-0"
+              style={{
+                width: DESKTOP_VW,
+                height: 3600,
+                transform: `scale(${scale})`,
+                transformOrigin: 'top left',
+                pointerEvents: 'none',
+                border: 'none',
+              }}
+            />
+          )
         ) : (
-          <div style={{ width: '100%', height: 1200, background: project.gradient }}>
-            <div className="flex flex-col gap-3 px-6 pt-10">
-              <div className="h-4 w-1/2 rounded bg-white/40" />
-              <div className="h-2.5 w-3/4 rounded bg-white/30" />
-              <div className="h-2.5 w-2/3 rounded bg-white/30" />
-              <div className="mt-4 h-8 w-32 rounded bg-white/50" />
-              <div className="mt-10 grid grid-cols-2 gap-3">
-                <div className="h-24 rounded bg-white/30" />
-                <div className="h-24 rounded bg-white/30" />
-                <div className="h-24 rounded bg-white/30" />
-                <div className="h-24 rounded bg-white/30" />
+          <div
+            style={{
+              width: '100%',
+              minHeight: windowHeight ? windowHeight * 1.8 : 720,
+              background: project.gradient,
+            }}
+          >
+            <div className="flex flex-col gap-4 px-10 pt-12">
+              <div className="h-6 w-2/5 rounded bg-white/45" />
+              <div className="h-3 w-3/5 rounded bg-white/30" />
+              <div className="h-3 w-1/2 rounded bg-white/30" />
+              <div className="mt-4 h-10 w-40 rounded bg-white/55" />
+              <div className="mt-12 grid grid-cols-3 gap-5">
+                <div className="h-28 rounded bg-white/30" />
+                <div className="h-28 rounded bg-white/30" />
+                <div className="h-28 rounded bg-white/30" />
               </div>
             </div>
           </div>
@@ -127,7 +154,7 @@ function PortfolioCard({ project }: { project: Project }) {
         </span>
       </div>
 
-      <div className="flex items-center justify-between px-5 py-4">
+      <div className="flex items-center justify-between px-6 py-4">
         <div>
           <p className="text-sm font-semibold" style={{ color: '#333333' }}>
             {project.label}
@@ -143,7 +170,7 @@ function PortfolioCard({ project }: { project: Project }) {
           aria-label={`Open ${project.displayUrl} in a new tab`}
           className="transition-transform hover:-translate-y-0.5"
         >
-          <ExternalLink size={14} color="#A8BDD0" aria-hidden="true" />
+          <ExternalLink size={16} color="#A8BDD0" aria-hidden="true" />
         </a>
       </div>
     </div>
@@ -153,7 +180,7 @@ function PortfolioCard({ project }: { project: Project }) {
 export function Portfolio() {
   return (
     <section id="portfolio" className="bg-white">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-5xl px-6 py-20 md:py-28">
         <Reveal>
           <SectionLabel>Our Work</SectionLabel>
           <h2 className="mt-4 max-w-2xl font-serif text-3xl italic text-charcoal text-balance md:text-4xl">
@@ -161,7 +188,7 @@ export function Portfolio() {
           </h2>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 flex flex-col gap-10">
           {projects.map((p, i) => (
             <Reveal key={p.label} delay={i * 100}>
               <PortfolioCard project={p} />
