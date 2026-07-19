@@ -19,17 +19,17 @@ export default function Page() {
         <Hero />
         <TrustStrip />
         <Services />
-        <QuoteCta variant="inline" />
         <HowItWorks />
         <Portfolio />
         <QuoteCta
           variant="band"
           title="Like what you see? Let's build yours."
-          subtitle="Tell us what you need and we'll send a free quote — no strings attached."
+          subtitle="See our packages and build your estimate in seconds."
+          ctaLabel="Get Pricing"
+          ctaHref="/#pricing"
         />
         <Calculator />
         <Testimonials />
-        <QuoteCta variant="inline" />
         <Faq />
         <Contact />
       </main>

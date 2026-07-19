@@ -7,10 +7,14 @@ export function QuoteCta({
   variant = 'inline',
   title = 'Ready to get your business online?',
   subtitle = 'Get a free, no-obligation quote in minutes.',
+  ctaLabel = 'Get a Free Quote',
+  ctaHref = '/get-a-quote',
 }: {
   variant?: Variant
   title?: string
   subtitle?: string
+  ctaLabel?: string
+  ctaHref?: string
 }) {
   if (variant === 'band') {
     return (
@@ -21,10 +25,10 @@ export function QuoteCta({
           </h2>
           <p className="max-w-xl text-white/70 leading-relaxed">{subtitle}</p>
           <a
-            href="/get-a-quote"
+            href={ctaHref}
             className="inline-flex items-center gap-2 rounded bg-steel px-6 py-3 text-sm font-semibold text-charcoal transition hover:brightness-95"
           >
-            Get a Free Quote
+            {ctaLabel}
             <ArrowRight size={16} aria-hidden="true" />
           </a>
         </div>

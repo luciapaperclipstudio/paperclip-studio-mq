@@ -1,7 +1,7 @@
 'use client'
 
 import { submitContact } from '@/app/actions/leads'
-import { Mail, MapPin, MessageCircle } from 'lucide-react'
+import { Mail, MapPin } from 'lucide-react'
 import { useState } from 'react'
 import { Reveal } from './reveal'
 import { SectionLabel } from './section-label'
@@ -52,10 +52,6 @@ export function Contact() {
             <li className="flex items-center gap-3">
               <Mail className="h-5 w-5 text-steel" />
               hello@paperclipstudio.co.za
-            </li>
-            <li className="flex items-center gap-3">
-              <MessageCircle className="h-5 w-5 text-steel" />
-              WhatsApp: +27 XX XXX XXXX
             </li>
             <li className="flex items-center gap-3">
               <MapPin className="h-5 w-5 text-steel" />
