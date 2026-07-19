@@ -9,7 +9,6 @@ const links = [
   { label: 'Services', href: '/#services' },
   { label: 'How It Works', href: '/#how-it-works' },
   { label: 'Pricing', href: '/#pricing' },
-  { label: 'Get a Quote', href: '/get-a-quote' },
 ]
 
 export function Navbar() {
@@ -38,7 +37,7 @@ export function Navbar() {
       )}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <a href="#top" className="shrink-0" aria-label="paperclip studio home">
+        <a href="/" className="shrink-0" aria-label="paperclip studio home">
           <Logo />
         </a>
 
@@ -54,9 +53,9 @@ export function Navbar() {
           </ul>
           <a
             href="/get-a-quote"
-            className="rounded border border-charcoal px-4 py-2 text-sm font-medium text-charcoal transition-colors hover:bg-charcoal hover:text-white"
+            className="rounded bg-steel px-4 py-2 text-sm font-semibold text-charcoal transition-colors hover:brightness-95"
           >
-            Get a Quote
+            Get a Free Quote
           </a>
         </div>
 
@@ -100,9 +99,9 @@ export function Navbar() {
             <a
               href="/get-a-quote"
               onClick={() => setOpen(false)}
-              className="block rounded bg-steel px-4 py-3 text-center text-sm font-medium text-charcoal"
+              className="block rounded bg-steel px-4 py-3 text-center text-sm font-semibold text-charcoal"
             >
-              Get a Quote
+              Get a Free Quote
             </a>
           </div>
         </div>

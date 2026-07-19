@@ -44,6 +44,7 @@ function shot(url: string) {
 function PhoneCard({ project }: { project: Project }) {
   const scrollRef = useRef<HTMLDivElement>(null)
   const [scrolled, setScrolled] = useState(false)
+  const hasScreenshot = Boolean(project.image || project.url)
 
   function onScroll() {
     const el = scrollRef.current
@@ -60,40 +61,38 @@ function PhoneCard({ project }: { project: Project }) {
         ) : null}
         {/* Screen */}
         <div className="relative overflow-hidden rounded-[1.75rem] bg-white">
-          <div
-            ref={scrollRef}
-            onScroll={onScroll}
-            className="aspect-[9/19] w-full overflow-y-scroll overscroll-contain"
-          >
-            {project.image ? (
-              <img
-                src={project.image || '/placeholder.svg'}
-                alt={`Mobile preview of the ${project.label} website`}
-                className="block w-full"
-                loading="lazy"
-              />
-            ) : project.url ? (
-              <img
-                src={shot(project.url) || '/placeholder.svg'}
-                alt={`Mobile preview of the ${project.label} website`}
-                className="block w-full"
-                loading="lazy"
-              />
-            ) : (
-              <PlaceholderPage tone={project.tone ?? '#dbe4ee'} label={project.label} />
-            )}
-          </div>
+          {hasScreenshot ? (
+            <>
+              <div
+                ref={scrollRef}
+                onScroll={onScroll}
+                className="aspect-[9/19] w-full overflow-y-scroll overscroll-contain"
+              >
+                <img
+                  src={project.image || shot(project.url as string) || '/placeholder.svg'}
+                  alt={`Mobile preview of the ${project.label} website`}
+                  className="block w-full"
+                  loading="lazy"
+                />
+              </div>
 
-          {/* Scroll hint */}
-          <div
-            className={`pointer-events-none absolute inset-x-0 bottom-0 flex justify-center bg-gradient-to-t from-white/95 to-transparent pb-3 pt-8 transition-opacity duration-300 ${
-              scrolled ? 'opacity-0' : 'opacity-100'
-            }`}
-          >
-            <span className="rounded-full bg-charcoal/80 px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-white">
-              Scroll to explore
-            </span>
-          </div>
+              {/* Scroll hint */}
+              <div
+                className={`pointer-events-none absolute inset-x-0 bottom-0 flex justify-center bg-gradient-to-t from-white/95 to-transparent pb-3 pt-8 transition-opacity duration-300 ${
+                  scrolled ? 'opacity-0' : 'opacity-100'
+                }`}
+              >
+                <span className="rounded-full bg-charcoal/80 px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-white">
+                  Scroll to explore
+                </span>
+              </div>
+            </>
+          ) : (
+            // Placeholder cards are static — no scroll.
+            <div className="aspect-[9/19] w-full overflow-hidden">
+              <PlaceholderPage tone={project.tone ?? '#dbe4ee'} label={project.label} />
+            </div>
+          )}
         </div>
       </div>
 

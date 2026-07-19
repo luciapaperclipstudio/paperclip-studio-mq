@@ -46,7 +46,7 @@ export function Footer() {
           <p className="label-caps mb-4 text-white/50">Contact</p>
           <ul className="space-y-2 text-sm text-white/80">
             <li>hello@paperclipstudio.co.za</li>
-            <li>Johannesburg, South Africa</li>
+            <li>South Africa</li>
           </ul>
           <div className="mt-5">
             <WhatsAppButton />
