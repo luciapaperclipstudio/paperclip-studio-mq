@@ -128,7 +128,7 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={status === 'saving'}
-                className="mt-1 w-full rounded bg-yellow px-6 py-3 text-sm font-semibold text-charcoal transition hover:brightness-95 disabled:opacity-60"
+                className="mt-1 w-full rounded bg-steel px-6 py-3 text-sm font-semibold text-charcoal transition hover:brightness-95 disabled:opacity-60"
               >
                 {status === 'saving' ? 'Sending…' : 'Send My Quote Request'}
               </button>

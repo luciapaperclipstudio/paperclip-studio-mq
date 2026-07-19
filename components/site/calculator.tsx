@@ -150,7 +150,7 @@ export function Calculator() {
                   className={cn(
                     'relative flex flex-col items-start rounded-lg border bg-white p-6 text-left transition-all duration-200 hover:-translate-y-0.5',
                     active
-                      ? 'border-2 border-charcoal bg-yellow'
+                      ? 'border-2 border-charcoal bg-steel'
                       : 'border border-[#e0e0e0] hover:shadow-md',
                   )}
                 >
@@ -250,7 +250,7 @@ export function Calculator() {
                     className={cn(
                       'relative flex items-start gap-3 rounded-lg border bg-white p-5 text-left transition-all duration-200 hover:-translate-y-0.5',
                       active
-                        ? 'border-2 border-charcoal bg-yellow'
+                        ? 'border-2 border-charcoal bg-steel'
                         : 'border border-[#e0e0e0] hover:shadow-md',
                     )}
                   >
@@ -321,7 +321,7 @@ export function Calculator() {
                   <button
                     type="button"
                     onClick={handleGetQuote}
-                    className="rounded bg-yellow px-6 py-3 text-sm font-semibold text-charcoal transition-transform hover:-translate-y-0.5 hover:shadow-md"
+                    className="rounded bg-steel px-6 py-3 text-sm font-semibold text-charcoal transition-transform hover:-translate-y-0.5 hover:shadow-md"
                   >
                     {completed ? 'Quote request sent ✓' : 'Get My Custom Quote'}
                   </button>

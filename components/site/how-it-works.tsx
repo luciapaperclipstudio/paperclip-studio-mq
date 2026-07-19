@@ -47,7 +47,9 @@ export function HowItWorks() {
           {steps.map((s, i) => (
             <Reveal key={s.n} delay={i * 100} className="relative">
               <div className="flex flex-col">
-                <span className="font-serif text-4xl italic leading-none text-yellow">{s.n}</span>
+                <span className="relative z-10 inline-block w-fit bg-cream pr-4 font-serif text-4xl italic leading-none text-steel">
+                  {s.n}
+                </span>
                 <span className="mt-4 flex h-11 w-11 items-center justify-center rounded-md border border-charcoal/15 bg-white text-charcoal">
                   <s.icon className="h-5 w-5" strokeWidth={1.5} />
                 </span>
