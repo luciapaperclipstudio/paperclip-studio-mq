@@ -88,8 +88,9 @@ export function Hero() {
               className="ml-auto w-[88%] -rotate-2"
             />
             <BrowserMock
-              label="Contractor · Johannesburg"
+              label="The Harvest Table · Catering"
               tone="#dbe4ee"
+              image="/portfolio/harvest-table-desktop.png"
               className="-mt-6 w-[82%] rotate-1"
             />
             <BrowserMock
