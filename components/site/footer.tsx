@@ -1,4 +1,3 @@
-import { PaperclipMark } from './logo'
 import { WhatsAppButton } from './whatsapp-button'
 
 const navLinks = [
@@ -13,14 +12,18 @@ export function Footer() {
     <footer className="bg-charcoal text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-3">
         <div>
-          <span className="inline-flex items-baseline gap-1">
-            <PaperclipMark className="self-center text-white/80" />
-            <span className="font-serif text-xl italic text-white">paper</span>
-            <span className="text-xl font-bold text-steel">clip.</span>
-            <span className="label-caps ml-1 self-end pb-[3px] text-[10px] text-white/60">
-              Studio
-            </span>
-          </span>
+          <span
+            role="img"
+            aria-label="paperclip studio"
+            className="block h-9 w-[168px] overflow-hidden"
+            style={{
+              backgroundImage: 'url(/paperclip-logo.png)',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center center',
+              backgroundSize: 'auto 500%',
+              filter: 'brightness(0) invert(1)',
+            }}
+          />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
             AI-powered websites for South African businesses.
           </p>
