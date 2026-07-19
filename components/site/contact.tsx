@@ -5,6 +5,7 @@ import { Mail, MapPin, MessageCircle } from 'lucide-react'
 import { useState } from 'react'
 import { Reveal } from './reveal'
 import { SectionLabel } from './section-label'
+import { WhatsAppButton } from './whatsapp-button'
 
 const inputClass =
   'w-full rounded border border-charcoal/30 bg-cream px-4 py-3 text-sm text-charcoal outline-none transition focus:border-steel focus:ring-2 focus:ring-steel/40'
@@ -61,9 +62,12 @@ export function Contact() {
               South Africa (serving clients nationwide)
             </li>
           </ul>
+          <div className="mt-8">
+            <WhatsAppButton />
+          </div>
           <a
             href="#pricing"
-            className="mt-8 inline-block font-serif text-lg italic text-steel transition-colors hover:text-charcoal"
+            className="mt-6 inline-block font-serif text-lg italic text-steel transition-colors hover:text-charcoal"
           >
             Or start building your package &rarr;
           </a>

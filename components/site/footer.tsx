@@ -1,4 +1,5 @@
 import { PaperclipMark } from './logo'
+import { WhatsAppButton } from './whatsapp-button'
 
 const navLinks = [
   { label: 'Services', href: '#services' },
@@ -42,9 +43,11 @@ export function Footer() {
           <p className="label-caps mb-4 text-white/50">Contact</p>
           <ul className="space-y-2 text-sm text-white/80">
             <li>hello@paperclipstudio.co.za</li>
-            <li>WhatsApp: +27 XX XXX XXXX</li>
             <li>Johannesburg, South Africa</li>
           </ul>
+          <div className="mt-5">
+            <WhatsAppButton />
+          </div>
         </div>
       </div>
       <div className="border-t border-white/10 bg-[#2b2b2b]">

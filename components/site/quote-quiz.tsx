@@ -14,6 +14,7 @@ import {
   Wrench,
 } from 'lucide-react'
 import { submitQuote } from '@/app/actions/leads'
+import { WhatsAppButton } from './whatsapp-button'
 
 type Pkg = { value: string; name: string; desc: string; icon: React.ReactNode }
 type Addon = { value: string; name: string; desc: string; icon: React.ReactNode }
@@ -478,6 +479,7 @@ export function QuoteQuiz() {
             <p className="text-[13px] leading-relaxed text-[#888888]">
               Got a question in the meantime? Message us on WhatsApp — we respond fast.
             </p>
+            <WhatsAppButton className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded bg-[#25D366] px-5 py-3 text-sm font-semibold text-white transition hover:brightness-95" />
           </div>
         ) : null}
       </div>
