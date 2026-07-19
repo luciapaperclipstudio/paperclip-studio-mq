@@ -6,27 +6,38 @@ function BrowserMock({
   label,
   className,
   tone,
+  image,
 }: {
   label: string
   className?: string
   tone: string
+  image?: string
 }) {
   return (
     <div
-      className={`rounded-lg border border-charcoal/15 bg-white shadow-[0_10px_30px_-12px_rgba(51,51,51,0.25)] ${className ?? ''}`}
+      className={`overflow-hidden rounded-lg border border-charcoal/15 bg-white shadow-[0_10px_30px_-12px_rgba(51,51,51,0.25)] ${className ?? ''}`}
     >
       <div className="flex items-center gap-1.5 border-b border-charcoal/10 px-3 py-2">
         <span className="h-2 w-2 rounded-full bg-charcoal/20" />
         <span className="h-2 w-2 rounded-full bg-charcoal/20" />
         <span className="h-2 w-2 rounded-full bg-charcoal/20" />
       </div>
-      <div className="p-3">
-        <div className="mb-3 h-16 rounded" style={{ backgroundColor: tone }} />
-        <div className="mb-2 h-2 w-2/3 rounded bg-charcoal/10" />
-        <div className="mb-2 h-2 w-full rounded bg-charcoal/10" />
-        <div className="h-2 w-1/2 rounded bg-charcoal/10" />
-        <p className="mt-3 text-[11px] font-medium text-charcoal/60">{label}</p>
-      </div>
+      {image ? (
+        <img
+          src={image || '/placeholder.svg'}
+          alt={label}
+          className="block h-auto w-full"
+          loading="lazy"
+        />
+      ) : (
+        <div className="p-3">
+          <div className="mb-3 h-16 rounded" style={{ backgroundColor: tone }} />
+          <div className="mb-2 h-2 w-2/3 rounded bg-charcoal/10" />
+          <div className="mb-2 h-2 w-full rounded bg-charcoal/10" />
+          <div className="h-2 w-1/2 rounded bg-charcoal/10" />
+          <p className="mt-3 text-[11px] font-medium text-charcoal/60">{label}</p>
+        </div>
+      )}
     </div>
   )
 }
@@ -71,9 +82,10 @@ export function Hero() {
         <Reveal className="md:col-span-2" delay={150}>
           <div className="relative rounded-xl bg-gradient-to-br from-cream to-white p-6 shadow-[0_24px_60px_-24px_rgba(51,51,51,0.35)]">
             <BrowserMock
-              label="Hair Salon · Cape Town"
+              label="Eventure Escapes · Luxury Travel"
               tone="#f0e7c8"
-              className="ml-auto w-[78%] -rotate-2"
+              image="/portfolio/eventure-escapes-desktop.jpeg"
+              className="ml-auto w-[88%] -rotate-2"
             />
             <BrowserMock
               label="Contractor · Johannesburg"
