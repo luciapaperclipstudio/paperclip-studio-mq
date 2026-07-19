@@ -129,6 +129,8 @@ export function QuoteQuiz() {
       return
     }
     setSubmitting(true)
+
+    // Save to our database (feeds the admin dashboard).
     const res = await submitQuote({
       name,
       business,
@@ -138,6 +140,29 @@ export function QuoteQuiz() {
       selectedPackage: pkg ?? '',
       addons,
     })
+
+    // Also email the request via Formspree. A failure here shouldn't block the
+    // user, since the lead is already saved to the database above.
+    try {
+      await fetch('https://formspree.io/f/xqerqolq', {
+        method: 'POST',
+        headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          business,
+          whatsapp,
+          email,
+          _replyto: email,
+          package: pkg ?? '',
+          addons: addons.length ? addons.join(', ') : 'None selected',
+          'how did you find us': form.source || 'Not specified',
+          _subject: `New quote request from ${name} (${business})`,
+        }),
+      })
+    } catch (err) {
+      console.log('[v0] Formspree submit failed:', (err as Error).message)
+    }
+
     setSubmitting(false)
     if (!res.ok) {
       setError(res.error ?? 'Something went wrong. Please try again.')
@@ -444,8 +469,8 @@ export function QuoteQuiz() {
                   }`}
                 >
                   <span className="mt-[5px] h-1.5 w-1.5 shrink-0 rounded-full bg-steel" />
-                  <span className="min-w-20 font-semibold text-charcoal">{k}</span>
-                  <span className="flex-1 text-[#888888]">{v}</span>
+                  <span className="w-20 shrink-0 font-semibold text-charcoal">{k}</span>
+                  <span className="min-w-0 flex-1 break-words text-[#888888]">{v}</span>
                 </div>
               ))}
             </div>
