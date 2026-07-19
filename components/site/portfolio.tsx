@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { ArrowUpDown, ExternalLink, Lock } from 'lucide-react'
+import { ArrowUpDown, ExternalLink } from 'lucide-react'
 import { Reveal } from './reveal'
 import { SectionLabel } from './section-label'
 
@@ -13,9 +13,9 @@ type Project = {
   gradient?: string
 }
 
-const DESKTOP_VW = 1440 // emulate a standard laptop screen width
-const DESKTOP_VH = 900 // one laptop "screen" height (16:10)
-const PAGE_VH = 6000 // tall enough to scroll the full landing page
+const MOBILE_VW = 390 // emulate an iPhone-class mobile viewport width
+const MOBILE_VH = 844 // one phone "screen" height (~19.5:9)
+const PAGE_VH = 5200 // tall enough to scroll the full mobile landing page
 
 const projects: Project[] = [
   {
@@ -38,37 +38,13 @@ const projects: Project[] = [
   },
 ]
 
-function BrowserChrome({ displayUrl }: { displayUrl: string }) {
-  return (
-    <div
-      className="flex h-9 items-center gap-3 border-b px-4"
-      style={{ backgroundColor: '#F5F5F5', borderColor: '#E0DDDA' }}
-    >
-      <div className="flex items-center gap-2">
-        <span className="h-3 w-3 rounded-full" style={{ backgroundColor: '#FF5F57' }} />
-        <span className="h-3 w-3 rounded-full" style={{ backgroundColor: '#FEBC2E' }} />
-        <span className="h-3 w-3 rounded-full" style={{ backgroundColor: '#28C840' }} />
-      </div>
-      <div
-        className="mx-auto flex h-5 min-w-0 max-w-[70%] items-center justify-center gap-1 rounded-full px-3"
-        style={{ backgroundColor: '#EBEBEB' }}
-      >
-        <Lock size={10} color="#888888" aria-hidden="true" className="shrink-0" />
-        <span className="truncate text-[10px]" style={{ color: '#888888' }}>
-          {displayUrl}
-        </span>
-      </div>
-    </div>
-  )
-}
-
-function PortfolioCard({ project }: { project: Project }) {
+function PhoneCard({ project }: { project: Project }) {
   const [scrolled, setScrolled] = useState(false)
   const [width, setWidth] = useState(0)
-  const frameRef = useRef<HTMLDivElement>(null)
+  const screenRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const el = frameRef.current
+    const el = screenRef.current
     if (!el) return
     const update = () => setWidth(el.clientWidth)
     update()
@@ -77,91 +53,96 @@ function PortfolioCard({ project }: { project: Project }) {
     return () => ro.disconnect()
   }, [])
 
-  // Scale the emulated laptop viewport down to fit the card width, so the site
-  // renders exactly as it would on a 1440px-wide laptop, just zoomed out.
-  const scale = width > 0 ? width / DESKTOP_VW : 0
-  // The visible window shows exactly one laptop screen (1440x900) scaled down.
-  const windowHeight = Math.round(DESKTOP_VH * scale)
+  // Scale the emulated 390px mobile viewport down to the phone screen width, so
+  // the site renders exactly as it would on a real phone, just zoomed to fit.
+  const scale = width > 0 ? width / MOBILE_VW : 0
+  const screenHeight = Math.round(MOBILE_VH * scale)
 
   return (
-    <div
-      className="group flex flex-col overflow-hidden border bg-white shadow-sm transition-all duration-300 hover:-translate-y-[3px]"
-      style={{ borderColor: '#E0DDDA' }}
-      onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#A8BDD0')}
-      onMouseLeave={(e) => (e.currentTarget.style.borderColor = '#E0DDDA')}
-    >
-      <BrowserChrome displayUrl={project.displayUrl} />
-
+    <div className="group flex flex-col items-center">
+      {/* Phone body */}
       <div
-        ref={frameRef}
-        className="relative w-full overflow-y-scroll overflow-x-hidden bg-white"
-        style={{ height: windowHeight || 400 }}
-        onScroll={(e) => {
-          if (e.currentTarget.scrollTop > 4 && !scrolled) setScrolled(true)
-        }}
+        className="relative w-full max-w-[280px] rounded-[2.2rem] p-2.5 shadow-xl transition-transform duration-300 group-hover:-translate-y-1"
+        style={{ backgroundColor: '#1c1c1e' }}
       >
-        {project.live ? (
-          scale > 0 && (
-            // Sizer height = scaled iframe height, so the scroll range matches
-            // the visible page exactly (no empty space, no cut-off).
-            <div style={{ width: '100%', height: Math.round(PAGE_VH * scale) }}>
-              <iframe
-                src={project.url}
-                title={project.label}
-                scrolling="no"
-                className="border-0"
-                style={{
-                  width: DESKTOP_VW,
-                  height: PAGE_VH,
-                  transform: `scale(${scale})`,
-                  transformOrigin: 'top left',
-                  pointerEvents: 'none',
-                  border: 'none',
-                }}
-              />
-            </div>
-          )
-        ) : (
+        {/* Screen */}
+        <div className="relative overflow-hidden rounded-[1.7rem] bg-white">
+          {/* Notch */}
+          <div className="pointer-events-none absolute left-1/2 top-0 z-20 h-5 w-28 -translate-x-1/2 rounded-b-2xl bg-[#1c1c1e]" />
+
           <div
-            style={{
-              width: '100%',
-              minHeight: windowHeight ? windowHeight * 1.8 : 720,
-              background: project.gradient,
+            ref={screenRef}
+            className="relative w-full overflow-y-scroll overflow-x-hidden bg-white"
+            style={{ height: screenHeight || 480 }}
+            onScroll={(e) => {
+              if (e.currentTarget.scrollTop > 4 && !scrolled) setScrolled(true)
             }}
           >
-            <div className="flex flex-col gap-4 px-10 pt-12">
-              <div className="h-6 w-2/5 rounded bg-white/45" />
-              <div className="h-3 w-3/5 rounded bg-white/30" />
-              <div className="h-3 w-1/2 rounded bg-white/30" />
-              <div className="mt-4 h-10 w-40 rounded bg-white/55" />
-              <div className="mt-12 grid grid-cols-3 gap-5">
-                <div className="h-28 rounded bg-white/30" />
-                <div className="h-28 rounded bg-white/30" />
-                <div className="h-28 rounded bg-white/30" />
+            {project.live ? (
+              scale > 0 && (
+                // Sizer height = scaled iframe height so the scroll range matches
+                // the mobile page exactly (no empty space, no cut-off).
+                <div style={{ width: '100%', height: Math.round(PAGE_VH * scale) }}>
+                  <iframe
+                    src={project.url}
+                    title={project.label}
+                    scrolling="no"
+                    className="border-0"
+                    style={{
+                      width: MOBILE_VW,
+                      height: PAGE_VH,
+                      transform: `scale(${scale})`,
+                      transformOrigin: 'top left',
+                      pointerEvents: 'none',
+                      border: 'none',
+                    }}
+                  />
+                </div>
+              )
+            ) : (
+              <div
+                style={{
+                  width: '100%',
+                  minHeight: screenHeight ? screenHeight * 1.9 : 900,
+                  background: project.gradient,
+                }}
+              >
+                <div className="flex flex-col gap-3 px-5 pt-10">
+                  <div className="h-4 w-3/4 rounded bg-white/45" />
+                  <div className="h-2.5 w-full rounded bg-white/30" />
+                  <div className="h-2.5 w-5/6 rounded bg-white/30" />
+                  <div className="mt-3 h-8 w-32 rounded bg-white/55" />
+                  <div className="mt-8 flex flex-col gap-4">
+                    <div className="h-24 rounded bg-white/30" />
+                    <div className="h-24 rounded bg-white/30" />
+                    <div className="h-24 rounded bg-white/30" />
+                  </div>
+                </div>
               </div>
-            </div>
+            )}
           </div>
-        )}
+
+          {/* Scroll hint */}
+          <div
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex h-8 items-center justify-center gap-2 transition-opacity duration-300"
+            style={{
+              background: 'linear-gradient(to top, rgba(255,255,255,0.95), rgba(255,255,255,0))',
+              opacity: scrolled ? 0 : 1,
+            }}
+          >
+            <ArrowUpDown size={12} color="#A8BDD0" aria-hidden="true" />
+            <span
+              className="text-[10px] uppercase"
+              style={{ color: '#8a9db0', letterSpacing: '0.15em' }}
+            >
+              Scroll to explore
+            </span>
+          </div>
+        </div>
       </div>
 
-      <div
-        className="flex h-8 items-center justify-center gap-2 border-t transition-opacity duration-300"
-        style={{
-          backgroundColor: '#F0EFE8',
-          borderColor: '#E0DDDA',
-          opacity: scrolled ? 0 : 1,
-        }}
-      >
-        <ArrowUpDown size={12} color="#A8BDD0" aria-hidden="true" />
-        <span
-          className="text-[11px] uppercase"
-          style={{ color: '#A8BDD0', letterSpacing: '0.15em' }}
-        >
-          Scroll to explore
-        </span>
-      </div>
-
-      <div className="flex items-center justify-between gap-2 px-4 py-3">
+      {/* Caption */}
+      <div className="mt-5 flex w-full max-w-[280px] items-center justify-between gap-2">
         <div className="min-w-0">
           <p className="truncate text-xs font-semibold" style={{ color: '#333333' }}>
             {project.label}
@@ -187,7 +168,7 @@ function PortfolioCard({ project }: { project: Project }) {
 export function Portfolio() {
   return (
     <section id="portfolio" className="bg-white">
-      <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <Reveal>
           <SectionLabel>Our Work</SectionLabel>
           <h2 className="mt-4 max-w-2xl font-serif text-3xl italic text-charcoal text-balance md:text-4xl">
@@ -195,10 +176,10 @@ export function Portfolio() {
           </h2>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid justify-items-center gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((p, i) => (
             <Reveal key={p.label} delay={i * 100}>
-              <PortfolioCard project={p} />
+              <PhoneCard project={p} />
             </Reveal>
           ))}
         </div>
