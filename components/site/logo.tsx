@@ -41,10 +41,21 @@ export function Wordmark({
 }
 
 export function Logo({ className }: { className?: string }) {
+  // The source PNG is a 2000x2000 square with the "paperclip. studio" wordmark
+  // centred inside empty padding. Framing it in a wide box and scaling the
+  // background to ~500% tall, centred, crops the padding so only the wordmark
+  // shows. `overflow-hidden` guarantees nothing spills outside the box.
   return (
-    <span className={cn('inline-flex items-center gap-2', className)}>
-      <PaperclipMark className="text-charcoal" />
-      <Wordmark />
-    </span>
+    <span
+      role="img"
+      aria-label="paperclip studio"
+      className={cn('block h-8 w-[150px] overflow-hidden md:h-9 md:w-[168px]', className)}
+      style={{
+        backgroundImage: 'url(/paperclip-logo.png)',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center center',
+        backgroundSize: 'auto 500%',
+      }}
+    />
   )
 }
