@@ -86,6 +86,57 @@ type ContactPayload = {
   message?: string
 }
 
+type QuotePayload = {
+  name: string
+  business: string
+  whatsapp: string
+  email: string
+  source?: string
+  selectedPackage: string
+  addons: string[]
+}
+
+// Handles the multi-step "Get a Quote" quiz submission.
+export async function submitQuote(payload: QuotePayload): Promise<ActionResult> {
+  const name = payload.name?.trim()
+  const email = payload.email?.trim().toLowerCase()
+  const business = payload.business?.trim()
+  const whatsapp = payload.whatsapp?.trim()
+
+  if (!name) return { ok: false, error: 'Please enter your name.' }
+  if (!business) return { ok: false, error: 'Please enter your business name.' }
+  if (!whatsapp) return { ok: false, error: 'Please enter your WhatsApp number.' }
+  if (!email || !emailRe.test(email)) return { ok: false, error: 'Please enter a valid email.' }
+
+  const addons: SelectedAddon[] = (payload.addons ?? []).map((label) => ({
+    id: label.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+    label,
+    price: 0,
+  }))
+
+  try {
+    const [row] = await db
+      .insert(leads)
+      .values({
+        name,
+        email,
+        phone: whatsapp,
+        businessName: business,
+        packageInterest: payload.selectedPackage || null,
+        selectedPackage: payload.selectedPackage || null,
+        selectedAddons: addons,
+        message: payload.source ? `Found us via: ${payload.source}` : null,
+        source: 'quote',
+        completed: true,
+      })
+      .returning({ id: leads.id })
+    return { ok: true, id: row.id }
+  } catch (e) {
+    console.log('[v0] submitQuote error:', (e as Error).message)
+    return { ok: false, error: 'Something went wrong sending your request.' }
+  }
+}
+
 export async function submitContact(payload: ContactPayload): Promise<ActionResult> {
   const name = payload.name?.trim()
   const email = payload.email?.trim().toLowerCase()

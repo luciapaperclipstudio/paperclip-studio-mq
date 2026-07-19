@@ -10,6 +10,7 @@ type Project = {
   subLabel: string
   url?: string
   displayUrl?: string
+  image?: string
   tone?: string
 }
 
@@ -19,6 +20,7 @@ const projects: Project[] = [
     subLabel: 'Luxury Travel — Cape Town',
     url: 'https://eventureescapes.com',
     displayUrl: 'eventureescapes.com',
+    image: '/portfolio/eventure-escapes.png',
   },
   {
     label: 'Electrical Contractor',
@@ -52,8 +54,10 @@ function PhoneCard({ project }: { project: Project }) {
     <figure className="flex flex-col items-center">
       {/* Phone frame */}
       <div className="relative w-full max-w-[280px] rounded-[2.25rem] border border-charcoal/15 bg-charcoal p-2.5 shadow-lg">
-        {/* Notch */}
-        <div className="absolute left-1/2 top-2.5 z-20 h-5 w-28 -translate-x-1/2 rounded-b-2xl bg-charcoal" />
+        {/* Notch (hidden when the screenshot already includes a status bar) */}
+        {!project.image ? (
+          <div className="absolute left-1/2 top-2.5 z-20 h-5 w-28 -translate-x-1/2 rounded-b-2xl bg-charcoal" />
+        ) : null}
         {/* Screen */}
         <div className="relative overflow-hidden rounded-[1.75rem] bg-white">
           <div
@@ -61,7 +65,14 @@ function PhoneCard({ project }: { project: Project }) {
             onScroll={onScroll}
             className="aspect-[9/19] w-full overflow-y-scroll overscroll-contain"
           >
-            {project.url ? (
+            {project.image ? (
+              <img
+                src={project.image || '/placeholder.svg'}
+                alt={`Mobile preview of the ${project.label} website`}
+                className="block w-full"
+                loading="lazy"
+              />
+            ) : project.url ? (
               <img
                 src={shot(project.url) || '/placeholder.svg'}
                 alt={`Mobile preview of the ${project.label} website`}

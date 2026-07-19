@@ -6,10 +6,10 @@ import { useEffect, useState } from 'react'
 import { Logo } from './logo'
 
 const links = [
-  { label: 'Services', href: '#services' },
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'Get a Quote', href: '#contact' },
+  { label: 'Services', href: '/#services' },
+  { label: 'How It Works', href: '/#how-it-works' },
+  { label: 'Pricing', href: '/#pricing' },
+  { label: 'Get a Quote', href: '/get-a-quote' },
 ]
 
 export function Navbar() {
@@ -53,7 +53,7 @@ export function Navbar() {
             ))}
           </ul>
           <a
-            href="#contact"
+            href="/get-a-quote"
             className="rounded border border-charcoal px-4 py-2 text-sm font-medium text-charcoal transition-colors hover:bg-charcoal hover:text-white"
           >
             Get a Quote
@@ -98,9 +98,9 @@ export function Navbar() {
           </ul>
           <div className="px-6 pt-6">
             <a
-              href="#contact"
+              href="/get-a-quote"
               onClick={() => setOpen(false)}
-              className="block rounded bg-yellow px-4 py-3 text-center text-sm font-medium text-charcoal"
+              className="block rounded bg-steel px-4 py-3 text-center text-sm font-medium text-charcoal"
             >
               Get a Quote
             </a>
