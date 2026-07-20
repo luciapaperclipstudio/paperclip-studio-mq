@@ -17,7 +17,7 @@ export function Footer() {
             aria-label="paperclip studio"
             className="block h-9 w-[168px] overflow-hidden"
             style={{
-              backgroundImage: 'url(/paperclip-logo.png)',
+              backgroundImage: 'url(/paperclip-logo-footer.png)',
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'center center',
               backgroundSize: 'auto 500%',

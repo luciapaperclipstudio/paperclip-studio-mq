@@ -52,8 +52,8 @@ export function Hero() {
             Websites that work as hard as you do.
           </h1>
           <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-muted-foreground">
-            We build clean, fast, and affordable websites for South African businesses — powered by
-            AI, delivered in days.
+            We build clean, fast, and mobile-first websites for South African businesses — powered
+            by AI, delivered in days.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
