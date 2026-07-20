@@ -82,21 +82,22 @@ export function Hero() {
         <Reveal className="md:col-span-2" delay={150}>
           <div className="relative rounded-xl bg-gradient-to-br from-cream to-white p-6 shadow-[0_24px_60px_-24px_rgba(51,51,51,0.35)]">
             <BrowserMock
+              label="Sea & Salt Events Studio · Durban"
+              tone="#dce7ef"
+              image="/portfolio/sea-and-salt-desktop.png"
+              className="w-[88%] -rotate-2"
+            />
+            <BrowserMock
               label="Eventure Escapes · Luxury Travel"
               tone="#f0e7c8"
               image="/portfolio/eventure-escapes-desktop.jpeg"
-              className="ml-auto w-[88%] -rotate-2"
+              className="-mt-6 ml-auto w-[82%] rotate-1"
             />
             <BrowserMock
               label="The Harvest Table · Catering"
               tone="#dbe4ee"
               image="/portfolio/harvest-table-desktop.png"
-              className="-mt-6 w-[82%] rotate-1"
-            />
-            <BrowserMock
-              label="Catering Co. · Pretoria"
-              tone="#e7e6de"
-              className="-mt-6 ml-auto w-[74%] -rotate-1"
+              className="-mt-6 w-[74%] -rotate-1"
             />
           </div>
         </Reveal>
