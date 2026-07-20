@@ -12,15 +12,15 @@ type Project = {
 
 const projects: Project[] = [
   {
+    label: 'Sea & Salt Events Studio',
+    subLabel: 'Event Planning — Durban',
+    image: '/portfolio/sea-and-salt-desktop.png',
+  },
+  {
     label: 'Eventure Escapes',
     subLabel: 'Luxury Travel — Cape Town',
     url: 'https://eventureescapes.com',
     image: '/portfolio/eventure-escapes-desktop.jpeg',
-  },
-  {
-    label: 'Sea & Salt Events Studio',
-    subLabel: 'Event Planning — Durban',
-    image: '/portfolio/sea-and-salt-desktop.png',
   },
   {
     label: 'The Harvest Table',
