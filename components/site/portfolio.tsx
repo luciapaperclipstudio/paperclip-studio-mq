@@ -18,14 +18,14 @@ const projects: Project[] = [
     image: '/portfolio/eventure-escapes-desktop.jpeg',
   },
   {
+    label: 'Sea & Salt Events Studio',
+    subLabel: 'Event Planning — Durban',
+    image: '/portfolio/sea-and-salt-desktop.png',
+  },
+  {
     label: 'The Harvest Table',
     subLabel: 'Event Catering — Johannesburg',
     image: '/portfolio/harvest-table-desktop.png',
-  },
-  {
-    label: 'Catering Company',
-    subLabel: 'Hospitality — Pretoria',
-    tone: '#e3e2d6',
   },
 ]
 
