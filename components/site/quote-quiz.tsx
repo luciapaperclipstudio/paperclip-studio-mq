@@ -79,15 +79,6 @@ const ADDONS: Addon[] = [
   },
 ]
 
-const SOURCES = [
-  'Instagram',
-  'Facebook',
-  'Google',
-  'Word of mouth / referral',
-  'WhatsApp group',
-  'Other',
-]
-
 const STEP_LABELS = ['Package', 'Add-ons', 'Your Details']
 const PROGRESS = ['5%', '38%', '70%', '100%']
 
@@ -95,7 +86,7 @@ export function QuoteQuiz() {
   const [step, setStep] = useState(1)
   const [pkg, setPkg] = useState<string | null>(null)
   const [addons, setAddons] = useState<string[]>([])
-  const [form, setForm] = useState({ name: '', business: '', whatsapp: '', email: '', source: '' })
+  const [form, setForm] = useState({ name: '', business: '', whatsapp: '', email: '' })
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
 
@@ -137,7 +128,6 @@ export function QuoteQuiz() {
       business,
       whatsapp,
       email,
-      source: form.source,
       selectedPackage: pkg ?? '',
       addons,
     })
@@ -156,7 +146,6 @@ export function QuoteQuiz() {
           _replyto: email,
           package: pkg ?? '',
           addons: addons.length ? addons.join(', ') : 'None selected',
-          'how did you find us': form.source || 'Not specified',
           _subject: `New quote request from ${name} (${business})`,
         }),
       })
@@ -393,20 +382,6 @@ export function QuoteQuiz() {
                   placeholder="e.g. naledi@example.com"
                   autoComplete="email"
                 />
-              </Field>
-              <Field label="How did you find us?">
-                <select
-                  className={inputClass}
-                  value={form.source}
-                  onChange={(e) => setForm({ ...form, source: e.target.value })}
-                >
-                  <option value="" disabled>
-                    Select an option
-                  </option>
-                  {SOURCES.map((s) => (
-                    <option key={s}>{s}</option>
-                  ))}
-                </select>
               </Field>
             </div>
 

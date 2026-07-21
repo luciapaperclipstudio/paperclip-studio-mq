@@ -19,7 +19,7 @@ const testimonials = [
     quote:
       'Our catering business had zero online presence. Now we get enquiries through the site every week.',
     name: 'Zanele D.',
-    role: 'Catering Company, Cape Town',
+    role: 'Catering Company, Johannesburg',
   },
 ]
 
