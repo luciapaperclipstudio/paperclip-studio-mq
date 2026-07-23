@@ -8,6 +8,7 @@ type Project = {
   url?: string
   image?: string
   tone?: string
+  caseStudy?: string
 }
 
 const projects: Project[] = [
@@ -21,6 +22,7 @@ const projects: Project[] = [
     subLabel: 'Luxury Travel — Cape Town',
     url: 'https://eventureescapes.com',
     image: '/portfolio/eventure-escapes-desktop.jpeg',
+    caseStudy: '/work/eventure-escapes',
   },
   {
     label: 'The Harvest Table',
@@ -56,6 +58,14 @@ function BrowserCard({ project }: { project: Project }) {
         <div className="min-w-0">
           <p className="truncate text-sm font-semibold text-charcoal">{project.label}</p>
           <p className="truncate text-xs text-charcoal/55">{project.subLabel}</p>
+          {project.caseStudy ? (
+            <a
+              href={project.caseStudy}
+              className="mt-1.5 inline-flex items-center gap-1 text-xs font-semibold text-charcoal transition-colors hover:text-charcoal/70"
+            >
+              View Case Study &rarr;
+            </a>
+          ) : null}
         </div>
         {project.url ? (
           <a
