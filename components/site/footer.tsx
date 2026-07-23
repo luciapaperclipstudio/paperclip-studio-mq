@@ -1,10 +1,11 @@
 import { WhatsAppButton } from './whatsapp-button'
 
 const navLinks = [
-  { label: 'Services', href: '#services' },
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'Get a Quote', href: '#contact' },
+  { label: 'Services', href: '/#services' },
+  { label: 'How It Works', href: '/#how-it-works' },
+  { label: 'About', href: '/about' },
+  { label: 'Pricing', href: '/#pricing' },
+  { label: 'Get a Quote', href: '/get-a-quote' },
 ]
 
 export function Footer() {
