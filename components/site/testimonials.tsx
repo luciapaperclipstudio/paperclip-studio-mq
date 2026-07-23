@@ -5,9 +5,9 @@ import { SectionLabel } from './section-label'
 const testimonials = [
   {
     quote:
-      'Paperclip Studio had our salon website live in 4 days. We\u2019ve already had 12 new bookings through it.',
-    name: 'Naledi M.',
-    role: 'Hair Salon, Johannesburg',
+      'Lucia understood my vision from day one — translating my brand into a site that\u2019s as elegant and considered as the trips themselves.',
+    name: 'Emma',
+    role: 'Eventure Escapes',
   },
   {
     quote:
