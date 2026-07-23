@@ -15,6 +15,96 @@ export type Post = {
 // with "- " become list items, everything else is a paragraph.
 const posts: Post[] = [
   {
+    slug: 'ai-website-builder-vs-hiring-web-designer-south-africa',
+    title: 'AI Website Builder vs Hiring a Web Designer: Which is Right for Your Business?',
+    metaTitle: 'AI Website Builder vs Web Designer South Africa: Which Should You Choose?',
+    metaDescription:
+      'Comparing AI website builders to hiring a web designer in South Africa — cost, quality, turnaround time, and which option actually makes sense for a small business.',
+    category: 'Web Design Advice',
+    readTime: '7 min read',
+    publishedDate: '2024-11-08',
+    excerpt:
+      "AI website tools are faster and cheaper than ever — but does that mean you should skip the designer? Here's an honest comparison for South African small businesses.",
+    content: `## The question every small business owner is asking right now
+
+A few years ago, getting a professional website meant one thing: you hired someone to build it. Today, a wave of AI website builders — Wix ADI, Framer AI, Durable, and a dozen others — promise to spin up a full site in minutes, often for the price of a monthly coffee habit. Type in what your business does, and the tool generates pages, copy, and images on the spot.
+
+So the obvious question follows: if AI can build a website in ten minutes for next to nothing, why would anyone still pay a web designer?
+
+It is a fair question, and the honest answer is more nuanced than either the AI hype crowd or the traditional designers will tell you. Both options have a real place. The trick is knowing which one fits your business, your budget, and — most importantly — what you actually need the website to do. Let us walk through it properly.
+
+## What AI website builders actually do well
+
+It would be easy to dismiss AI builders, but that would not be honest. They are genuinely impressive at certain things, and for the right person they are a great fit.
+
+Speed is the headline. You can go from nothing to a live, functioning website in an afternoon. For a business that needs a basic online presence yesterday, that is hard to argue with.
+
+Cost is the other big draw. Most AI builders run on affordable monthly subscriptions, so there is little upfront commitment. If you are testing an idea or running a side hustle, you are not risking much.
+
+- The templates are genuinely decent — modern, mobile-responsive, and a long way from the clunky drag-and-drop sites of a decade ago.
+- They handle the technical basics for you: hosting, security certificates, and mobile layouts are sorted automatically.
+- For very simple needs — a one-page site, a coming-soon page, a basic portfolio — the output is often perfectly good.
+
+If your requirements are modest and your budget is close to zero, an AI builder is a sensible starting point. There is no shame in that, and anyone who tells you otherwise is usually trying to sell you something more expensive.
+
+## Where AI website builders fall short
+
+The cracks appear once your needs go beyond the basics — and for most real businesses, they do.
+
+The first problem is that AI sites tend to look generic. The tools pull from the same pool of templates and patterns, so your site ends up looking like thousands of others. It works, but it rarely feels like you, and it rarely stands out from a competitor using the same tool.
+
+The deeper problem is that AI builders give you a website, not a strategy. They do not ask why someone visits your site, what action you want that visitor to take, or how to guide them towards booking, buying, or enquiring. There is no conversion thinking behind the layout — just blocks arranged attractively.
+
+- SEO control is usually limited. You get the basics, but the finer tuning that actually helps you rank on Google is often locked away or missing entirely.
+- There is no real copywriting strategy. AI-generated text reads smoothly but says little, and it rarely speaks to your specific customer.
+- You are locked into a monthly subscription. Stop paying and the site can disappear — you are renting, not owning.
+- When something breaks, you are on your own. There is no one to call, just a help centre and a support queue.
+
+For a business that depends on its website to bring in work, those shortfalls are not minor. They are the difference between a site that looks fine and a site that actually earns its keep.
+
+## What a web designer brings that AI can't
+
+A good web designer is not competing with AI on speed or price. They are offering something different: judgement.
+
+A designer starts with strategy — who your customers are, what they need to see, and what you want them to do. That thinking shapes every decision, from the layout to the wording of a single button. It is the part AI simply does not do, because it does not understand your business or your market.
+
+Then there is the craft that quietly makes a site work: conversion-optimised copy that speaks to your customer, a proper SEO structure that gives you a real chance on Google, schema markup so search engines understand your business, and local knowledge of what actually resonates with a South African audience.
+
+And crucially, you get a person. Someone who takes your brief, pushes back when something will not work, fixes things when they break, and takes responsibility for the result. When your business depends on the outcome, having someone accountable is worth a great deal.
+
+The catch, of course, is cost and time. Traditional design has always meant higher prices and longer timelines — which is exactly the gap that a newer model has stepped in to fill.
+
+## The best of both worlds: AI-assisted design studios
+
+There is a third option that often gets lost in the "AI versus designer" framing, and it is arguably the most practical for small businesses: designers who use AI as a tool rather than a replacement.
+
+This is the approach we take at Paperclip Studio. The idea is simple. AI is genuinely brilliant at the slow, repetitive parts of building a site — first drafts, layout scaffolding, boilerplate code, content structure. So we let it do that work, which cuts build time and cost dramatically.
+
+But the strategic and quality layer stays firmly human. A designer still decides how the site should be structured to convert, writes and shapes the copy, tunes the SEO, and reviews every decision before it ships. You get the speed and affordability that AI makes possible, without losing the strategy and accountability that pure AI builders miss.
+
+In practice that means a professional, custom-built site in days rather than weeks, at a price closer to an AI subscription than an agency invoice. It is not the right fit for every enormous project, but for a typical small business it hits a sweet spot the other options struggle to reach.
+
+## So which should you choose? A simple decision framework
+
+Cutting through all of it, here is a straightforward way to decide.
+
+- If you need something live in the next 24 hours and have zero budget, use a DIY AI builder. It will not be remarkable, but it will get you online today, and you can upgrade later.
+- If you want a genuinely professional result but cannot justify R15,000 or more, an AI-assisted studio is almost certainly your best value. You get the strategy and quality of a designer at a fraction of the traditional cost and timeline.
+- If you are a large business with complex needs — multiple stakeholders, custom functionality, a big brand to protect — a traditional agency is worth the higher investment for the capacity and accountability it brings.
+
+Most small South African businesses land squarely in the middle option, and that is not a coincidence. It is the point where quality and affordability finally overlap.
+
+## The real question isn't AI vs designer — it's what outcome do you need?
+
+Here is the thing to hold onto through all the noise about tools and technology: your website has a job to do. That job is to generate leads, bookings, or sales for your business. Nothing else really matters.
+
+An AI builder, a freelance designer, an AI-assisted studio, a full agency — these are just different ways of arriving at the same destination. The right choice is not the newest, the cheapest, or the most impressive-sounding. It is the one that gets you a website that actually achieves your outcome.
+
+So do not ask "should I use AI or hire a designer?" Ask "what do I need this website to do, and which option gets me there best?" Answer that honestly, and the decision usually makes itself.
+
+If you would like a straight answer about which route fits your business, we are happy to help — even if that turns out to be a simple builder rather than us. Get a free quote and we will point you in the right direction.`,
+  },
+  {
     slug: 'how-much-does-a-website-cost-in-south-africa',
     title: 'How Much Does a Website Cost in South Africa in 2024?',
     metaTitle: 'How Much Does a Website Cost in South Africa? (2024 Pricing Guide)',

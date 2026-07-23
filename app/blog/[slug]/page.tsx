@@ -28,14 +28,6 @@ export async function generateMetadata({
   }
 }
 
-function formatDate(date: string): string {
-  return new Date(date).toLocaleDateString('en-ZA', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  })
-}
-
 // Renders the post content convention into semantic HTML:
 // "## " -> <h2>, consecutive "- " lines -> <ul>, everything else -> <p>.
 function ArticleBody({ content }: { content: string }) {
@@ -102,8 +94,6 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
                   {post.category}
                 </span>
                 <span>{post.readTime}</span>
-                <span aria-hidden="true">·</span>
-                <time dateTime={post.publishedDate}>{formatDate(post.publishedDate)}</time>
               </div>
               <h1 className="mt-5 font-serif text-4xl italic leading-[1.1] tracking-tight text-charcoal text-balance md:text-5xl">
                 {post.title}
