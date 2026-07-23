@@ -2,7 +2,7 @@ import { Check } from 'lucide-react'
 import { Reveal } from './reveal'
 import { SectionLabel } from './section-label'
 
-function BrowserMock({
+export function BrowserMock({
   label,
   className,
   tone,

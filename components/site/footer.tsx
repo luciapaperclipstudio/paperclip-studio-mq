@@ -5,8 +5,14 @@ const navLinks = [
   { label: 'How It Works', href: '/#how-it-works' },
   { label: 'About', href: '/about' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Pricing', href: '/#pricing' },
+  { label: 'Pricing', href: '/#services' },
   { label: 'Get a Quote', href: '/get-a-quote' },
+]
+
+const areasWeServe = [
+  { label: 'Web Design Cape Town', href: '/locations/web-designer-cape-town' },
+  { label: 'Web Design Johannesburg', href: '/locations/web-designer-johannesburg' },
+  { label: 'Web Design Durban', href: '/locations/web-designer-durban' },
 ]
 
 export function Footer() {
@@ -62,6 +68,22 @@ export function Footer() {
           <div className="mt-5">
             <WhatsAppButton />
           </div>
+        </div>
+      </div>
+      <div className="border-t border-white/10">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-3 gap-y-2 px-6 py-6 text-center text-sm text-white/70">
+          {areasWeServe.map((area, i) => (
+            <span key={area.href} className="flex items-center gap-3">
+              <a href={area.href} className="transition-colors hover:text-white">
+                {area.label}
+              </a>
+              {i < areasWeServe.length - 1 ? (
+                <span aria-hidden="true" className="text-white/25">
+                  ·
+                </span>
+              ) : null}
+            </span>
+          ))}
         </div>
       </div>
       <div className="border-t border-white/10 bg-[#2b2b2b]">

@@ -2,7 +2,7 @@ import { CheckCircle2, X } from 'lucide-react'
 import { Reveal } from './reveal'
 import { SectionLabel } from './section-label'
 
-type Plan = {
+export type Plan = {
   title: string
   tagline: string
   from: string
@@ -13,7 +13,7 @@ type Plan = {
   popular: boolean
 }
 
-const plans: Plan[] = [
+export const plans: Plan[] = [
   {
     title: 'Starter Landing Page',
     tagline: 'Get online fast. Perfect for running ads.',

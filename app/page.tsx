@@ -1,4 +1,3 @@
-import { Calculator } from '@/components/site/calculator'
 import { Contact } from '@/components/site/contact'
 import { Faq } from '@/components/site/faq'
 import { Footer } from '@/components/site/footer'
@@ -26,7 +25,6 @@ export default function Page() {
           title="Like what you see? Let's build yours."
           subtitle="Tell us what you need and we'll send a free, no-obligation quote."
         />
-        <Calculator />
         <Testimonials />
         <Faq />
         <Contact />
