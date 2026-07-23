@@ -45,7 +45,16 @@ export function Footer() {
         <div>
           <p className="label-caps mb-4 text-white/50">Contact</p>
           <ul className="space-y-2 text-sm text-white/80">
-            <li>hello@paperclipstudio.co.za</li>
+            <li>
+              <a href="mailto:hello@paperclipstudio.co.za" className="transition-colors hover:text-white">
+                hello@paperclipstudio.co.za
+              </a>
+            </li>
+            <li>
+              <a href="tel:+277784429357" className="transition-colors hover:text-white">
+                +27 77 844 29357
+              </a>
+            </li>
             <li>South Africa</li>
           </ul>
           <div className="mt-5">

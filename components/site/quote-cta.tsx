@@ -1,13 +1,11 @@
-import { ArrowRight } from 'lucide-react'
-
 type Variant = 'band' | 'inline'
 
-// Reusable "Get a Free Quote" call-to-action used sporadically down the page.
+// Reusable "Get a Free Quote →" call-to-action used sporadically down the page.
 export function QuoteCta({
   variant = 'inline',
   title = 'Ready to get your business online?',
   subtitle = 'Get a free, no-obligation quote in minutes.',
-  ctaLabel = 'Get a Free Quote',
+  ctaLabel = 'Get a Free Quote →',
   ctaHref = '/get-a-quote',
 }: {
   variant?: Variant
@@ -29,7 +27,6 @@ export function QuoteCta({
             className="inline-flex items-center gap-2 rounded bg-steel px-6 py-3 text-sm font-semibold text-charcoal transition hover:brightness-95"
           >
             {ctaLabel}
-            <ArrowRight size={16} aria-hidden="true" />
           </a>
         </div>
       </section>
@@ -42,8 +39,7 @@ export function QuoteCta({
         href="/get-a-quote"
         className="inline-flex items-center gap-2 rounded bg-steel px-6 py-3 text-sm font-semibold text-charcoal transition hover:brightness-95"
       >
-        Get a Free Quote
-        <ArrowRight size={16} aria-hidden="true" />
+        Get a Free Quote &rarr;
       </a>
     </div>
   )

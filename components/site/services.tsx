@@ -155,10 +155,10 @@ export function Services() {
 
                 {/* CTA */}
                 <a
-                  href="#pricing"
+                  href="/get-a-quote"
                   className="mt-8 inline-flex w-full items-center justify-center gap-1 bg-steel px-6 py-3 text-sm font-semibold text-charcoal transition-transform hover:-translate-y-0.5 hover:shadow-md"
                 >
-                  Get Started &rarr;
+                  Get a Free Quote &rarr;
                 </a>
               </article>
             </Reveal>

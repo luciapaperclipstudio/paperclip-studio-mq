@@ -24,9 +24,7 @@ export default function Page() {
         <QuoteCta
           variant="band"
           title="Like what you see? Let's build yours."
-          subtitle="See our packages and build your estimate in seconds."
-          ctaLabel="Get Pricing"
-          ctaHref="/#pricing"
+          subtitle="Tell us what you need and we'll send a free, no-obligation quote."
         />
         <Calculator />
         <Testimonials />

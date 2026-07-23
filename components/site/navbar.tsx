@@ -55,7 +55,7 @@ export function Navbar() {
             href="/get-a-quote"
             className="rounded bg-steel px-4 py-2 text-sm font-semibold text-charcoal transition-colors hover:brightness-95"
           >
-            Get a Free Quote
+            Get a Free Quote &rarr;
           </a>
         </div>
 
@@ -101,7 +101,7 @@ export function Navbar() {
               onClick={() => setOpen(false)}
               className="block rounded bg-steel px-4 py-3 text-center text-sm font-semibold text-charcoal"
             >
-              Get a Free Quote
+              Get a Free Quote &rarr;
             </a>
           </div>
         </div>
