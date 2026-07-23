@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import {
   Check,
   FileText,
@@ -89,11 +89,17 @@ export function QuoteQuiz() {
   const [form, setForm] = useState({ name: '', business: '', whatsapp: '', email: '' })
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
+  const rootRef = useRef<HTMLDivElement>(null)
 
   function go(n: number) {
     setError('')
     setStep(n)
-    if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' })
+    // Scroll to the top of the form itself rather than the top of the page, so
+    // the quiz stays in view when it's embedded mid-page (e.g. the homepage).
+    if (typeof window !== 'undefined' && rootRef.current) {
+      const top = rootRef.current.getBoundingClientRect().top + window.scrollY - 100
+      window.scrollTo({ top, behavior: 'smooth' })
+    }
   }
 
   function selectPkg(value: string) {
@@ -165,7 +171,7 @@ export function QuoteQuiz() {
     'w-full border border-[#E0DDDA] bg-[#F7F6F2] px-4 py-3.5 text-[15px] text-charcoal outline-none transition focus:border-steel focus:bg-white placeholder:text-[#C0BCBA]'
 
   return (
-    <div className="mx-auto w-full max-w-[480px]">
+    <div ref={rootRef} className="mx-auto w-full max-w-[480px] scroll-mt-24">
       {/* Progress */}
       {step < 4 ? (
         <div className="mb-6 px-1">
