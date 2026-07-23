@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 }
 
 const stats = [
-  { value: '50+', label: 'Websites delivered' },
+  { value: '10+', label: 'Websites delivered' },
   { value: '3–7 day', label: 'Turnaround' },
   { value: '100%', label: 'South African clients' },
 ]
@@ -62,7 +62,7 @@ export default function AboutPage() {
             <Reveal>
               <div className="overflow-hidden border border-[#e0ddda] bg-cream">
                 <img
-                  src="/placeholder.svg?height=640&width=560"
+                  src="/founder.jpg"
                   alt="Founder of Paperclip Studio"
                   className="aspect-[7/8] w-full object-cover"
                 />
