@@ -87,9 +87,17 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 bg-[#2b2b2b]">
-        <p className="mx-auto max-w-6xl px-6 py-4 text-center text-xs text-white/50">
-          © 2026 paperclip studio. All rights reserved.
-        </p>
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 py-4 text-xs text-white/50 sm:flex-row">
+          <p>© 2026 paperclip studio. All rights reserved.</p>
+          <div className="flex items-center gap-4">
+            <a href="/privacy-policy" className="transition-colors hover:text-white">
+              Privacy Policy
+            </a>
+            <a href="/terms" className="transition-colors hover:text-white">
+              Terms &amp; Conditions
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   )
