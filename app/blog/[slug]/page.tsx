@@ -36,6 +36,51 @@ function formatDate(date: string): string {
   })
 }
 
+// Renders the post content convention into semantic HTML:
+// "## " -> <h2>, consecutive "- " lines -> <ul>, everything else -> <p>.
+function ArticleBody({ content }: { content: string }) {
+  const blocks = content.trim().split(/\n{2,}/)
+
+  return (
+    <div className="text-[16px] leading-relaxed text-muted-foreground">
+      {blocks.map((block, i) => {
+        const trimmed = block.trim()
+
+        if (trimmed.startsWith('## ')) {
+          return (
+            <h2
+              key={i}
+              className="mt-12 font-serif text-2xl italic text-charcoal text-balance md:text-3xl"
+            >
+              {trimmed.replace(/^##\s+/, '')}
+            </h2>
+          )
+        }
+
+        if (trimmed.startsWith('- ')) {
+          const items = trimmed.split('\n').map((line) => line.replace(/^-\s+/, ''))
+          return (
+            <ul key={i} className="mt-5 space-y-2.5 pl-1">
+              {items.map((item, j) => (
+                <li key={j} className="flex items-start gap-2.5">
+                  <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-steel" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          )
+        }
+
+        return (
+          <p key={i} className="mt-5">
+            {trimmed}
+          </p>
+        )
+      })}
+    </div>
+  )
+}
+
 export default async function BlogPostPage({ params }: { params: Promise<Params> }) {
   const { slug } = await params
   const post = getPostBySlug(slug)
@@ -69,12 +114,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
           {/* Body */}
           <div className="bg-white">
             <div className="mx-auto max-w-3xl px-6 py-16 md:py-20">
-              <div
-                className="text-[16px] leading-relaxed text-muted-foreground"
-                style={{ whiteSpace: 'pre-wrap' }}
-              >
-                {post.content}
-              </div>
+              <ArticleBody content={post.content} />
 
               {/* CTA box */}
               <aside className="mt-14 border border-[#e0ddda] bg-cream p-8 text-center md:p-10">
