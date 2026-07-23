@@ -27,9 +27,10 @@ const plans: Plan[] = [
       'Contact form with email notification',
       'Basic SEO metadata',
       'WhatsApp chat button',
+      'Ads pixel setup',
       'Deployed to your domain',
     ],
-    excluded: ['Multiple pages', 'Portfolio / gallery section', 'Ads pixel setup'],
+    excluded: ['Multiple pages', 'Portfolio / gallery section'],
     popular: false,
   },
   {
