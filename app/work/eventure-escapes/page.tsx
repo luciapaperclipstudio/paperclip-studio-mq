@@ -111,21 +111,35 @@ export default function EventureEscapesCaseStudy() {
           </div>
         </section>
 
-        {/* c) Full-width website preview */}
+        {/* c) Full-width website preview — full-page screenshot in a scrollable frame */}
         <section className="bg-white">
-          <div className="mx-auto max-w-6xl px-6 pb-16 md:pb-20">
+          <div className="mx-auto max-w-5xl px-6 pb-16 md:pb-20">
             <Reveal>
-              <div className="overflow-hidden rounded-xl border border-charcoal/15 bg-white shadow-[0_24px_60px_-24px_rgba(51,51,51,0.35)]">
-                {/* Replace with actual screenshot */}
-                <Image
-                  src="/portfolio/eventure-escapes-desktop.jpeg"
-                  alt="Eventure Escapes luxury travel website — designed by Paperclip Studio"
-                  width={1600}
-                  height={1000}
-                  className="block h-auto w-full object-cover"
-                  priority
-                />
-              </div>
+              <figure className="overflow-hidden rounded-xl border border-charcoal/15 bg-white shadow-[0_24px_60px_-24px_rgba(51,51,51,0.35)]">
+                {/* Browser chrome bar */}
+                <div className="flex items-center gap-2 border-b border-charcoal/10 bg-cream px-4 py-3">
+                  <span className="h-3 w-3 rounded-full bg-charcoal/15" aria-hidden="true" />
+                  <span className="h-3 w-3 rounded-full bg-charcoal/15" aria-hidden="true" />
+                  <span className="h-3 w-3 rounded-full bg-charcoal/15" aria-hidden="true" />
+                  <span className="ml-3 truncate rounded bg-white px-3 py-1 text-xs text-charcoal/50">
+                    eventureescapes.com
+                  </span>
+                </div>
+                {/* Scrollable viewport — the tall full-page capture scrolls within here */}
+                <div className="h-[600px] overflow-y-auto overscroll-contain bg-white">
+                  <Image
+                    src="/work/eventure-escapes-full.jpeg"
+                    alt="Full homepage of the Eventure Escapes luxury travel website — designed by Paperclip Studio"
+                    width={1200}
+                    height={7200}
+                    className="block h-auto w-full"
+                    priority
+                  />
+                </div>
+              </figure>
+              <figcaption className="mt-3 text-center text-xs text-muted-foreground">
+                Scroll within the frame to explore the full homepage.
+              </figcaption>
             </Reveal>
           </div>
         </section>
