@@ -49,8 +49,11 @@ export function Hero() {
         <Reveal className="md:col-span-3">
           <SectionLabel>Web Design Studio · South Africa</SectionLabel>
           <h1 className="mt-5 font-serif text-[2.75rem] italic leading-[1.05] tracking-tight text-charcoal text-balance md:text-6xl">
-            Websites that work as hard as you do.
+            AI-Powered Websites for South African Businesses
           </h1>
+          <p className="mt-4 font-serif text-xl italic font-light leading-snug text-charcoal/70 text-balance md:text-2xl">
+            Built to convert. Delivered in 3–7 days.
+          </p>
           <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-muted-foreground">
             We build clean, fast, and mobile-first websites for South African businesses — powered
             by AI, delivered in days.
