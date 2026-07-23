@@ -102,13 +102,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-ZA" className={`${dmSans.variable} ${playfair.variable} bg-background`}>
-      <head>
+      <body className="font-sans antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      </head>
-      <body className="font-sans antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
         {/* Google tag (gtag.js) */}
