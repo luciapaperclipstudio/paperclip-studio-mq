@@ -97,7 +97,7 @@ const jsonLdBlocks = [
       '@type': 'Country',
       name: 'South Africa',
     },
-    priceRange: 'R1800 – R7500',
+    priceRange: 'R2500 – R8200',
     serviceType: ['Web Design', 'Landing Page Design', 'AI Website Development'],
     image: 'https://paperclipstudio.co.za/opengraph-image',
     sameAs: [],

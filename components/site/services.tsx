@@ -18,7 +18,7 @@ export const plans: Plan[] = [
     title: 'Starter Landing Page',
     tagline: 'Get online fast. Perfect for running ads.',
     from: 'From',
-    price: 'R1,800',
+    price: 'R2,500',
     delivery: '3–5 days',
     included: [
       '1-page custom design',
@@ -27,17 +27,16 @@ export const plans: Plan[] = [
       'Contact form with email notification',
       'Basic SEO metadata',
       'WhatsApp chat button',
-      'Ads pixel setup',
       'Deployed to your domain',
     ],
-    excluded: ['Multiple pages', 'Portfolio / gallery section'],
+    excluded: ['Multiple pages', 'Portfolio / gallery section', 'Ads pixel setup (add-on)'],
     popular: false,
   },
   {
     title: 'Business Website',
     tagline: 'Your full online presence. Done properly.',
     from: 'From',
-    price: 'R3,500',
+    price: 'R4,000',
     delivery: '5–7 days',
     included: [
       '3–5 custom pages',
@@ -57,7 +56,7 @@ export const plans: Plan[] = [
     title: 'Premium + Ads-Ready',
     tagline: 'Full site plus a dedicated page for paid ads.',
     from: 'From',
-    price: 'R7,500',
+    price: 'R8,200',
     delivery: 'Priority',
     included: [
       'Everything in Business Website',

@@ -17,20 +17,20 @@ export const packages: PackageOption[] = [
   {
     id: 'starter',
     name: 'Starter Landing Page',
-    short: '1 page · Fast · Ads-ready',
-    price: 1800,
+    short: '1 page · Fast · Mobile-ready',
+    price: 2500,
   },
   {
     id: 'business',
     name: 'Business Website',
     short: '3–5 pages · Full site · WhatsApp',
-    price: 3500,
+    price: 4000,
   },
   {
     id: 'premium',
     name: 'Premium + Ads-Ready',
     short: 'Full site + landing page · Ads setup',
-    price: 7500,
+    price: 8200,
   },
 ]
 
@@ -40,6 +40,7 @@ export const addons: AddonOption[] = [
   { id: 'whatsapp', label: 'WhatsApp Widget', note: 'Click-to-chat button', price: 300 },
   { id: 'popia', label: 'POPIA Compliance', note: 'Privacy policy + cookie notice', price: 400 },
   { id: 'gbp', label: 'Google Business Profile', note: 'Maps listing setup', price: 600 },
+  { id: 'ads-pixel', label: 'Ads Pixel Setup', note: 'Meta + Google Ads pixel', price: 600 },
   {
     id: 'maintenance',
     label: 'Monthly Maintenance',
