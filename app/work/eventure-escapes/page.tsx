@@ -50,7 +50,6 @@ const features = [
 const stats = [
   { value: '5–7', label: 'Days from brief to launch' },
   { value: 'Simple', label: 'Smooth, collaborative process' },
-  { value: 'R3,500', label: 'Total investment' },
 ]
 
 export default function EventureEscapesCaseStudy() {
@@ -174,7 +173,7 @@ export default function EventureEscapesCaseStudy() {
 
         {/* e) Results / stats */}
         <section className="bg-charcoal">
-          <div className="mx-auto grid max-w-5xl gap-10 px-6 py-16 text-center sm:grid-cols-3 md:py-20">
+          <div className="mx-auto grid max-w-3xl gap-10 px-6 py-16 text-center sm:grid-cols-2 md:py-20">
             {stats.map((stat, i) => (
               <Reveal key={stat.label} delay={i * 100}>
                 <p className="font-serif text-4xl italic text-steel md:text-5xl">{stat.value}</p>

@@ -103,15 +103,9 @@ export function Services() {
                   </p>
                   <hr className="my-5 border-t border-[#e0ddda]" />
 
-                  {/* Price */}
-                  <div className="flex items-end gap-3">
-                    <div>
-                      <span className="block text-xs uppercase tracking-wider text-muted-foreground">
-                        {plan.from}
-                      </span>
-                      <span className="font-serif text-3xl italic text-charcoal">{plan.price}</span>
-                    </div>
-                    <span className="mb-1 bg-charcoal px-2.5 py-1 text-[11px] font-medium text-white">
+                  {/* Delivery */}
+                  <div>
+                    <span className="inline-block bg-charcoal px-2.5 py-1 text-[11px] font-medium text-white">
                       {plan.delivery}
                     </span>
                   </div>
