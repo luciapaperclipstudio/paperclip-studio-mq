@@ -1,5 +1,6 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
 import { useRef, useState } from 'react'
 import {
   Check,
@@ -83,6 +84,7 @@ const STEP_LABELS = ['Package', 'Add-ons', 'Your Details']
 const PROGRESS = ['5%', '38%', '70%', '100%']
 
 export function QuoteQuiz() {
+  const router = useRouter()
   const [step, setStep] = useState(1)
   const [pkg, setPkg] = useState<string | null>(null)
   const [addons, setAddons] = useState<string[]>([])
@@ -159,12 +161,23 @@ export function QuoteQuiz() {
       console.log('[v0] Formspree submit failed:', (err as Error).message)
     }
 
-    setSubmitting(false)
     if (!res.ok) {
+      setSubmitting(false)
       setError(res.error ?? 'Something went wrong. Please try again.')
       return
     }
-    go(4)
+
+    // Redirect to the dedicated thank-you page, carrying the submitted details
+    // so they can be shown back to the user.
+    const params = new URLSearchParams({
+      name,
+      business,
+      whatsapp,
+      email,
+      package: pkg ?? '',
+      addons: addons.length ? addons.join(', ') : 'None selected',
+    })
+    router.push(`/thank-you?${params.toString()}`)
   }
 
   const inputClass =
@@ -413,63 +426,11 @@ export function QuoteQuiz() {
           </div>
         ) : null}
 
-        {/* STEP 4 — Thank you */}
-        {step === 4 ? (
-          <div className="py-2 text-center">
-            <div className="mx-auto mb-6 flex h-[60px] w-[60px] items-center justify-center rounded-full bg-steel text-charcoal">
-              <Check size={28} strokeWidth={2.4} />
-            </div>
-            <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-steel">
-              Quote request received
-            </p>
-            <h2 className="mb-1.5 font-serif text-[28px] italic leading-tight text-charcoal">
-              You&apos;re all set.
-            </h2>
-            <p className="mb-6 text-sm leading-relaxed text-[#888888]">
-              We&apos;ll review your selections and send a custom quote to your email and WhatsApp
-              within 24 hours.
-            </p>
-
-            <div className="my-5 border border-[#E0DDDA] bg-[#F7F6F2] p-5 text-left">
-              <p className="mb-3.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-steel">
-                Your selections
-              </p>
-              {(
-                [
-                  ['Package', pkg ?? '—'],
-                  ['Add-ons', addons.length ? addons.join(', ') : 'None selected'],
-                  ['Name', form.name],
-                  ['Business', form.business],
-                  ['WhatsApp', form.whatsapp],
-                  ['Email', form.email],
-                ] as const
-              ).map(([k, v], i, arr) => (
-                <div
-                  key={k}
-                  className={`flex items-start gap-2.5 py-2 text-[13.5px] ${
-                    i < arr.length - 1 ? 'border-b border-[#E0DDDA]' : ''
-                  }`}
-                >
-                  <span className="mt-[5px] h-1.5 w-1.5 shrink-0 rounded-full bg-steel" />
-                  <span className="w-20 shrink-0 font-semibold text-charcoal">{k}</span>
-                  <span className="min-w-0 flex-1 break-words text-[#888888]">{v}</span>
-                </div>
-              ))}
-            </div>
-
-            <p className="text-[13px] leading-relaxed text-[#888888]">
-              Got a question in the meantime? Message us on WhatsApp — we respond fast.
-            </p>
-            <WhatsAppButton className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded bg-[#25D366] px-5 py-3 text-sm font-semibold text-white transition hover:brightness-95" />
-          </div>
-        ) : null}
       </div>
 
-      {step < 4 ? (
-        <p className="mx-auto mt-4 max-w-[480px] text-center text-[11.5px] leading-relaxed text-[#aaaaaa]">
-          Your information is only used to prepare and send your quote — never shared or sold.
-        </p>
-      ) : null}
+      <p className="mx-auto mt-4 max-w-[480px] text-center text-[11.5px] leading-relaxed text-[#aaaaaa]">
+        Your information is only used to prepare and send your quote — never shared or sold.
+      </p>
     </div>
   )
 }
