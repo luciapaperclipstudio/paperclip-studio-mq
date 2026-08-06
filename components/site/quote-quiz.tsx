@@ -15,7 +15,6 @@ import {
   Wrench,
 } from 'lucide-react'
 import { submitQuote } from '@/app/actions/leads'
-import { WhatsAppButton } from './whatsapp-button'
 
 type Pkg = { value: string; name: string; desc: string; icon: React.ReactNode }
 type Addon = { value: string; name: string; desc: string; icon: React.ReactNode }
