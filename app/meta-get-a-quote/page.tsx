@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { ArrowRight, Check, Clock, MessageCircle, ShieldCheck } from 'lucide-react'
+import { ArrowRight, Check, Clock, MessageCircle, ShieldCheck, Star } from 'lucide-react'
 import { Logo } from '@/components/site/logo'
 import { QuoteQuiz } from '@/components/site/quote-quiz'
 import { Reveal } from '@/components/site/reveal'
@@ -44,24 +44,26 @@ const WORK = [
   { src: '/portfolio/sea-and-salt-desktop.png', alt: 'Sea & Salt Events Studio website designed by Paperclip Studio' },
 ]
 
-const TESTIMONIALS = [
+// Verbatim excerpts from the Google Business Profile reviews. These describe
+// marketing work rather than websites, so the section is headed "about working
+// with us" and never implies the web build itself has been reviewed.
+const GOOGLE_RATING = { score: '5.0', count: 3 }
+
+const REVIEWS = [
   {
     quote:
-      'Lucia understood my vision from day one — translating my brand into a site that’s as elegant and considered as the trips themselves.',
-    name: 'Emma',
-    role: 'Eventure Escapes',
+      'She didn’t just give surface-level advice… It just felt very practical and well thought through. Something we could actually use day to day, not just a document that gets left behind.',
+    name: 'Kiara Durao',
   },
   {
     quote:
-      'Finally a web designer who delivers on time and doesn’t overcomplicate everything.',
-    name: 'Thabo K.',
-    role: 'Electrical Contractor, Pretoria',
+      'They came in with a clear plan on what to film, how to structure the content, and how to stay consistent without it feeling forced… The difference has been huge. Our reach increased by 217%.',
+    name: 'George Kappatos',
   },
   {
     quote:
-      'Our catering business had zero online presence. Now we get enquiries through the site every week.',
-    name: 'Zanele D.',
-    role: 'Catering Company, Johannesburg',
+      'It finally feels like everything is working together instead of being all over the place… Overall just really solid, reliable service.',
+    name: 'Eileen van der Schyff',
   },
 ]
 
@@ -131,6 +133,20 @@ export default function MetaLandingPage() {
                 Fill out the form to get a fast quote.
               </p>
 
+              {/* The strongest signal paid traffic looks for, kept above the
+                  fold on every viewport. Figures match the Google profile. */}
+              <div className="mt-5 flex items-center gap-2.5">
+                <span className="flex gap-0.5" aria-hidden="true">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} size={16} className="fill-[#ddd27a] text-[#ddd27a]" />
+                  ))}
+                </span>
+                <span className="text-[14px] text-charcoal/80">
+                  <strong className="font-semibold text-charcoal">{GOOGLE_RATING.score}</strong> ·{' '}
+                  {GOOGLE_RATING.count} Google reviews
+                </span>
+              </div>
+
               <ul className="mt-6 flex flex-col gap-2.5">
                 {PROOF_POINTS.map(({ icon: Icon, label }) => (
                   <li key={label} className="flex items-center gap-2.5 text-[15px] text-charcoal/80">
@@ -148,11 +164,11 @@ export default function MetaLandingPage() {
                 </p>
                 <figure className="mt-6 border-l-2 border-steel pl-5">
                   <blockquote className="font-serif text-lg italic leading-snug text-charcoal">
-                    &ldquo;{TESTIMONIALS[1].quote}&rdquo;
+                    &ldquo;{REVIEWS[0].quote}&rdquo;
                   </blockquote>
                   <figcaption className="mt-3 text-[13px] text-charcoal/60">
-                    <span className="font-semibold text-charcoal">{TESTIMONIALS[1].name}</span> ·{' '}
-                    {TESTIMONIALS[1].role}
+                    <span className="font-semibold text-charcoal">{REVIEWS[0].name}</span> · Google
+                    review
                   </figcaption>
                 </figure>
               </div>
@@ -259,19 +275,36 @@ export default function MetaLandingPage() {
         <section className="bg-white">
           <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
             <Reveal>
-              <h2 className="font-serif text-3xl italic text-charcoal md:text-4xl">
-                What clients say.
-              </h2>
+              <div className="flex flex-wrap items-baseline justify-between gap-3">
+                <h2 className="font-serif text-3xl italic text-charcoal md:text-4xl">
+                  What clients say about working with us.
+                </h2>
+                <span className="flex items-center gap-2 text-[14px] text-charcoal/70">
+                  <span className="flex gap-0.5" aria-hidden="true">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} size={15} className="fill-[#ddd27a] text-[#ddd27a]" />
+                    ))}
+                  </span>
+                  {GOOGLE_RATING.score} · {GOOGLE_RATING.count} Google reviews
+                </span>
+              </div>
             </Reveal>
             <div className="mt-10 grid gap-6 md:grid-cols-3">
-              {TESTIMONIALS.map((t, i) => (
+              {REVIEWS.map((t, i) => (
                 <Reveal key={t.name} delay={i * 100}>
                   <figure className="flex h-full flex-col justify-between border border-[#E0DDDA] bg-cream p-7">
-                    <blockquote className="font-serif text-lg italic leading-snug text-charcoal">
-                      &ldquo;{t.quote}&rdquo;
-                    </blockquote>
+                    <div>
+                      <span className="flex gap-0.5" aria-hidden="true">
+                        {Array.from({ length: 5 }).map((_, s) => (
+                          <Star key={s} size={14} className="fill-[#ddd27a] text-[#ddd27a]" />
+                        ))}
+                      </span>
+                      <blockquote className="mt-4 font-serif text-lg italic leading-snug text-charcoal">
+                        &ldquo;{t.quote}&rdquo;
+                      </blockquote>
+                    </div>
                     <figcaption className="mt-5 text-[13px] text-charcoal/60">
-                      <span className="font-semibold text-charcoal">{t.name}</span> · {t.role}
+                      <span className="font-semibold text-charcoal">{t.name}</span> · Google review
                     </figcaption>
                   </figure>
                 </Reveal>
