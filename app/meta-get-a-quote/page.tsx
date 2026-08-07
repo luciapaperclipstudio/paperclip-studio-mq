@@ -65,6 +65,34 @@ const TESTIMONIALS = [
   },
 ]
 
+// Deliberately not a star rating or review count — there are no real ones to
+// cite yet. These are all commitments we actually make, so they survive scrutiny.
+const STATS = [
+  { value: '3–7', label: 'Days to launch' },
+  { value: '2', label: 'Revision rounds included' },
+  { value: '50%', label: 'Deposit, balance on delivery' },
+  { value: '<1s', label: 'Page load time' },
+]
+
+const TECH = [
+  {
+    title: 'Next.js and React',
+    body: 'The same framework used by companies like Nike and OpenAI — not a website builder, and not a theme bought off a marketplace.',
+  },
+  {
+    title: 'Hosted on Vercel',
+    body: 'Your site is served from a global edge network, so it loads fast whether the visitor is in Cape Town or London. No shared hosting, no unexplained downtime.',
+  },
+  {
+    title: 'No WordPress, no plugins',
+    body: 'Nothing to update, nothing to break, and no plugin vulnerabilities to patch. The most common way a small business site gets hacked simply does not apply.',
+  },
+  {
+    title: 'Built to be found',
+    body: 'Page titles, metadata, sitemap, structured data and POPIA groundwork are done at launch — not sold back to you as an SEO retainer later.',
+  },
+]
+
 const STEPS = [
   { n: '01', title: 'Fill in the form', body: 'Three quick questions. Takes under a minute.' },
   { n: '02', title: 'Get your quote', body: 'A fixed price by email and WhatsApp, usually within a few hours.' },
@@ -138,17 +166,18 @@ export default function MetaLandingPage() {
           </div>
         </section>
 
-        {/* Trust bar */}
+        {/* Hard numbers rather than a star rating. Every one of these is a
+            commitment we actually make, so it holds up if a client checks. */}
         <section className="bg-charcoal">
-          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-2 px-6 py-4 text-center">
-            {['Custom-built, never templated', 'Fixed price, quoted upfront', 'South African owned'].map(
-              (t, i) => (
-                <span key={t} className="flex items-center gap-2 text-[13px] uppercase tracking-[0.1em] text-white/90">
-                  {i > 0 ? <span className="mr-6 hidden text-white/30 sm:inline">·</span> : null}
-                  {t}
-                </span>
-              ),
-            )}
+          <div className="mx-auto grid max-w-6xl grid-cols-2 gap-y-8 px-6 py-10 md:grid-cols-4 md:py-12">
+            {STATS.map((s) => (
+              <div key={s.label} className="px-2 text-center">
+                <p className="font-serif text-3xl italic text-white md:text-4xl">{s.value}</p>
+                <p className="mt-1.5 text-[12px] uppercase tracking-[0.12em] text-white/60">
+                  {s.label}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -169,6 +198,32 @@ export default function MetaLandingPage() {
                       {item.title}
                     </h3>
                     <p className="mt-2.5 text-[15px] leading-relaxed text-charcoal/70">{item.body}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Tech stack. The real differentiator against the Wix/WordPress
+            competition, and something a sceptical buyer can go and verify. */}
+        <section className="bg-charcoal">
+          <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+            <Reveal>
+              <h2 className="max-w-2xl font-serif text-3xl italic text-white text-balance md:text-4xl">
+                Built on proper technology.
+              </h2>
+              <p className="mt-4 max-w-xl text-[17px] leading-relaxed text-white/70">
+                Most small business sites in South Africa are WordPress themes or drag-and-drop
+                builders. Yours will not be.
+              </p>
+            </Reveal>
+            <div className="mt-12 grid gap-x-10 gap-y-9 md:grid-cols-2">
+              {TECH.map((t, i) => (
+                <Reveal key={t.title} delay={i * 80}>
+                  <div className="border-l-2 border-steel pl-5">
+                    <h3 className="text-[17px] font-semibold text-white">{t.title}</h3>
+                    <p className="mt-2 text-[15px] leading-relaxed text-white/65">{t.body}</p>
                   </div>
                 </Reveal>
               ))}
