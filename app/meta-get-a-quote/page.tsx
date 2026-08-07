@@ -4,7 +4,6 @@ import { ArrowRight, Check, Clock, MessageCircle, ShieldCheck, Star } from 'luci
 import { Logo } from '@/components/site/logo'
 import { QuoteQuiz } from '@/components/site/quote-quiz'
 import { Reveal } from '@/components/site/reveal'
-import { WHATSAPP_CHAT_LINK } from '@/lib/packages'
 
 // Paid-traffic destination only. Deliberately noindex/nofollow and kept out of
 // the sitemap: it targets the same intent as /get-a-quote, so letting Google
@@ -12,7 +11,7 @@ import { WHATSAPP_CHAT_LINK } from '@/lib/packages'
 export const metadata: Metadata = {
   title: 'Landing Pages and Websites for South African Businesses',
   description:
-    'Custom-built landing pages and websites for South African businesses, delivered in 3–7 days. Fill out the form for a fast quote.',
+    'Custom-built landing pages and websites for South African service businesses, delivered in 3–7 days. Fill out the form for a fast quote.',
   robots: { index: false, follow: false },
   alternates: { canonical: 'https://www.paperclipstudio.co.za/get-a-quote' },
 }
@@ -49,21 +48,29 @@ const WORK = [
 // with us" and never implies the web build itself has been reviewed.
 const GOOGLE_RATING = { score: '5.0', count: 3 }
 
+// `google: false` marks a client testimonial rather than a Google review, so it
+// is never labelled or star-rated as one — Emma left no public rating.
 const REVIEWS = [
   {
     quote:
-      'She didn’t just give surface-level advice… It just felt very practical and well thought through. Something we could actually use day to day, not just a document that gets left behind.',
-    name: 'Kiara Durao',
+      'Lucia understood my vision from day one — translating my brand into a site that’s as elegant and considered as the trips themselves.',
+    name: 'Emma',
+    source: 'Eventure Escapes',
+    google: false,
   },
   {
     quote:
       'They came in with a clear plan on what to film, how to structure the content, and how to stay consistent without it feeling forced… The difference has been huge. Our reach increased by 217%.',
     name: 'George Kappatos',
+    source: 'Google review',
+    google: true,
   },
   {
     quote:
       'It finally feels like everything is working together instead of being all over the place… Overall just really solid, reliable service.',
     name: 'Eileen van der Schyff',
+    source: 'Google review',
+    google: true,
   },
 ]
 
@@ -107,16 +114,8 @@ export default function MetaLandingPage() {
       {/* Minimal header. No navigation on purpose — a paid visitor should have
           exactly one thing to do, and every nav link is a way to leave. */}
       <header className="border-b border-[#E0DDDA] bg-cream">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <div className="mx-auto flex max-w-6xl items-center px-6 py-4">
           <Logo />
-          <a
-            href={WHATSAPP_CHAT_LINK}
-            target="_blank"
-            rel="noreferrer"
-            className="text-[13px] font-medium text-charcoal/70 underline underline-offset-4 transition hover:text-charcoal"
-          >
-            Chat on WhatsApp
-          </a>
         </div>
       </header>
 
@@ -130,7 +129,7 @@ export default function MetaLandingPage() {
                 Landing pages and websites for South African businesses.
               </h1>
               <p className="mt-4 text-lg leading-relaxed text-charcoal/75 md:text-xl">
-                Fill out the form to get a fast quote.
+                Built for service businesses. Fill out the form to get a fast quote.
               </p>
 
               {/* The strongest signal paid traffic looks for, kept above the
@@ -167,8 +166,8 @@ export default function MetaLandingPage() {
                     &ldquo;{REVIEWS[0].quote}&rdquo;
                   </blockquote>
                   <figcaption className="mt-3 text-[13px] text-charcoal/60">
-                    <span className="font-semibold text-charcoal">{REVIEWS[0].name}</span> · Google
-                    review
+                    <span className="font-semibold text-charcoal">{REVIEWS[0].name}</span> ·{' '}
+                    {REVIEWS[0].source}
                   </figcaption>
                 </figure>
               </div>
@@ -294,17 +293,19 @@ export default function MetaLandingPage() {
                 <Reveal key={t.name} delay={i * 100}>
                   <figure className="flex h-full flex-col justify-between border border-[#E0DDDA] bg-cream p-7">
                     <div>
-                      <span className="flex gap-0.5" aria-hidden="true">
-                        {Array.from({ length: 5 }).map((_, s) => (
-                          <Star key={s} size={14} className="fill-[#ddd27a] text-[#ddd27a]" />
-                        ))}
-                      </span>
+                      {t.google ? (
+                        <span className="flex gap-0.5" aria-hidden="true">
+                          {Array.from({ length: 5 }).map((_, s) => (
+                            <Star key={s} size={14} className="fill-[#ddd27a] text-[#ddd27a]" />
+                          ))}
+                        </span>
+                      ) : null}
                       <blockquote className="mt-4 font-serif text-lg italic leading-snug text-charcoal">
                         &ldquo;{t.quote}&rdquo;
                       </blockquote>
                     </div>
                     <figcaption className="mt-5 text-[13px] text-charcoal/60">
-                      <span className="font-semibold text-charcoal">{t.name}</span> · Google review
+                      <span className="font-semibold text-charcoal">{t.name}</span> · {t.source}
                     </figcaption>
                   </figure>
                 </Reveal>
