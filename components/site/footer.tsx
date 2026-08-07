@@ -1,4 +1,3 @@
-import { WhatsAppButton } from './whatsapp-button'
 
 const navLinks = [
   { label: 'Services', href: '/#services' },
@@ -65,9 +64,6 @@ export function Footer() {
             </li>
             <li>South Africa</li>
           </ul>
-          <div className="mt-5">
-            <WhatsAppButton />
-          </div>
         </div>
       </div>
       <div className="border-t border-white/10">

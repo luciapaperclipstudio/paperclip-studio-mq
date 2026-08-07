@@ -4,7 +4,6 @@ import { Check } from 'lucide-react'
 import { Footer } from '@/components/site/footer'
 import { MetaLeadEvent } from '@/components/site/meta-lead-event'
 import { Navbar } from '@/components/site/navbar'
-import { WhatsAppButton } from '@/components/site/whatsapp-button'
 
 export const metadata: Metadata = {
   title: 'Thank You — paperclip studio',
@@ -73,11 +72,6 @@ export default async function ThankYouPage({ searchParams }: { searchParams: Sea
                 ))}
               </div>
             ) : null}
-
-            <p className="mb-5 text-[13px] leading-relaxed text-[#888888]">
-              Got a question in the meantime? Message us on WhatsApp — we respond fast.
-            </p>
-            <WhatsAppButton className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded bg-[#25D366] px-5 py-3 text-sm font-semibold text-white transition hover:brightness-95" />
 
             <div className="mt-6">
               <Link href="/" className="text-[13px] text-charcoal underline transition hover:text-charcoal/70">
