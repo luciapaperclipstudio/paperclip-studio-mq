@@ -355,13 +355,13 @@ export default function MetaLandingPage() {
         {/* pb clears the sticky mobile bar so the last line is never hidden behind it */}
         <div className="mx-auto max-w-6xl px-6 py-10 pb-28 text-center md:pb-10">
           <Logo className="mx-auto" />
+          {/* No phone number here on purpose. It is the same number as the
+              WhatsApp account, and in South Africa publishing a mobile is
+              publishing a WhatsApp — paid visitors were messaging it instead
+              of using the form, skipping the quote pipeline entirely. */}
           <p className="mt-4 text-[13px] text-charcoal/60">
             <a href="mailto:hello@paperclipstudio.co.za" className="hover:text-charcoal">
               hello@paperclipstudio.co.za
-            </a>
-            {' · '}
-            <a href="tel:+27784429357" className="hover:text-charcoal">
-              +27 78 442 9357
             </a>
           </p>
           <p className="mt-3 text-[12px] text-charcoal/45">
