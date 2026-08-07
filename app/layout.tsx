@@ -19,7 +19,11 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.paperclipstudio.co.za'),
-  title: 'paperclip studio — AI-Powered Websites for South African Businesses',
+  // Keyword first, brand omitted. The front of a title tag carries the most
+  // weight and gets shown before truncation (~60 chars), so it goes to the
+  // term people actually search rather than a brand name they don't know yet.
+  // Brand searches find the homepage regardless of the title.
+  title: 'Web Design South Africa | Custom Websites in 3–7 Days',
   description:
     'Professional websites and landing pages for South African businesses. Custom-built with AI, delivered in 3–7 days. Mobile-ready, SEO-optimised, and built to convert.',
   keywords: [
