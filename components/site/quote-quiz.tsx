@@ -45,7 +45,9 @@ const ADDON_ICONS: Record<string, React.ReactNode> = {
 const STEP_LABELS = ['Package', 'Add-ons', 'Your Details']
 const PROGRESS = ['5%', '38%', '70%', '100%']
 
-export function QuoteQuiz() {
+// `source` is recorded on the lead so paid traffic is distinguishable from
+// organic in the review email and the admin list.
+export function QuoteQuiz({ source }: { source?: string } = {}) {
   const router = useRouter()
   const [step, setStep] = useState(1)
   const [pkg, setPkg] = useState<PackageId | null>(null)
@@ -116,6 +118,7 @@ export function QuoteQuiz() {
       selectedPackage: pkg ?? '',
       addons,
       domainChoice: domain,
+      source,
     })
 
     // Also email the request via Formspree. A failure here shouldn't block the
