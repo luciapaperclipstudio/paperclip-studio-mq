@@ -196,6 +196,127 @@ Website pricing in South Africa ranges from R500 DIY builders to R80,000 agency 
 
 If you want a fast, professionally built site without the agency price tag, get a free quote and we will tell you honestly which option fits your business — even if that turns out not to be us.`,
   },
+  {
+    slug: 'popia-compliance-for-small-business-websites',
+    title: 'POPIA and Your Website: What South African Businesses Actually Need',
+    metaTitle: 'POPIA Website Compliance in South Africa: What Your Site Needs',
+    metaDescription:
+      'A plain-English guide to what POPIA requires from a small business website in South Africa — privacy policy, consent, contact forms, and the mistakes that catch people out.',
+    category: 'Compliance & Legal',
+    readTime: '5 min read',
+    publishedDate: '2026-07-28',
+    excerpt:
+      'If your website has a contact form, POPIA applies to you. Here is what that actually means for a small South African business, without the legal jargon.',
+    content: `## POPIA applies to almost every business website
+
+The Protection of Personal Information Act came into full force in July 2021, and a surprising number of South African business owners still assume it is something only banks and big corporates need to worry about. It is not.
+
+POPIA governs what happens when you collect, store, or use someone's personal information. A name and an email address in a contact form is personal information. So is a phone number, an IP address, or a WhatsApp number. If your website has a contact form, an enquiry form, or a newsletter signup, you are processing personal information and POPIA applies to you.
+
+The good news is that for a typical small business website, compliance is far less painful than the acronym suggests. It is mostly about being honest and specific about what you do with the information people give you.
+
+## The four things your website actually needs
+
+Most small business sites need the same handful of things in place.
+
+- A privacy policy that says what you collect, why you collect it, how long you keep it, and who else sees it. Vague boilerplate copied from a template site is worse than useless, because it will not match what you actually do.
+- A lawful reason for collecting each piece of information. For a contact form the reason is obvious: someone asked you to get back to them. For a marketing list it is not, which is why marketing needs its own explicit opt-in.
+- A way for people to reach you about their data. POPIA gives people the right to ask what you hold about them and to ask you to delete it. You need a working contact route for that, and someone who reads it.
+- Security appropriate to what you hold. For most sites this means HTTPS, a reputable host, and not emailing spreadsheets of customer details around.
+
+## Consent is narrower than people think
+
+The most common mistake we see is treating a single tick box as blanket permission. It is not.
+
+If someone fills in your enquiry form, you have permission to reply to their enquiry. You do not automatically have permission to add them to a monthly newsletter, share their details with a partner business, or message them on WhatsApp about an unrelated promotion two years later. Each of those is a different purpose, and POPIA works on the basis that consent is specific.
+
+The practical version: keep a separate, unticked opt-in for marketing, and honour it.
+
+## Cookies and analytics
+
+If you run Google Analytics, a Meta Pixel, or any advertising tracking, you are collecting information about visitors before they have typed anything. That needs disclosing in your privacy policy, and in most cases it needs a cookie notice that lets people decline non-essential tracking.
+
+A cookie banner that offers no way to say no is not consent. It is a notification.
+
+## What happens if you ignore it
+
+The Information Regulator can issue enforcement notices, and non-compliance can carry administrative fines or, in serious cases, criminal liability. In practice, small businesses are rarely the first target of a regulator with limited capacity.
+
+The more realistic risk is commercial. Larger clients increasingly ask about POPIA compliance during procurement, and a missing privacy policy is an easy reason to be passed over. It also does you no favours with customers who are, quite reasonably, more careful about their data than they were a few years ago.
+
+## Getting it sorted
+
+None of this requires a lawyer for a straightforward small business site. It requires someone to write a privacy policy that reflects what your site genuinely does, add a cookie notice if you are running tracking, and make sure your forms only ask for what you need.
+
+We include POPIA setup as an add-on when we build a site, because it is far easier to do properly at build time than to retrofit later.
+
+One caveat worth stating plainly: this article is general guidance, not legal advice. If you process sensitive information, handle children's data, or move personal information outside South Africa, talk to someone qualified.
+
+Get a free quote and we will tell you what your site needs.`,
+  },
+  {
+    slug: 'get-your-business-on-google-maps-south-africa',
+    title: 'How to Get Your Business Showing Up on Google Maps in South Africa',
+    metaTitle: 'Google Business Profile South Africa: How to Get Found on Maps',
+    metaDescription:
+      'A step-by-step guide to setting up and ranking a Google Business Profile in South Africa, including verification, the signals that matter, and how to handle reviews.',
+    category: 'Local SEO',
+    readTime: '6 min read',
+    publishedDate: '2026-08-05',
+    excerpt:
+      'For most local businesses, the Google map results send more customers than the website does. Here is how to claim your spot and climb it.',
+    content: `## The map results matter more than your website
+
+Search for "plumber in Randburg" or "hair salon Sea Point" and look at what Google shows first. Above the normal blue links sits a map with three businesses listed beneath it. That block is called the local pack, and for most service businesses it captures the majority of the clicks.
+
+Here is the part people miss: appearing there is not controlled by your website. It is controlled by your Google Business Profile, which is a separate free listing you claim and manage. You can have an excellent website and be invisible on the map, or a mediocre one and dominate it.
+
+If you serve customers in a specific place, this is usually the highest-return hour of work available to you.
+
+## Claiming your profile
+
+Go to google.com/business and search for your business name. One of two things happens.
+
+- A listing already exists that you have never touched. Google creates these automatically from other sources, and they are often wrong. Claim it rather than making a new one, or you end up with duplicates competing against each other.
+- Nothing exists, and you create it from scratch.
+
+Either way you will fill in a name, category, address or service area, phone number, and website.
+
+Two decisions matter more than the rest. Your primary category is the single strongest signal for what searches you appear in, so choose the most specific one that fits rather than something broad. And if you visit customers rather than receiving them, set yourself up as a service-area business and hide the address, otherwise you are publishing your home address.
+
+## Verification is where people get stuck
+
+Google needs to confirm the business is real. Depending on the category and how the listing looks, you may be asked for a postcard to your address, a phone call, an email, or increasingly a short video showing your premises, signage, and equipment.
+
+Video verification catches people out, so be ready to film your storefront or vehicle signage, some tools or stock, and then yourself accessing something that proves you run the place. Failed verifications can be appealed, but it is much less painful to get it right the first time.
+
+Nothing you do to the profile will show publicly until verification completes.
+
+## What actually moves you up the rankings
+
+Google weighs three things: relevance, distance, and prominence. You cannot change where a searcher is standing, so the work goes into the other two.
+
+- Complete every field. Hours, services, description, attributes, opening date. Sparse profiles rank below complete ones, and it costs nothing to fix.
+- Add real photos, and keep adding them. Profiles with recent photos get noticeably more engagement, and Google reads that engagement as a quality signal. Phone photos of actual work beat stock imagery every time.
+- Keep your name, address, and phone number identical everywhere it appears online. Inconsistent details across directories genuinely dilute your ranking.
+- Post updates occasionally. Offers, new services, seasonal notes. It is a small signal, but it is a signal.
+
+## Reviews are the lever most people neglect
+
+Review volume, recency, and rating all feed local ranking, and they influence whether someone clicks you over the business above you.
+
+The reliable way to get them is to ask, immediately after you have done good work, with a direct link. Most satisfied customers are willing and simply never think of it.
+
+Two things to avoid. Do not buy reviews, because Google is good at spotting them and the penalty is severe. And do not leave negative reviews unanswered. A calm, specific, non-defensive reply is read by every future customer, and it often matters more than the complaint itself.
+
+## Where your website fits in
+
+Your profile links to your website, and Google looks at that site when deciding how much to trust the listing. A site that clearly states where you operate, what you do, and how to contact you reinforces the profile. A site with no location mentioned anywhere gives Google nothing to work with.
+
+The two work together: the profile wins you the visibility, the website converts it.
+
+We set up and optimise Google Business Profiles as an add-on when we build a site, including the location signals that connect the two. Get a free quote if you would like it handled.`,
+  },
 ]
 
 // Newest first, based on publishedDate.
