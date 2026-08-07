@@ -31,7 +31,7 @@ export async function generateMetadata({
     return { title: 'Location not found' }
   }
 
-  const url = `https://paperclipstudio.co.za/locations/${location.slug}`
+  const url = `https://www.paperclipstudio.co.za/locations/${location.slug}`
 
   return {
     title: location.metaTitle,
@@ -64,7 +64,7 @@ export default async function LocationPage({
     '@type': 'LocalBusiness',
     name: 'Paperclip Studio',
     description: location.metaDescription,
-    url: `https://paperclipstudio.co.za/locations/${location.slug}`,
+    url: `https://www.paperclipstudio.co.za/locations/${location.slug}`,
     email: 'hello@paperclipstudio.co.za',
     telephone: '+27 78 442 9357',
     areaServed: {

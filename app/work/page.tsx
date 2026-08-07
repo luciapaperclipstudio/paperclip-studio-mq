@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'Our Work | Paperclip Studio',
   description:
     'Case studies from Paperclip Studio — real websites built for South African businesses, elegant, on-brand, and built to convert.',
-  alternates: { canonical: 'https://paperclipstudio.co.za/work' },
+  alternates: { canonical: 'https://www.paperclipstudio.co.za/work' },
 }
 
 export default function WorkPage() {

@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import { locations } from '@/lib/locations'
 import { getPosts } from '@/lib/posts'
 
-const BASE = 'https://paperclipstudio.co.za'
+const BASE = 'https://www.paperclipstudio.co.za'
 
 // Generated from the same data the pages render from, so a new blog post or
 // location page is submitted to Google without anyone remembering to add it

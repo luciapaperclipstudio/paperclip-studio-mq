@@ -21,7 +21,7 @@ export function ownerEmail(): string {
 }
 
 export function siteUrl(): string {
-  const raw = process.env.SITE_URL || 'https://paperclipstudio.co.za'
+  const raw = process.env.SITE_URL || 'https://www.paperclipstudio.co.za'
   return raw.replace(/\/+$/, '')
 }
 

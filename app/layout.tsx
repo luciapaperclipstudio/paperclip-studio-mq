@@ -18,7 +18,7 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://paperclipstudio.co.za'),
+  metadataBase: new URL('https://www.paperclipstudio.co.za'),
   title: 'paperclip studio — AI-Powered Websites for South African Businesses',
   description:
     'Professional websites and landing pages for South African businesses. Custom-built with AI, delivered in 3–7 days. Mobile-ready, SEO-optimised, and built to convert.',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     'business website South Africa',
   ],
   alternates: {
-    canonical: 'https://paperclipstudio.co.za',
+    canonical: 'https://www.paperclipstudio.co.za',
   },
   robots: {
     index: true,
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     description:
       'A professional, mobile-ready website — delivered in 3–7 days. Custom-built for SA businesses. From salons to contractors, we build sites that work.',
     type: 'website',
-    url: 'https://paperclipstudio.co.za',
+    url: 'https://www.paperclipstudio.co.za',
     siteName: 'paperclip studio',
     locale: 'en_ZA',
   },
@@ -77,10 +77,10 @@ const jsonLdBlocks = [
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Paperclip Studio',
-    url: 'https://paperclipstudio.co.za',
+    url: 'https://www.paperclipstudio.co.za',
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://paperclipstudio.co.za/?s={search_term_string}',
+      target: 'https://www.paperclipstudio.co.za/?s={search_term_string}',
       'query-input': 'required name=search_term_string',
     },
   },
@@ -89,7 +89,7 @@ const jsonLdBlocks = [
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'Paperclip Studio',
-    url: 'https://paperclipstudio.co.za',
+    url: 'https://www.paperclipstudio.co.za',
     email: 'hello@paperclipstudio.co.za',
     description:
       'AI-powered websites and landing pages for South African businesses. Custom-built, mobile-ready, SEO-optimised and delivered in 3–7 days.',
@@ -98,7 +98,7 @@ const jsonLdBlocks = [
       name: 'South Africa',
     },
     serviceType: ['Web Design', 'Landing Page Design', 'AI Website Development'],
-    image: 'https://paperclipstudio.co.za/opengraph-image',
+    image: 'https://www.paperclipstudio.co.za/opengraph-image',
     sameAs: [],
   },
   // 3. Service — Starter Landing Page

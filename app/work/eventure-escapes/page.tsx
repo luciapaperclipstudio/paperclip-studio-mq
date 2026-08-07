@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'Eventure Escapes | Paperclip Studio',
   description:
     'How Paperclip Studio built a luxury travel website for Eventure Escapes in 5–7 days — elegant, on-brand, and built to convert.',
-  alternates: { canonical: 'https://paperclipstudio.co.za/work/eventure-escapes' },
+  alternates: { canonical: 'https://www.paperclipstudio.co.za/work/eventure-escapes' },
 }
 
 const jsonLd = {
@@ -22,11 +22,11 @@ const jsonLd = {
   publisher: {
     '@type': 'Organization',
     name: 'Paperclip Studio',
-    url: 'https://paperclipstudio.co.za',
+    url: 'https://www.paperclipstudio.co.za',
   },
   description:
     'Case study: AI-powered luxury travel website built for Eventure Escapes in 5–7 days.',
-  url: 'https://paperclipstudio.co.za/work/eventure-escapes',
+  url: 'https://www.paperclipstudio.co.za/work/eventure-escapes',
 }
 
 const features = [
