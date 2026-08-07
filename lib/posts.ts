@@ -162,9 +162,9 @@ You still get a real person reviewing every decision, tuning the design, and mak
 
 ## What should a small business in South Africa actually pay?
 
-For the vast majority of small businesses, the sweet spot is a professionally built site in the R3,500–R7,500 range.
+For the vast majority of small businesses, the sweet spot is a professionally built custom site — comfortably above what DIY can produce, well below what an agency charges.
 
-Here is the logic. DIY costs you time you cannot get back. Agencies cost money that does not match the return for a small operation. A professionally built R3,500–R7,500 site sits right in the middle: custom, credible, and built properly, without the corporate price tag.
+Here is the logic. DIY costs you time you cannot get back. Agencies cost money that does not match the return for a small operation. A professionally built site sits right in the middle: custom, credible, and built properly, without the corporate price tag.
 
 The real test is not the sticker price at all — it is whether the site earns its cost back. A well-built website that brings in even two or three extra enquiries a month has usually paid for itself within the first quarter. Think of it as a salesperson that works 24/7, not a once-off expense.
 
@@ -192,7 +192,7 @@ None of these extras are traps — they are legitimate costs. The important thin
 
 ## Bottom line
 
-Website pricing in South Africa ranges from R500 DIY builders to R80,000 agency projects, but for most small businesses the honest sweet spot is a professionally built site between R3,500 and R7,500. The right choice is the one that pays for itself in leads, not the cheapest number you can find.
+Website pricing in South Africa ranges from R500 DIY builders to R80,000 agency projects, but for most small businesses the honest sweet spot is a professionally built custom site somewhere in between. The right choice is the one that pays for itself in leads, not the cheapest number you can find.
 
 If you want a fast, professionally built site without the agency price tag, get a free quote and we will tell you honestly which option fits your business — even if that turns out not to be us.`,
   },
