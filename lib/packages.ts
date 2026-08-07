@@ -151,14 +151,14 @@ export type DomainChoice = {
 export const domainChoices: DomainChoice[] = [
   {
     id: 'none',
-    label: 'Not needed',
-    note: "I'll handle my own domain and hosting",
+    label: 'I have my own domain and hosting',
+    note: 'Nothing to set up — no charge for this',
     price: 0,
   },
   {
     id: 'own',
-    label: 'I already own my domain',
-    note: 'DNS, hosting setup and SSL certificate',
+    label: 'I have a domain, but need hosting',
+    note: 'Hosting setup, DNS and SSL certificate',
     price: 300,
   },
   {

@@ -5,8 +5,6 @@ import { SectionLabel } from './section-label'
 export type Plan = {
   title: string
   tagline: string
-  from: string
-  price: string
   delivery: string
   included: string[]
   excluded: string[]
@@ -17,8 +15,6 @@ export const plans: Plan[] = [
   {
     title: 'Starter Landing Page',
     tagline: 'Get online fast. Perfect for running ads.',
-    from: 'From',
-    price: 'R2,500',
     delivery: '3–5 days',
     included: [
       '1-page custom design',
@@ -35,8 +31,6 @@ export const plans: Plan[] = [
   {
     title: 'Business Website',
     tagline: 'Your full online presence. Done properly.',
-    from: 'From',
-    price: 'R4,000',
     delivery: '5–7 days',
     included: [
       '3–5 custom pages',
@@ -55,8 +49,6 @@ export const plans: Plan[] = [
   {
     title: 'Premium + Ads-Ready',
     tagline: 'Full site plus a dedicated page for paid ads.',
-    from: 'From',
-    price: 'R8,200',
     delivery: 'Priority',
     included: [
       'Everything in Business Website',

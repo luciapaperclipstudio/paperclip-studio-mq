@@ -15,10 +15,11 @@ import {
   Zap,
 } from 'lucide-react'
 import { submitQuote } from '@/app/actions/leads'
+// Prices are deliberately not imported here. The quiz collects selections only;
+// the rate card stays server-side so it isn't readable from the public page.
 import {
   addonsFor,
   domainChoices,
-  formatRand,
   packages,
   type DomainChoiceId,
   type PackageId,
@@ -222,12 +223,7 @@ export function QuoteQuiz() {
                       {PACKAGE_ICONS[p.id]}
                     </span>
                     <span className="flex-1">
-                      <span className="flex items-baseline justify-between gap-2">
-                        <span className="text-[15px] font-semibold text-charcoal">{p.name}</span>
-                        <span className="shrink-0 text-[13px] font-semibold text-charcoal">
-                          from {formatRand(p.price)}
-                        </span>
-                      </span>
+                      <span className="block text-[15px] font-semibold text-charcoal">{p.name}</span>
                       <span
                         className={`block text-[13px] leading-normal ${selected ? 'text-[#555]' : 'text-[#888888]'}`}
                       >
@@ -297,10 +293,6 @@ export function QuoteQuiz() {
                       {a.label}
                     </span>
                     <span className="text-[11px] leading-snug text-[#888888]">{a.note}</span>
-                    <span className="text-[11.5px] font-semibold text-charcoal">
-                      +{formatRand(a.price)}
-                      {a.suffix ?? ''}
-                    </span>
                   </button>
                 )
               })}
@@ -341,11 +333,6 @@ export function QuoteQuiz() {
                           {d.note}
                         </span>
                       </span>
-                      {d.price > 0 ? (
-                        <span className="shrink-0 text-[11.5px] font-semibold text-charcoal">
-                          +{formatRand(d.price)}
-                        </span>
-                      ) : null}
                     </button>
                   )
                 })}

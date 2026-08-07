@@ -152,11 +152,11 @@ For large corporates, funded startups, or businesses where the website is the co
 
 For most small South African businesses, though, an agency is simply overkill. You are covering the cost of account managers, office space, and a design team you do not really need for a five-page site. The work is excellent, but the price rarely matches the return for a small operation.
 
-## Option 4: AI-powered studio (R1,800–R7,500 once-off)
+## Option 4: AI-powered studio
 
 This is the newest option, and it changes the maths. AI-powered studios — the approach we take at Paperclip Studio — use modern AI tooling to handle the slow, repetitive parts of building a site: first drafts, layout, boilerplate code, and content structure.
 
-Here is the honest version: AI does not replace the designer, it removes the grunt work. That means a professional, custom site can be built in days rather than weeks, which is why our packages run from R1,800 to R7,500 as a once-off rather than the R15,000-plus an agency would charge for comparable quality.
+Here is the honest version: AI does not replace the designer, it removes the grunt work. That means a professional, custom site can be built in days rather than weeks, which is why a studio like ours can deliver comparable quality for a fraction of the R15,000-plus an agency would charge.
 
 You still get a real person reviewing every decision, tuning the design, and making sure the site reflects your business. The difference is speed and price — not a drop in quality. It is not magic, and it is not right for every enormous project, but for a small business that wants a sharp, fast, conversion-focused site without the agency bill, it is hard to beat.
 
@@ -194,7 +194,7 @@ None of these extras are traps — they are legitimate costs. The important thin
 
 Website pricing in South Africa ranges from R500 DIY builders to R80,000 agency projects, but for most small businesses the honest sweet spot is a professionally built site between R3,500 and R7,500. The right choice is the one that pays for itself in leads, not the cheapest number you can find.
 
-If you want a fast, professionally built site without the agency price tag, our packages start at R1,800. Get a free quote and we will tell you honestly which option fits your business — even if that turns out not to be us.`,
+If you want a fast, professionally built site without the agency price tag, get a free quote and we will tell you honestly which option fits your business — even if that turns out not to be us.`,
   },
 ]
 

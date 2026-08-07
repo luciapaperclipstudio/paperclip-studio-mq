@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: 'Do you handle hosting and domain setup?',
-    a: 'We can set up hosting for you as an add-on (R500), or deliver the files to host on your own server.',
+    a: 'We can register your domain and set up hosting as an add-on, or deliver the files to host on your own server. Either way it is priced in your quote.',
   },
   {
     q: 'What payment methods do you accept?',

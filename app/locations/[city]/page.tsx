@@ -76,7 +76,6 @@ export default async function LocationPage({
       addressLocality: location.city,
       addressCountry: 'ZA',
     },
-    priceRange: 'R1800 – R7500',
     serviceType: ['Web Design', 'Landing Page Design', 'AI Website Development'],
   }
 
@@ -186,15 +185,12 @@ export default async function LocationPage({
                       <div className="flex items-end gap-3">
                         <div>
                           <span className="block text-xs uppercase tracking-wider text-muted-foreground">
-                            {plan.from}
+                            Delivered in
                           </span>
                           <span className="font-serif text-3xl italic text-charcoal">
-                            {plan.price}
+                            {plan.delivery}
                           </span>
                         </div>
-                        <span className="mb-1 bg-charcoal px-2.5 py-1 text-[11px] font-medium text-white">
-                          {plan.delivery}
-                        </span>
                       </div>
 
                       <ul className="mt-6 flex flex-col gap-2.5">

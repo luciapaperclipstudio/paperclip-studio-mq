@@ -97,7 +97,6 @@ const jsonLdBlocks = [
       '@type': 'Country',
       name: 'South Africa',
     },
-    priceRange: 'R2500 – R8200',
     serviceType: ['Web Design', 'Landing Page Design', 'AI Website Development'],
     image: 'https://paperclipstudio.co.za/opengraph-image',
     sameAs: [],
@@ -110,11 +109,6 @@ const jsonLdBlocks = [
     provider: { '@type': 'LocalBusiness', name: 'Paperclip Studio' },
     description:
       'A single-page website built to convert visitors into leads. Mobile-first, SEO-optimised and delivered fast.',
-    offers: {
-      '@type': 'Offer',
-      price: '1800',
-      priceCurrency: 'ZAR',
-    },
   },
   // 3. Service — Business Website
   {
@@ -124,11 +118,6 @@ const jsonLdBlocks = [
     provider: { '@type': 'LocalBusiness', name: 'Paperclip Studio' },
     description:
       'A multi-section business website with portfolio, services, and contact — built with AI and delivered in under a week.',
-    offers: {
-      '@type': 'Offer',
-      price: '3500',
-      priceCurrency: 'ZAR',
-    },
   },
   // 3. Service — Premium + Ads-Ready Website
   {
@@ -138,11 +127,6 @@ const jsonLdBlocks = [
     provider: { '@type': 'LocalBusiness', name: 'Paperclip Studio' },
     description:
       'Full premium website with Google Ads and Meta Ads integration, conversion tracking, and advanced SEO.',
-    offers: {
-      '@type': 'Offer',
-      price: '7500',
-      priceCurrency: 'ZAR',
-    },
   },
   // 4. FAQPage — mirrors the visible FAQ section on the homepage
   {
@@ -178,7 +162,7 @@ const jsonLdBlocks = [
         name: 'Do you handle hosting and domain setup?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'We can set up hosting for you as an add-on (R500), or deliver the files to host on your own server.',
+          text: 'We can register your domain and set up hosting as an add-on, or deliver the files to host on your own server. Either way it is priced in your quote.',
         },
       },
       {
