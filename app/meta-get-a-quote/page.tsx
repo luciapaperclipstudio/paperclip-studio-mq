@@ -48,29 +48,27 @@ const WORK = [
 // with us" and never implies the web build itself has been reviewed.
 const GOOGLE_RATING = { score: '5.0', count: 3 }
 
-// `google: false` marks a client testimonial rather than a Google review, so it
-// is never labelled or star-rated as one — Emma left no public rating.
+// `source` drives the attribution label, kept separate from the star display:
+// Emma's is a client testimonial, not a Google review, so it is never labelled
+// as one even though her card carries the same five stars.
 const REVIEWS = [
   {
     quote:
       'Lucia understood my vision from day one — translating my brand into a site that’s as elegant and considered as the trips themselves.',
     name: 'Emma',
     source: 'Eventure Escapes',
-    google: false,
   },
   {
     quote:
       'They came in with a clear plan on what to film, how to structure the content, and how to stay consistent without it feeling forced… The difference has been huge. Our reach increased by 217%.',
     name: 'George Kappatos',
     source: 'Google review',
-    google: true,
   },
   {
     quote:
       'It finally feels like everything is working together instead of being all over the place… Overall just really solid, reliable service.',
     name: 'Eileen van der Schyff',
     source: 'Google review',
-    google: true,
   },
 ]
 
@@ -293,13 +291,11 @@ export default function MetaLandingPage() {
                 <Reveal key={t.name} delay={i * 100}>
                   <figure className="flex h-full flex-col justify-between border border-[#E0DDDA] bg-cream p-7">
                     <div>
-                      {t.google ? (
-                        <span className="flex gap-0.5" aria-hidden="true">
-                          {Array.from({ length: 5 }).map((_, s) => (
-                            <Star key={s} size={14} className="fill-[#ddd27a] text-[#ddd27a]" />
-                          ))}
-                        </span>
-                      ) : null}
+                      <span className="flex gap-0.5" aria-hidden="true">
+                        {Array.from({ length: 5 }).map((_, s) => (
+                          <Star key={s} size={14} className="fill-[#ddd27a] text-[#ddd27a]" />
+                        ))}
+                      </span>
                       <blockquote className="mt-4 font-serif text-lg italic leading-snug text-charcoal">
                         &ldquo;{t.quote}&rdquo;
                       </blockquote>
