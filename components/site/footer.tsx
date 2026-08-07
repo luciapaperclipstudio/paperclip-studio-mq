@@ -59,8 +59,8 @@ export function Footer() {
               </a>
             </li>
             <li>
-              <a href="tel:+277784429357" className="transition-colors hover:text-white">
-                +27 77 844 29357
+              <a href="tel:+27784429357" className="transition-colors hover:text-white">
+                +27 78 442 9357
               </a>
             </li>
             <li>South Africa</li>

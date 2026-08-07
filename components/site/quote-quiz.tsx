@@ -5,79 +5,41 @@ import { useRef, useState } from 'react'
 import {
   Check,
   FileText,
-  Globe,
   Laptop,
   MapPin,
-  MessageCircle,
   Rocket,
   Shield,
   Sparkles,
+  Target,
   Wrench,
+  Zap,
 } from 'lucide-react'
 import { submitQuote } from '@/app/actions/leads'
+import {
+  addonsFor,
+  domainChoices,
+  formatRand,
+  packages,
+  type DomainChoiceId,
+  type PackageId,
+} from '@/lib/packages'
 
-type Pkg = { value: string; name: string; desc: string; icon: React.ReactNode }
-type Addon = { value: string; name: string; desc: string; icon: React.ReactNode }
+// Options are derived from lib/packages so the quiz can never drift from the
+// rate card. Only the icons live here — everything priced comes from there.
+const PACKAGE_ICONS: Record<string, React.ReactNode> = {
+  starter: <FileText size={24} strokeWidth={1.6} />,
+  business: <Laptop size={24} strokeWidth={1.6} />,
+  premium: <Rocket size={24} strokeWidth={1.6} />,
+}
 
-const PACKAGES: Pkg[] = [
-  {
-    value: 'Starter Landing Page',
-    name: 'Starter Landing Page',
-    desc: 'One powerful page — great for ads, lead capture, or simply getting found online.',
-    icon: <FileText size={24} strokeWidth={1.6} />,
-  },
-  {
-    value: 'Business Website',
-    name: 'Business Website',
-    desc: 'A full 3–5 page website — Home, About, Services, Gallery, and Contact.',
-    icon: <Laptop size={24} strokeWidth={1.6} />,
-  },
-  {
-    value: 'Premium + Ads-Ready',
-    name: 'Premium + Ads-Ready',
-    desc: 'Full website plus a dedicated landing page set up for Google or Meta ad campaigns.',
-    icon: <Rocket size={24} strokeWidth={1.6} />,
-  },
-]
-
-const ADDONS: Addon[] = [
-  {
-    value: 'Domain + Hosting Setup',
-    name: 'Domain + Hosting',
-    desc: '1-year domain registration & hosting setup',
-    icon: <Globe size={20} strokeWidth={1.6} />,
-  },
-  {
-    value: 'Logo / Brand Refresh',
-    name: 'Logo / Brand Refresh',
-    desc: 'AI-assisted logo design for your business',
-    icon: <Sparkles size={20} strokeWidth={1.6} />,
-  },
-  {
-    value: 'WhatsApp Chat Widget',
-    name: 'WhatsApp Widget',
-    desc: 'Click-to-chat button on your website',
-    icon: <MessageCircle size={20} strokeWidth={1.6} />,
-  },
-  {
-    value: 'POPIA Compliance',
-    name: 'POPIA Compliance',
-    desc: 'Privacy policy + cookie notice',
-    icon: <Shield size={20} strokeWidth={1.6} />,
-  },
-  {
-    value: 'Google Business Profile Setup',
-    name: 'Google Business Profile',
-    desc: 'Maps listing setup & optimisation',
-    icon: <MapPin size={20} strokeWidth={1.6} />,
-  },
-  {
-    value: 'Monthly Maintenance Plan',
-    name: 'Monthly Maintenance',
-    desc: 'Updates, backups & uptime monitoring',
-    icon: <Wrench size={20} strokeWidth={1.6} />,
-  },
-]
+const ADDON_ICONS: Record<string, React.ReactNode> = {
+  logo: <Sparkles size={20} strokeWidth={1.6} />,
+  popia: <Shield size={20} strokeWidth={1.6} />,
+  gbp: <MapPin size={20} strokeWidth={1.6} />,
+  'ads-pixel': <Target size={20} strokeWidth={1.6} />,
+  rush: <Zap size={20} strokeWidth={1.6} />,
+  maintenance: <Wrench size={20} strokeWidth={1.6} />,
+}
 
 const STEP_LABELS = ['Package', 'Add-ons', 'Your Details']
 const PROGRESS = ['5%', '38%', '70%', '100%']
@@ -85,8 +47,9 @@ const PROGRESS = ['5%', '38%', '70%', '100%']
 export function QuoteQuiz() {
   const router = useRouter()
   const [step, setStep] = useState(1)
-  const [pkg, setPkg] = useState<string | null>(null)
+  const [pkg, setPkg] = useState<PackageId | null>(null)
   const [addons, setAddons] = useState<string[]>([])
+  const [domain, setDomain] = useState<DomainChoiceId>('none')
   const [form, setForm] = useState({ name: '', business: '', whatsapp: '', email: '' })
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
@@ -103,9 +66,16 @@ export function QuoteQuiz() {
     }
   }
 
-  function selectPkg(value: string) {
+  // Add-ons on offer depend on the package — Premium already covers tracking,
+  // so that option is filtered out rather than sold twice.
+  const availableAddons = pkg ? addonsFor(pkg) : []
+
+  function selectPkg(value: PackageId) {
     setPkg(value)
     setError('')
+    // Drop any selection the new package doesn't offer.
+    const allowed = addonsFor(value).map((a) => a.id)
+    setAddons((prev) => prev.filter((id) => allowed.includes(id)))
     setTimeout(() => go(2), 380)
   }
 
@@ -129,7 +99,14 @@ export function QuoteQuiz() {
     }
     setSubmitting(true)
 
-    // Save to our database (feeds the admin dashboard).
+    // Human-readable versions for the Formspree alert and the thank-you page.
+    // The database gets ids, so pricing stays keyed to lib/packages.
+    const addonLabels = availableAddons
+      .filter((a) => addons.includes(a.id))
+      .map((a) => a.label)
+    const packageLabel = packages.find((p) => p.id === pkg)?.name ?? ''
+
+    // Save to our database. This also prices the quote and emails it for review.
     const res = await submitQuote({
       name,
       business,
@@ -137,6 +114,7 @@ export function QuoteQuiz() {
       email,
       selectedPackage: pkg ?? '',
       addons,
+      domainChoice: domain,
     })
 
     // Also email the request via Formspree. A failure here shouldn't block the
@@ -151,8 +129,9 @@ export function QuoteQuiz() {
           whatsapp,
           email,
           _replyto: email,
-          package: pkg ?? '',
-          addons: addons.length ? addons.join(', ') : 'None selected',
+          package: packageLabel,
+          addons: addonLabels.length ? addonLabels.join(', ') : 'None selected',
+          domain: domainChoices.find((d) => d.id === domain)?.label ?? '',
           _subject: `New quote request from ${name} (${business})`,
         }),
       })
@@ -173,8 +152,8 @@ export function QuoteQuiz() {
       business,
       whatsapp,
       email,
-      package: pkg ?? '',
-      addons: addons.length ? addons.join(', ') : 'None selected',
+      package: packageLabel,
+      addons: addonLabels.length ? addonLabels.join(', ') : 'None selected',
     })
     router.push(`/thank-you?${params.toString()}`)
   }
@@ -226,13 +205,13 @@ export function QuoteQuiz() {
             </p>
 
             <div className="mb-6 flex flex-col gap-2.5">
-              {PACKAGES.map((p) => {
-                const selected = pkg === p.value
+              {packages.map((p) => {
+                const selected = pkg === p.id
                 return (
                   <button
-                    key={p.value}
+                    key={p.id}
                     type="button"
-                    onClick={() => selectPkg(p.value)}
+                    onClick={() => selectPkg(p.id)}
                     className={`flex items-start gap-3.5 border p-4 text-left transition ${
                       selected
                         ? 'border-2 border-charcoal bg-steel'
@@ -240,10 +219,15 @@ export function QuoteQuiz() {
                     }`}
                   >
                     <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center text-charcoal">
-                      {p.icon}
+                      {PACKAGE_ICONS[p.id]}
                     </span>
                     <span className="flex-1">
-                      <span className="block text-[15px] font-semibold text-charcoal">{p.name}</span>
+                      <span className="flex items-baseline justify-between gap-2">
+                        <span className="text-[15px] font-semibold text-charcoal">{p.name}</span>
+                        <span className="shrink-0 text-[13px] font-semibold text-charcoal">
+                          from {formatRand(p.price)}
+                        </span>
+                      </span>
                       <span
                         className={`block text-[13px] leading-normal ${selected ? 'text-[#555]' : 'text-[#888888]'}`}
                       >
@@ -288,13 +272,13 @@ export function QuoteQuiz() {
             </p>
 
             <div className="mb-6 grid grid-cols-2 gap-2">
-              {ADDONS.map((a) => {
-                const selected = addons.includes(a.value)
+              {availableAddons.map((a) => {
+                const selected = addons.includes(a.id)
                 return (
                   <button
-                    key={a.value}
+                    key={a.id}
                     type="button"
-                    onClick={() => toggleAddon(a.value)}
+                    onClick={() => toggleAddon(a.id)}
                     className={`relative flex flex-col gap-2 border p-3.5 text-left transition ${
                       selected
                         ? 'border-2 border-charcoal bg-steel'
@@ -308,14 +292,64 @@ export function QuoteQuiz() {
                     >
                       {selected ? <Check size={10} strokeWidth={3} /> : null}
                     </span>
-                    <span className="flex h-7 items-center text-charcoal">{a.icon}</span>
+                    <span className="flex h-7 items-center text-charcoal">{ADDON_ICONS[a.id]}</span>
                     <span className="pr-4 text-[12.5px] font-semibold leading-tight text-charcoal">
-                      {a.name}
+                      {a.label}
                     </span>
-                    <span className="text-[11px] leading-snug text-[#888888]">{a.desc}</span>
+                    <span className="text-[11px] leading-snug text-[#888888]">{a.note}</span>
+                    <span className="text-[11.5px] font-semibold text-charcoal">
+                      +{formatRand(a.price)}
+                      {a.suffix ?? ''}
+                    </span>
                   </button>
                 )
               })}
+            </div>
+
+            {/* Domain + hosting is a choice between situations, not a tick-box:
+                what it costs us differs a lot depending on what they already have. */}
+            <div className="mb-6">
+              <p className="mb-2 text-[12.5px] font-semibold text-charcoal">
+                Domain &amp; hosting
+              </p>
+              <div className="flex flex-col gap-1.5">
+                {domainChoices.map((d) => {
+                  const selected = domain === d.id
+                  return (
+                    <button
+                      key={d.id}
+                      type="button"
+                      onClick={() => setDomain(d.id)}
+                      className={`flex items-center gap-3 border p-3 text-left transition ${
+                        selected
+                          ? 'border-2 border-charcoal bg-steel'
+                          : 'border-[1.5px] border-[#E0DDDA] hover:border-steel'
+                      }`}
+                    >
+                      <span
+                        className={`flex h-[17px] w-[17px] shrink-0 items-center justify-center rounded-full border-[1.5px] transition ${
+                          selected ? 'border-charcoal bg-charcoal text-white' : 'border-[#E0DDDA]'
+                        }`}
+                      >
+                        {selected ? <Check size={10} strokeWidth={3} /> : null}
+                      </span>
+                      <span className="flex-1">
+                        <span className="block text-[12.5px] font-semibold leading-tight text-charcoal">
+                          {d.label}
+                        </span>
+                        <span className="block text-[11px] leading-snug text-[#888888]">
+                          {d.note}
+                        </span>
+                      </span>
+                      {d.price > 0 ? (
+                        <span className="shrink-0 text-[11.5px] font-semibold text-charcoal">
+                          +{formatRand(d.price)}
+                        </span>
+                      ) : null}
+                    </button>
+                  )
+                })}
+              </div>
             </div>
 
             <div className="mb-5 text-center">

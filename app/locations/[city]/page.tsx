@@ -66,7 +66,7 @@ export default async function LocationPage({
     description: location.metaDescription,
     url: `https://paperclipstudio.co.za/locations/${location.slug}`,
     email: 'hello@paperclipstudio.co.za',
-    telephone: '+27 77 844 29357',
+    telephone: '+27 78 442 9357',
     areaServed: {
       '@type': 'City',
       name: location.city,

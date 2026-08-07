@@ -29,8 +29,8 @@ export function Contact() {
             </li>
             <li className="flex items-center gap-2.5">
               <Phone className="h-5 w-5 text-steel" />
-              <a href="tel:+277784429357" className="hover:text-steel">
-                +27 77 844 29357
+              <a href="tel:+27784429357" className="hover:text-steel">
+                +27 78 442 9357
               </a>
             </li>
             <li className="flex items-center gap-2.5">

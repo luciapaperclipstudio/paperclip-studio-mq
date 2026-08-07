@@ -22,7 +22,7 @@ By using our website or engaging our Services, you agree to these Terms. If you 
 - Nature of business: Web design and development services
 - Location: South Africa
 - Email: hello@paperclipstudio.co.za
-- Phone: +27 77 844 29357`,
+- Phone: +27 78 442 9357`,
   },
   {
     heading: '3. Our services',
