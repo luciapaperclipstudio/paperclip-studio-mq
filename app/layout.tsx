@@ -75,6 +75,28 @@ export const viewport: Viewport = {
 // Structured data (JSON-LD). Each object below is rendered into its own
 // <script type="application/ld+json"> tag so search engines can parse them
 // independently. Keep these in sync with the visible content on the page.
+// Canonical profile URLs. These are what let an engine confirm that a mention
+// of "Paperclip Studio" elsewhere is this business — there are several
+// similarly-named South African companies, so the disambiguation is load-bearing.
+// TODO: add the Google Business Profile once the canonical Maps URL is known
+// (a share.google short link redirects to a search wrapper, not a stable page).
+export const SAME_AS = [
+  'https://www.instagram.com/paperclip.studio_/',
+  'https://www.facebook.com/people/Paperclip-Studio/61586866732770/',
+]
+
+// The author entity behind the site's advice content. Answer engines weight who
+// wrote something, so articles are attributed to a real person rather than
+// nobody.
+export const AUTHOR = {
+  '@type': 'Person',
+  '@id': 'https://www.paperclipstudio.co.za/#lucia',
+  name: 'Lucia',
+  jobTitle: 'Founder',
+  worksFor: { '@type': 'Organization', name: 'Paperclip Studio' },
+  url: 'https://www.paperclipstudio.co.za/about',
+} as const
+
 const jsonLdBlocks = [
   // 1. WebSite
   {
@@ -103,7 +125,17 @@ const jsonLdBlocks = [
     },
     serviceType: ['Web Design', 'Landing Page Design', 'AI Website Development'],
     image: 'https://www.paperclipstudio.co.za/opengraph-image',
-    sameAs: [],
+    sameAs: SAME_AS,
+    founder: AUTHOR,
+  },
+  // 2b. Person — the author entity, declared once so articles can reference it
+  // by @id rather than repeating it.
+  {
+    '@context': 'https://schema.org',
+    ...AUTHOR,
+    description:
+      'Founder of Paperclip Studio, building websites and landing pages for South African businesses.',
+    sameAs: SAME_AS,
   },
   // 3. Service — Starter Landing Page
   {
@@ -131,53 +163,6 @@ const jsonLdBlocks = [
     provider: { '@type': 'LocalBusiness', name: 'Paperclip Studio' },
     description:
       'Full premium website with Google Ads and Meta Ads integration, conversion tracking, and advanced SEO.',
-  },
-  // 4. FAQPage — mirrors the visible FAQ section on the homepage
-  {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'How long does it take to build my website?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Most projects are completed in 3–7 business days, depending on how quickly we receive your content.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'What do I need to provide?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Your logo, business photos (or we use stock images), your services list, and contact details. We send a simple intake form to collect everything.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Will my website work on mobile?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Yes — every site we build is fully mobile-responsive and tested across devices.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Do you handle hosting and domain setup?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'We can register your domain and set up hosting as an add-on, or deliver the files to host on your own server. Either way it is priced in your quote.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'What payment methods do you accept?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'We accept EFT, credit/debit card (via PayFast or Yoco), and PayPal for international clients. A 50% deposit is required to start; the balance is due on delivery.',
-        },
-      },
-    ],
   },
 ]
 
@@ -238,4 +223,56 @@ export default function RootLayout({
       </body>
     </html>
   )
+}
+
+
+// FAQPage schema. Exported rather than included in jsonLdBlocks because that
+// array renders in the root layout on every page, and this markup is only
+// valid where the FAQ is actually visible — the homepage and location pages.
+// Emitting it site-wide described content that was not on the page.
+export const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'How long does it take to build my website?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Most projects are completed in 3–7 business days, depending on how quickly we receive your content.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What do I need to provide?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Your logo, business photos (or we use stock images), your services list, and contact details. We send a simple intake form to collect everything.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Will my website work on mobile?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes — every site we build is fully mobile-responsive and tested across devices.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Do you handle hosting and domain setup?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We can register your domain and set up hosting as an add-on, or deliver the files to host on your own server. Either way it is priced in your quote.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What payment methods do you accept?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We accept EFT, credit/debit card (via PayFast or Yoco), and PayPal for international clients. A 50% deposit is required to start; the balance is due on delivery.',
+        },
+      },
+    ],
 }

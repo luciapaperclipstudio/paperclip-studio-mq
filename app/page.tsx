@@ -1,4 +1,5 @@
 import { Contact } from '@/components/site/contact'
+import { faqJsonLd } from '@/app/layout'
 import { Faq } from '@/components/site/faq'
 import { Footer } from '@/components/site/footer'
 import { Hero } from '@/components/site/hero'
@@ -26,6 +27,10 @@ export default function Page() {
           subtitle="Tell us what you need and we'll send a free, no-obligation quote."
         />
         <Testimonials />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
         <Faq />
         <Contact />
       </main>

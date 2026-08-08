@@ -1,3 +1,5 @@
+export type Faq = { q: string; a: string }
+
 export type Post = {
   slug: string
   title: string
@@ -8,6 +10,10 @@ export type Post = {
   metaTitle: string
   metaDescription: string
   content: string
+  // Rendered visibly at the end of the article AND emitted as FAQPage schema.
+  // Both must stay in sync: marking up questions that aren't on the page is a
+  // structured-data violation, so the schema is only emitted when these render.
+  faqs?: Faq[]
 }
 
 // Post content lives here. Add entries to this array to publish.
@@ -253,6 +259,24 @@ We include POPIA setup as an add-on when we build a site, because it is far easi
 One caveat worth stating plainly: this article is general guidance, not legal advice. If you process sensitive information, handle children's data, or move personal information outside South Africa, talk to someone qualified.
 
 Get a free quote and we will tell you what your site needs.`,
+    faqs: [
+      {
+        q: 'Does POPIA apply to a small business website?',
+        a: 'Yes. POPIA governs any collection of personal information, and a name and email address in a contact form counts. If your site has an enquiry form or a newsletter signup, it applies to you regardless of company size.',
+      },
+      {
+        q: 'What does a POPIA-compliant website actually need?',
+        a: 'A privacy policy that accurately describes what you collect and why, a lawful reason for collecting each item, a working contact route for data requests, and security appropriate to what you hold — HTTPS and a reputable host for most small sites.',
+      },
+      {
+        q: 'Do I need a cookie banner in South Africa?',
+        a: 'If you run Google Analytics, a Meta Pixel or any advertising tracking, you are collecting data before a visitor types anything. That needs disclosing, and in most cases a cookie notice that genuinely lets people decline non-essential tracking. A banner with no way to say no is a notification, not consent.',
+      },
+      {
+        q: 'What happens if I ignore POPIA?',
+        a: 'The Information Regulator can issue enforcement notices and fines. In practice the more immediate risk for a small business is commercial: larger clients increasingly ask about compliance during procurement, and a missing privacy policy is an easy reason to be passed over.',
+      },
+    ],
   },
   {
     slug: 'get-your-business-on-google-maps-south-africa',
@@ -316,6 +340,24 @@ Your profile links to your website, and Google looks at that site when deciding 
 The two work together: the profile wins you the visibility, the website converts it.
 
 We set up and optimise Google Business Profiles as an add-on when we build a site, including the location signals that connect the two. Get a free quote if you would like it handled.`,
+    faqs: [
+      {
+        q: 'How do I get my business on Google Maps in South Africa?',
+        a: 'Claim or create a Google Business Profile at google.com/business, fill in your category, address or service area, phone number and website, then complete verification. Nothing appears publicly until verification is done.',
+      },
+      {
+        q: 'Why is my business not showing up on Google Maps?',
+        a: 'The most common reasons are that verification was never completed, that a duplicate unclaimed listing is competing with yours, or that the profile is too sparse. Google ranks on relevance, distance and prominence, and an incomplete profile loses on prominence.',
+      },
+      {
+        q: 'Do I need a website to rank on Google Maps?',
+        a: 'No, but it helps. Your profile links to your site, and Google uses that site to judge how much to trust the listing. A site that states clearly where you operate and what you do reinforces the profile.',
+      },
+      {
+        q: 'How do I get more Google reviews?',
+        a: 'Ask directly, immediately after doing good work, with a link that goes straight to the review form. Never buy reviews — Google detects them and the penalty is severe. Always reply to negative reviews calmly, because every future customer reads that reply.',
+      },
+    ],
   },
 ]
 

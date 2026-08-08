@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Check, CheckCircle2, X } from 'lucide-react'
 
+import { faqJsonLd } from '@/app/layout'
 import { Faq } from '@/components/site/faq'
 import { Footer } from '@/components/site/footer'
 import { BrowserMock } from '@/components/site/hero'
@@ -273,6 +274,10 @@ export default async function LocationPage({
         <Testimonials />
 
         {/* g) FAQ */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
         <Faq />
 
         {/* h) Footer CTA with city mention */}

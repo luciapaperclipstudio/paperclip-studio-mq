@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Footer } from '@/components/site/footer'
 import { Navbar } from '@/components/site/navbar'
+import { AUTHOR, SAME_AS } from '@/app/layout'
 import { getPostBySlug, getPosts } from '@/lib/posts'
 
 type Params = { slug: string }
@@ -81,8 +82,57 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
     notFound()
   }
 
+  const url = `https://www.paperclipstudio.co.za/blog/${post.slug}`
+
+  // Article schema: what an answer engine reads to decide whether this page is
+  // a citable piece of writing, who wrote it and when. Previously absent, which
+  // left the articles structurally invisible to them.
+  const articleLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.metaDescription,
+    datePublished: post.publishedDate,
+    dateModified: post.publishedDate,
+    author: AUTHOR,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Paperclip Studio',
+      url: 'https://www.paperclipstudio.co.za',
+      sameAs: SAME_AS,
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    url,
+    inLanguage: 'en-ZA',
+    articleSection: post.category,
+  }
+
+  // Only emitted when the questions actually render below — marking up content
+  // that isn't visible on the page is a structured-data violation.
+  const faqLd = post.faqs?.length
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: post.faqs.map((f) => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: f.a },
+        })),
+      }
+    : null
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
+      />
+      {faqLd ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+        />
+      ) : null}
       <Navbar />
       <main>
         <article>
@@ -123,6 +173,25 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
               </aside>
             </div>
           </div>
+          {post.faqs?.length ? (
+            <section className="bg-cream">
+              <div className="mx-auto max-w-3xl px-6 py-14 md:py-20">
+                <h2 className="font-serif text-3xl italic text-charcoal">
+                  Common questions
+                </h2>
+                <dl className="mt-8 flex flex-col gap-7">
+                  {post.faqs.map((f) => (
+                    <div key={f.q}>
+                      <dt className="text-[17px] font-semibold leading-snug text-charcoal">
+                        {f.q}
+                      </dt>
+                      <dd className="mt-2 text-[16px] leading-relaxed text-charcoal/75">{f.a}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </section>
+          ) : null}
         </article>
       </main>
       <Footer />

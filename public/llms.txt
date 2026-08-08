@@ -1,0 +1,36 @@
+# Paperclip Studio
+
+> Web design studio building custom websites and landing pages for South African
+> businesses. Sites are built on Next.js and React, hosted on Vercel, and
+> delivered in 3–7 working days. Based in South Africa, serving the whole country.
+
+Paperclip Studio is run by Lucia. The studio builds three things: single-page
+landing pages aimed at paid traffic, full 3–5 page business websites, and
+premium builds that pair a website with a dedicated ads landing page and
+conversion tracking. Add-on services include logo design, POPIA compliance
+setup, Google Business Profile setup, tracking and pixel installation, domain
+and hosting setup, and monthly maintenance.
+
+Pricing is quoted per project rather than published. Every quote is a fixed
+price against a defined scope, with a 50% deposit and the balance on delivery.
+Two rounds of revisions are included.
+
+## Guides
+
+- [How much does a website cost in South Africa?](https://www.paperclipstudio.co.za/blog/how-much-does-a-website-cost-in-south-africa): What South African businesses actually pay across DIY builders, freelancers, studios and agencies, and what each option gets you.
+- [AI website builder vs hiring a web designer](https://www.paperclipstudio.co.za/blog/ai-website-builder-vs-hiring-web-designer-south-africa): An honest comparison of AI builders and human designers for South African small businesses.
+- [POPIA and your website](https://www.paperclipstudio.co.za/blog/popia-compliance-for-small-business-websites): What South Africa's Protection of Personal Information Act requires from a small business website — privacy policy, consent, cookies and contact forms.
+- [Getting your business on Google Maps in South Africa](https://www.paperclipstudio.co.za/blog/get-your-business-on-google-maps-south-africa): Claiming and ranking a Google Business Profile, including verification and reviews.
+
+## Locations
+
+- [Web design Cape Town](https://www.paperclipstudio.co.za/locations/web-designer-cape-town)
+- [Web design Johannesburg](https://www.paperclipstudio.co.za/locations/web-designer-johannesburg)
+- [Web design Durban](https://www.paperclipstudio.co.za/locations/web-designer-durban)
+
+## Contact
+
+- Email: hello@paperclipstudio.co.za
+- Quote form: https://www.paperclipstudio.co.za/get-a-quote
+- Instagram: https://www.instagram.com/paperclip.studio_/
+- Facebook: https://www.facebook.com/people/Paperclip-Studio/61586866732770/
