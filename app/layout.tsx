@@ -81,9 +81,14 @@ export const viewport: Viewport = {
 // TODO: add the Google Business Profile once the canonical Maps URL is known
 // (a share.google short link redirects to a search wrapper, not a stable page).
 export const SAME_AS = [
+  // Google Business Profile, in ?cid= form. Derived from the listing's own CID
+  // rather than a maps.app.goo.gl share link, which is a redirect and can expire.
+  'https://maps.google.com/?cid=16979307826701520713',
   'https://www.instagram.com/paperclip.studio_/',
   'https://www.facebook.com/people/Paperclip-Studio/61586866732770/',
 ]
+
+export const GOOGLE_MAPS_URL = SAME_AS[0]
 
 // The author entity behind the site's advice content. Answer engines weight who
 // wrote something, so articles are attributed to a real person rather than
@@ -126,6 +131,7 @@ const jsonLdBlocks = [
     serviceType: ['Web Design', 'Landing Page Design', 'AI Website Development'],
     image: 'https://www.paperclipstudio.co.za/opengraph-image',
     sameAs: SAME_AS,
+    hasMap: GOOGLE_MAPS_URL,
     founder: AUTHOR,
   },
   // 2b. Person — the author entity, declared once so articles can reference it
