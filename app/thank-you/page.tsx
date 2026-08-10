@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Check } from 'lucide-react'
 import { Footer } from '@/components/site/footer'
+import { GoogleLeadEvent } from '@/components/site/google-lead-event'
 import { MetaLeadEvent } from '@/components/site/meta-lead-event'
 import { Navbar } from '@/components/site/navbar'
 
@@ -35,6 +36,7 @@ export default async function ThankYouPage({ searchParams }: { searchParams: Sea
   return (
     <>
       <MetaLeadEvent />
+      <GoogleLeadEvent />
       <Navbar />
       <main className="bg-cream">
         <section className="mx-auto max-w-2xl px-6 pb-24 pt-16 md:pt-20">
