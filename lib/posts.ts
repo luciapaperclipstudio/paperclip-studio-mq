@@ -359,6 +359,178 @@ We set up and optimise Google Business Profiles as an add-on when we build a sit
       },
     ],
   },
+  {
+    slug: 'do-i-need-a-website-if-i-have-facebook',
+    title: 'Do I Need a Website If I Have a Facebook Page?',
+    metaTitle: 'Do I Need a Website If I Have a Facebook Page? (South Africa)',
+    metaDescription:
+      'A straight answer for South African small businesses weighing up a website against a Facebook or Instagram page, including when a page really is enough.',
+    category: 'Web Design Advice',
+    readTime: '6 min read',
+    publishedDate: '2026-08-09',
+    excerpt:
+      'A Facebook page is a good place to be found. It is a bad place to be the only place you can be found. Here is how to tell which you are.',
+    content: `## The short answer
+
+A Facebook page is a good place to be found. It is a bad place to be the only place you can be found.
+
+If your business runs entirely off a Facebook or Instagram page and you are wondering whether a website is worth it, the honest answer depends on what you need it to do. For some businesses a page really is enough. For most South African service businesses, it quietly costs them work they never hear about.
+
+Here is how to tell which one you are.
+
+## What a Facebook page genuinely does well
+
+It would be dishonest to pretend social pages are useless. They are not.
+
+- They are free, and they take minutes to set up.
+- People already spend hours a day on them, so your posts appear where attention already is.
+- Messaging is instant and familiar. A customer can ask a question without leaving the app.
+- Reviews and recommendations spread naturally between friends, which is powerful in local markets.
+
+For a business built on regular posting and word of mouth, that combination is genuinely effective. If most of your work comes from people tagging friends in the comments, your page is doing real work.
+
+## Where it starts costing you
+
+The trouble is that a page is a room in somebody else's building.
+
+**You do not own it.** Meta decides who sees your posts, and what your page is allowed to say and do. Pages get restricted, mistakenly flagged, or hacked, and there is often no phone number to call. Businesses lose years of content and followers overnight, and the only real defence is having somewhere else that is yours.
+
+**Almost nobody finds you on Google.** This is the big one. When someone types plumber near me or guest house in Hermanus, Google shows websites and Google Business Profiles. Facebook pages rank poorly for those searches, if at all. Every one of those people is ready to buy right now, and they are not seeing you.
+
+**It looks less established.** Fair or not, a company with only a Facebook page reads as smaller and newer than one with a proper site. When someone is deciding who to trust with a job worth thousands of rands, that impression matters.
+
+**You cannot control the journey.** A page puts your phone number next to your competitors adverts, unrelated posts, and whatever the algorithm decides to show next. A website has one job and no distractions.
+
+**You learn almost nothing.** You can see likes and reach. You cannot see that eleven people looked at your pricing and only one enquired, which is the kind of thing that tells you what to fix.
+
+## What changes when you have both
+
+The businesses that do best do not choose. They use each for what it is good at.
+
+Social is where you build familiarity. You post the work, the before and afters, the team, the day to day. People follow along and get comfortable with you.
+
+The website is where that familiarity turns into an enquiry. It answers the practical questions, shows the work properly, and gives one clear way to get in touch. It also gets you into Google search results, which social simply cannot do.
+
+In practice the flow looks like this: someone sees your work on Instagram, wants to check you are real, taps the link in your bio, lands on a site that looks professional and answers their questions, and fills in the form. The page created the interest. The site closed it.
+
+## When a page really is enough
+
+Some cases where a website would be a waste of money:
+
+- You are testing an idea and do not know yet whether there is a business in it.
+- Your work comes entirely from a fixed group of repeat clients who already have your number.
+- You are fully booked and turning work away.
+
+If that is you, spend the money elsewhere. A website is a tool for getting more enquiries, and if you do not need more enquiries you do not need the tool.
+
+## How to decide
+
+Ask yourself one question: if someone hears your business name from a friend and searches for it on Google tonight, what do they find?
+
+If the answer is nothing, or a Facebook page that has not been posted to in three weeks, that is the gap. Every person who does that search and finds nothing is a customer who was already interested and went elsewhere.
+
+You do not need anything elaborate. For most service businesses a single well built page that says what you do, shows the work, proves you are real, and makes it easy to get in touch will do more than a large site nobody planned properly.`,
+    faqs: [
+      {
+        q: 'Do I need a website if I already have a Facebook page?',
+        a: 'If you want to be found on Google, you do. Facebook pages rank poorly in search results, so anyone typing something like plumber near me will not see you. A page is good for building familiarity, but it does not capture people searching for your service right now.',
+      },
+      {
+        q: 'Is a website better than a Facebook page for a small business?',
+        a: 'They do different jobs. Social builds familiarity with people who already follow you. A website captures people actively searching, works on Google, and is something you own outright. Most successful small businesses use both.',
+      },
+      {
+        q: 'What happens to my Facebook page if it gets restricted?',
+        a: 'You can lose access to your followers, content and messages with very little recourse. Pages get flagged in error and appeals can take weeks. That is the main argument for having a website you control, rather than renting your entire online presence.',
+      },
+      {
+        q: 'Can I just use my Instagram bio link instead of a website?',
+        a: 'A bio link only helps people who are already on your profile. It does nothing for someone searching Google. It also cannot answer questions, show your full portfolio, or capture an enquiry properly.',
+      },
+    ],
+  },
+  {
+    slug: 'why-is-my-website-not-getting-enquiries',
+    title: 'Why Isn’t My Website Getting Any Enquiries?',
+    metaTitle: 'Why Is My Website Not Getting Enquiries? A Diagnostic Guide',
+    metaDescription:
+      'Work out whether your website has a traffic problem or a conversion problem, and what to fix first. A practical checklist for South African businesses.',
+    category: 'Web Design Advice',
+    readTime: '7 min read',
+    publishedDate: '2026-08-10',
+    excerpt:
+      'A website with no enquiries has one of two problems, and they need opposite fixes. Diagnose which one you have before spending money on a redesign.',
+    content: `## First, work out which problem you have
+
+A website that produces no enquiries has one of two problems, and they need completely different fixes. Either nobody is visiting, or people are visiting and leaving without contacting you.
+
+Guessing wastes months. Open Google Analytics, or your hosting dashboard if that is all you have, and look at how many people visited in the last thirty days.
+
+Under roughly a hundred visitors a month is a traffic problem. Several hundred visitors and almost no enquiries is a conversion problem. Fixing the wrong one is why so many businesses redesign a site that was never getting visitors in the first place.
+
+## If almost nobody is visiting
+
+**Check you are actually in Google.** Search for your exact business name. If your site does not come up first, something is badly wrong. Then search site: followed by your domain. If nothing appears, Google has not indexed you at all, and nothing else you do matters until that is fixed.
+
+**Check your Google Business Profile.** For local service businesses this sends more customers than the website does. If your profile is unclaimed, unverified or half filled in, you are invisible in the map results where most local searches end.
+
+**Check what your pages are actually about.** Many small business sites have a home page titled Home and nothing that mentions what they do or where they do it. If your page title does not contain the service and the town, Google has very little to work with.
+
+**Be realistic about time.** A new site does not rank quickly. Three to six months before meaningful search traffic is normal, and longer in competitive markets. If your site went live last month, the honest answer is that it is too early.
+
+## If people visit but do not enquire
+
+This is more common, and usually more fixable.
+
+**There is no obvious next step.** Look at your home page on a phone. Is there one clear thing to do, visible without scrolling? Not a menu with eight options. One action. Most sites bury the contact form at the bottom of a long page and wonder why nobody fills it in.
+
+**It is too slow.** Every extra second of load time loses visitors, and on South African mobile data that gets worse. If your site takes more than about three seconds on a phone, a meaningful share of people are gone before they see anything.
+
+**It does not work properly on a phone.** Most of your visitors are on mobile. Text that needs pinching, buttons too small to tap, forms that are painful to complete. Open your own site on your phone and try to enquire. If it is annoying for you, it is worse for a stranger.
+
+**Nothing proves you are real.** No photos of actual work, no reviews, no names, no faces. Someone about to spend money on a service they cannot inspect first needs reassurance. Stock photos actively work against you.
+
+**Your form asks too much.** Every extra field costs you submissions. Ask for what you genuinely need to respond, and get the rest in the conversation afterwards.
+
+**It does not answer the obvious question.** People want a sense of cost, timing and process before they get in touch. A site that answers none of that leaves them to assume, and the safest assumption is to keep looking.
+
+## The five second test
+
+Give your home page to someone who does not know your business. Let them look for five seconds, then take it away and ask three things: what does this business do, where do they do it, and what would you do next if you wanted to hire them.
+
+If they cannot answer all three, that is your problem, and no amount of traffic will fix it.
+
+## What to fix first
+
+In order, because effort should follow impact:
+
+- Make sure Google has indexed the site at all.
+- Claim and complete your Google Business Profile.
+- Put one clear action at the top of the home page, visible on a phone without scrolling.
+- Add real photos of real work, and any genuine reviews you have.
+- Cut your enquiry form down to the fields you truly need.
+- Only then think about redesigning anything.
+
+Most sites that produce no enquiries do not need a rebuild. They need someone to decide what the site is for, and then make that one thing obvious.`,
+    faqs: [
+      {
+        q: 'Why is my website not getting any enquiries?',
+        a: 'Either nobody is visiting, or visitors are leaving without contacting you. Check your visitor numbers first. Under about a hundred a month is a traffic problem. Several hundred with no enquiries is a conversion problem, and the two need completely different fixes.',
+      },
+      {
+        q: 'How long does a new website take to get traffic from Google?',
+        a: 'Three to six months is normal for meaningful search traffic, and longer in competitive markets. A site that launched a few weeks ago has not had time. Google Business Profile and paid ads work far faster if you need enquiries sooner.',
+      },
+      {
+        q: 'Does my website need to be on the first page of Google?',
+        a: 'For your own business name, yes, and that should happen quickly. For competitive service terms it takes months of work. In the meantime the local map results, driven by your Google Business Profile, are usually a faster route to local customers.',
+      },
+      {
+        q: 'Should I redesign my website if it is not working?',
+        a: 'Usually not first. Most sites that produce no enquiries have a clarity problem rather than a design problem. Make the next step obvious, add real proof, and shorten the form before spending money on a rebuild.',
+      },
+    ],
+  },
 ]
 
 // Newest first, based on publishedDate.
