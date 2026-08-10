@@ -189,7 +189,11 @@ export default function RootLayout({
         ))}
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
-        {/* Google tag (gtag.js) */}
+        {/* Google tag (gtag.js). One loader, two destinations: GA4 for
+            analytics and Google Ads for conversion tracking. Google's snippet
+            for a second account ships its own <script src> loader, but adding
+            it would put two Google tags on every page — the config line below
+            is the supported way to add a destination to an existing tag. */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-DE22GSB30T"
           strategy="afterInteractive"
@@ -200,6 +204,7 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-DE22GSB30T');
+            gtag('config', 'AW-18253779955');
           `}
         </Script>
         {/* Meta Pixel Code */}
