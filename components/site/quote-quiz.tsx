@@ -74,6 +74,33 @@ function detectSource(fallback?: string): string | undefined {
   return fallback
 }
 
+// Suggests a better-fitting package when the selections imply one.
+//
+// Deliberately framed on scope, not value: the quiz shows no prices, and
+// add-ons are not bundled into higher tiers, so "you'd save money" or "Business
+// includes these" would both be untrue. Returns null when nothing genuinely
+// fits better — an upsell on every combination trains people to ignore it.
+function packageNudge(pkg: PackageId | null, addons: string[]) {
+  if (pkg === 'starter' && addons.length >= 3) {
+    return {
+      id: 'starter-to-business',
+      to: 'business' as PackageId,
+      label: 'Business Website',
+      body: 'You’ve picked a few extras for a single-page site. Businesses adding this much usually want more room — the Business Website covers Home, About, Services, Gallery and Contact. Your add-ons carry over either way.',
+    }
+  }
+  // Premium genuinely includes tracking, so this one is a factual redundancy.
+  if (pkg === 'business' && addons.includes('ads-pixel')) {
+    return {
+      id: 'business-to-premium',
+      to: 'premium' as PackageId,
+      label: 'Premium + Ads-Ready',
+      body: 'Premium + Ads-Ready already includes tracking and pixel setup, and adds a dedicated campaign landing page. Worth a look if you’re planning to run ads.',
+    }
+  }
+  return null
+}
+
 const STEP_LABELS = ['Package', 'Add-ons', 'Your Details']
 const PROGRESS = ['5%', '38%', '70%', '100%']
 
@@ -85,6 +112,7 @@ export function QuoteQuiz({ source }: { source?: string } = {}) {
   const [pkg, setPkg] = useState<PackageId | null>(null)
   const [addons, setAddons] = useState<string[]>([])
   const [domain, setDomain] = useState<DomainChoiceId>('none')
+  const [dismissedNudges, setDismissedNudges] = useState<string[]>([])
   const [form, setForm] = useState({ name: '', business: '', whatsapp: '', email: '' })
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
@@ -116,6 +144,19 @@ export function QuoteQuiz({ source }: { source?: string } = {}) {
 
   function toggleAddon(value: string) {
     setAddons((prev) => (prev.includes(value) ? prev.filter((a) => a !== value) : [...prev, value]))
+  }
+
+  // Dismissal is per rule, so declining the Business suggestion doesn't also
+  // suppress the unrelated Premium one. Each rule gets one chance, never more.
+  const candidate = packageNudge(pkg, addons)
+  const nudge = candidate && !dismissedNudges.includes(candidate.id) ? candidate : null
+
+  // Switches tier without leaving step 2 — selectPkg would bounce them back
+  // through the package step, which feels like the form undoing their work.
+  function switchPackage(to: PackageId) {
+    setPkg(to)
+    const allowed = addonsFor(to).map((a) => a.id)
+    setAddons((prev) => prev.filter((id) => allowed.includes(id)))
   }
 
   function nextFromPkg() {
@@ -332,6 +373,31 @@ export function QuoteQuiz({ source }: { source?: string } = {}) {
                 )
               })}
             </div>
+
+            {nudge ? (
+              <div className="mb-6 border-[1.5px] border-steel bg-[#F4F7FA] p-4">
+                <p className="text-[12.5px] font-semibold text-charcoal">
+                  Would {nudge.label} suit you better?
+                </p>
+                <p className="mt-1.5 text-[12px] leading-relaxed text-[#666]">{nudge.body}</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <button
+                    type="button"
+                    onClick={() => switchPackage(nudge.to)}
+                    className="border-2 border-charcoal bg-charcoal px-3.5 py-2 text-[12px] font-semibold text-white transition hover:bg-[#222]"
+                  >
+                    Switch to {nudge.label}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setDismissedNudges((prev) => [...prev, nudge.id])}
+                    className="px-2 py-2 text-[12px] text-[#888888] underline"
+                  >
+                    No, keep my choice
+                  </button>
+                </div>
+              </div>
+            ) : null}
 
             {/* Domain + hosting is a choice between situations, not a tick-box:
                 what it costs us differs a lot depending on what they already have. */}
