@@ -174,7 +174,7 @@ export default function MetaLandingPage() {
             {/* The form is the page. It sits in the first screen on every
                 viewport rather than behind a CTA that costs a click. */}
             <div id="quote-form" className="scroll-mt-6">
-              <QuoteQuiz source="Meta Ads" />
+              <QuoteQuiz source="Ads landing page" />
             </div>
           </div>
         </section>

@@ -42,6 +42,38 @@ const ADDON_ICONS: Record<string, React.ReactNode> = {
   maintenance: <Wrench size={20} strokeWidth={1.6} />,
 }
 
+// Works out which channel a lead came from, read at submit time so the page can
+// stay statically rendered.
+//
+// Falls back through four signals rather than relying on tagged URLs alone:
+// Google Ads adds ?gclid= and Meta adds ?fbclid= automatically, so attribution
+// still works if an ad URL is set up without a src parameter.
+function detectSource(fallback?: string): string | undefined {
+  if (typeof window === 'undefined') return fallback
+
+  const params = new URLSearchParams(window.location.search)
+  const explicit = (params.get('src') || params.get('utm_source') || '').toLowerCase()
+
+  const named: Record<string, string> = {
+    google: 'Google Ads',
+    'google-ads': 'Google Ads',
+    adwords: 'Google Ads',
+    meta: 'Meta Ads',
+    facebook: 'Meta Ads',
+    fb: 'Meta Ads',
+    instagram: 'Meta Ads',
+    ig: 'Meta Ads',
+  }
+  if (explicit && named[explicit]) return named[explicit]
+  if (explicit) return explicit
+
+  // Auto-tagging click IDs, present even on untagged ad URLs.
+  if (params.has('gclid') || params.has('gbraid') || params.has('wbraid')) return 'Google Ads'
+  if (params.has('fbclid')) return 'Meta Ads'
+
+  return fallback
+}
+
 const STEP_LABELS = ['Package', 'Add-ons', 'Your Details']
 const PROGRESS = ['5%', '38%', '70%', '100%']
 
@@ -118,7 +150,7 @@ export function QuoteQuiz({ source }: { source?: string } = {}) {
       selectedPackage: pkg ?? '',
       addons,
       domainChoice: domain,
-      source,
+      source: detectSource(source),
     })
 
     // Also email the request via Formspree. A failure here shouldn't block the
