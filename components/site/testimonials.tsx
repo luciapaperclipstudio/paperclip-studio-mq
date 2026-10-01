@@ -28,7 +28,7 @@ export function Testimonials() {
           </h2>
         </Reveal>
 
-        <div className="mt-12 grid max-w-4xl gap-6 md:grid-cols-2">
+        <div className="mx-auto mt-12 grid max-w-4xl gap-6 md:grid-cols-2">
           {testimonials.map((t, i) => (
             <Reveal key={t.name} delay={i * 100}>
               <blockquote className="flex h-full flex-col rounded-lg border border-[#e0e0e0] bg-cream p-7">
