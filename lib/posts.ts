@@ -14,6 +14,10 @@ export type Post = {
   // Both must stay in sync: marking up questions that aren't on the page is a
   // structured-data violation, so the schema is only emitted when these render.
   faqs?: Faq[]
+  // Optional replacement for the default "Need a website?" box at the end of
+  // the article. Use it on posts written to drive enquiries, so the ask
+  // matches what the reader has just read. whatsapp adds a second button.
+  cta?: { title: string; body: string; button: string; whatsapp?: boolean }
 }
 
 // Post content lives here. Add entries to this array to publish.
@@ -708,6 +712,284 @@ Five minutes checking today is far cheaper than rebuilding your website, your em
       {
         q: 'Can I move my website away from my web designer?',
         a: 'Yes. You can transfer the domain to a registrar of your choice and move or rebuild the website elsewhere. It is far easier if the domain is already in your name and you have copies of your content, which is why it is worth checking now.',
+      },
+    ],
+  },
+  {
+    slug: 'signs-your-business-website-needs-a-redesign',
+    title: '7 Signs Your Business Website Is Costing You Customers',
+    metaTitle: '7 Signs Your Website Needs a Redesign (South Africa)',
+    metaDescription:
+      'How to tell if your business website is quietly losing you customers, and whether it needs a fix or a full redesign. A practical checklist for South African businesses.',
+    category: 'Web Design Advice',
+    readTime: '6 min read',
+    publishedDate: '2026-10-01',
+    excerpt:
+      'A website rarely breaks loudly. It just stops bringing in work, and nobody notices for a year. Here are the seven signs to look for, and what to do about each one.',
+    content: `## Websites fail quietly
+
+Nobody phones a business to say they nearly enquired but the website put them off. They just leave and contact someone else. That is why an outdated website is so expensive: the cost is invisible.
+
+If you are not sure whether yours is helping or hurting, go through these seven signs. If two or more sound familiar, your website is very likely costing you customers right now.
+
+## 1. It is awkward to use on a phone
+
+Most people looking for a local business are on their phone. Open your own site on yours and try to do what a customer would: find a price, find your number, send an enquiry. If you have to pinch, zoom or hunt for the menu, so does every customer, and many of them give up.
+
+## 2. You are embarrassed to send people the link
+
+This is the most honest test there is. If you hesitate before sharing your own website, or add "ignore the website, it's old" when you do, your customers are picking up on the same thing. People judge how good your work is by how your website looks, fairly or not.
+
+## 3. It does not say clearly what you do and where
+
+A visitor should know within five seconds what you offer, which area you serve, and how to get in touch. Many older sites open with a slogan, a slideshow or a welcome message and make people scroll to find out whether they are in the right place.
+
+## 4. The information is out of date
+
+Old prices, a phone number that has changed, staff who left years ago, a "latest news" post from 2021. Each one makes a visitor wonder whether you are still trading. The more out of date the site looks, the less a stranger trusts it.
+
+## 5. You cannot change anything yourself
+
+If updating your opening hours means emailing a developer who takes two weeks to reply, the site will always fall behind. A good website lets you make simple changes yourself, or comes with someone who will do them quickly.
+
+## 6. You do not show up on Google
+
+Search for your service and your town, the way a customer would. If competitors appear and you do not, your website is not doing its most important job. Often the cause is a site that was never set up for search in the first place: no proper page titles, no mention of the areas you serve, and slow loading.
+
+## 7. People visit, but nobody enquires
+
+If you can see visitors in your analytics but enquiries are rare, the site is losing people somewhere between landing and contacting you. Usually the next step is unclear, the contact form is long, or there is no proof that you are good at what you do.
+
+## Fix it or start again?
+
+Not every one of these needs a new website. Out of date information and a missing Google Business Profile can be fixed in an afternoon. But if your site fails on phones, cannot be updated, and was never built with search in mind, patching it usually costs more in the long run than rebuilding it properly.
+
+A modern rebuild does not have to be a drawn-out project either. A focused business website can be designed, written and launched in about a week, and from day one it will be fast, work properly on phones and be set up to be found on Google.
+
+## The next step
+
+If you recognised your website in this list, it is worth finding out what a fix would actually involve. Tell us a little about your business and we will come back with a clear, fixed-price quote, usually within 24 hours. There is no obligation, and if a small fix is all you need, we will say so.`,
+    faqs: [
+      {
+        q: 'How do I know if my website needs a redesign?',
+        a: 'Check it on your phone, search for your service and town on Google, and ask whether you would happily send the link to a new customer. If it is awkward on mobile, does not show up in search, or you hesitate to share it, a redesign is usually worth it.',
+      },
+      {
+        q: 'How often should a business website be redesigned?',
+        a: 'There is no fixed rule, but most small business sites start to look and perform out of date after three to five years. Keep the content current all the time, and plan a proper rebuild when the site stops working well on phones or stops bringing in enquiries.',
+      },
+      {
+        q: 'Will a redesign hurt my Google rankings?',
+        a: 'Not if it is done carefully. Keeping important page addresses, or redirecting old ones to the new pages, protects the rankings you have. A well-built new site usually ranks better, because it is faster and properly structured.',
+      },
+      {
+        q: 'How long does a website redesign take?',
+        a: 'With Paperclip Studio, most business websites are designed and live within 3 to 7 business days of receiving your content. Larger sites with many pages can take a little longer.',
+      },
+    ],
+    cta: {
+      title: 'Recognised your website in this list?',
+      body: 'Tell us about your business and we’ll send a clear, fixed-price quote within 24 hours. No obligation, and if a small fix is all you need, we’ll tell you.',
+      button: 'Get My Free Quote',
+      whatsapp: true,
+    },
+  },
+  {
+    slug: 'landing-page-vs-website',
+    title: 'Landing Page or Full Website: Which Does Your Business Need?',
+    metaTitle: 'Landing Page vs Website: Which Does Your Business Need?',
+    metaDescription:
+      'The difference between a landing page and a full business website, when each one makes sense, and how South African businesses use both together.',
+    category: 'Web Design Advice',
+    readTime: '5 min read',
+    publishedDate: '2026-10-01',
+    excerpt:
+      'A landing page and a website are not small and large versions of the same thing. They do different jobs. Here is how to choose the right one for where your business is now.',
+    content: `## Two different jobs
+
+A landing page is a single page with one goal, usually getting the visitor to enquire, book or buy. A full website is several pages that explain your whole business: what you do, who you are, your work, and how to reach you.
+
+People often think of a landing page as a cheaper website. It is better to think of it as a different tool. One is built to convert a specific visitor. The other is built to be found and to answer every question a customer might have.
+
+## When a landing page makes sense
+
+A landing page is the right choice when:
+
+- You are running adverts on Google, Facebook or Instagram and need somewhere focused to send that traffic.
+- You are launching one product, service or offer and want to test whether people want it.
+- You are a one-service business and everything you need to say fits comfortably on one page.
+- You need something live quickly while a larger site is planned.
+
+The strength of a landing page is focus. There is no menu to wander off into, no unrelated pages, just one message and one clear action. For paid adverts, that focus is what turns clicks into enquiries instead of wasted spend.
+
+## When you need a full website
+
+A full website is the better choice when:
+
+- You offer several services and each one deserves its own explanation.
+- You want to be found on Google for different searches, because each page can target different services and areas.
+- Customers need to trust you before they get in touch, so they want to see your work, your story and your reviews.
+- You want room to grow, such as adding a blog, a portfolio or new services later.
+
+The strength of a full website is depth. Google has more to understand and rank, and customers who want to research before they contact you have everything they need.
+
+## Many businesses use both
+
+The most effective setup for businesses that advertise is often both together. The website builds credibility and brings in search traffic over time. A separate landing page sits behind each advert campaign, matched exactly to what the advert promised, so paid visitors land on the most relevant message possible.
+
+## How to decide
+
+Ask yourself where most of your customers will come from in the next six months. If the answer is adverts, start with a landing page. If it is Google searches, referrals checking you out, or a mix of services, start with a full website. If it is both, plan for both, even if you build one first.
+
+Not sure which fits? When you request a quote, tell us how you find customers now and we will recommend the option that suits you, including the smaller one if that is all you need.`,
+    faqs: [
+      {
+        q: 'What is the difference between a landing page and a website?',
+        a: 'A landing page is a single page with one goal, such as getting an enquiry from an advert. A website has several pages that explain the whole business and help it get found on Google. They do different jobs.',
+      },
+      {
+        q: 'Is a landing page enough for a small business?',
+        a: 'It can be, if you offer one main service or mostly get customers from adverts. If you offer several services or want to rank on Google for different searches, a full website will serve you better over time.',
+      },
+      {
+        q: 'Do I need a landing page for Google or Facebook ads?',
+        a: 'It is strongly recommended. Sending ad traffic to a focused page that matches the advert usually produces far more enquiries than sending it to a general home page.',
+      },
+      {
+        q: 'Can I start with a landing page and add a website later?',
+        a: 'Yes. Many businesses start with a landing page to get enquiries quickly, then expand into a full website once they know what works.',
+      },
+    ],
+  },
+  {
+    slug: 'website-for-tradespeople-south-africa',
+    title: 'What a Tradesperson’s Website Needs to Win More Jobs',
+    metaTitle: 'Websites for Tradespeople in South Africa: What Wins Jobs',
+    metaDescription:
+      'What plumbers, electricians, mechanics, builders and other South African trades need on their website to get found locally and turn visitors into booked jobs.',
+    category: 'Local SEO',
+    readTime: '6 min read',
+    publishedDate: '2026-10-01',
+    excerpt:
+      'Most trade websites look fine and win nothing. The ones that bring in work all share the same handful of features. Here is the checklist.',
+    content: `## Trade customers decide fast
+
+Someone looking for a plumber, electrician, mechanic or builder is usually in a hurry. Something is broken, leaking or making a noise. They search, open two or three websites, and contact whoever looks trustworthy and easy to reach first.
+
+That changes what a trade website needs to do. It does not need to be long or clever. It needs to answer three questions in seconds: do you do this job, do you work in my area, and how do I get hold of you right now.
+
+## 1. A way to contact you in one tap
+
+Put a call button and a WhatsApp button at the top of every page, where a thumb can reach them. WhatsApp matters especially in South Africa, because many customers would rather send a message and a photo of the problem than make a call. A pre-filled message that asks for the details you need saves both sides time.
+
+## 2. Your services, spelled out
+
+List each service in plain language, the way customers describe it: geyser replacement, not hot water solutions. If you can, give a starting price or a price range. You do not have to publish a full price list, but showing that you are upfront about cost removes one of the biggest worries people have about hiring a tradesperson.
+
+## 3. The areas you cover
+
+Name the suburbs and towns you work in. This helps customers know straight away that you will come to them, and it helps Google show you to people searching in those areas. A line like "serving Wynberg, Plumstead, Claremont and the Southern Suburbs" does real work.
+
+## 4. Proof that you are good and legitimate
+
+Trust is everything in the trades. Show real photos of your work, your vehicle, your team. Add your registrations and accreditations, any workmanship guarantee you offer, and how long you have been in business. Link to your Google reviews, which customers trust more than testimonials on your own site.
+
+## 5. A simple explanation of how it works
+
+A short "how it works" section takes the uncertainty out of booking. For example: send a message, get a quote, we book you in, job done. When people know what happens next, they are more likely to take the first step.
+
+## 6. A Google Business Profile that matches
+
+For local trades, your Google Business Profile often brings in more calls than the website itself. Make sure the name, phone number, service areas and hours match your website exactly, and keep asking happy customers for reviews.
+
+## Seeing it in practice
+
+To show what this looks like, we designed a concept website for a fictional mechanic in Cape Town called Torque & Co. Every feature on this list is built in, from the WhatsApp booking button to the service prices and the suburbs covered. You can see it in our Torque & Co. case study on the Our Work page.
+
+If you run a trade business and your website is not bringing in jobs, we build sites like this for South African tradespeople, usually live within a week.`,
+    faqs: [
+      {
+        q: 'Does a tradesperson need a website?',
+        a: 'If you want work from people who do not already know you, yes. Customers search Google for local trades and check websites before they call. A simple, clear site with your services, areas and contact buttons wins jobs that a Facebook page alone often misses.',
+      },
+      {
+        q: 'What should a plumber or electrician put on their website?',
+        a: 'One-tap call and WhatsApp buttons, a clear list of services, the areas you cover, real photos of your work, your registrations or accreditations, and links to your Google reviews. Starting prices help too.',
+      },
+      {
+        q: 'Should I show prices on my trade website?',
+        a: 'Showing starting prices or ranges builds trust and filters out people who are only shopping on price. You do not need a full price list, just enough for a customer to know roughly what to expect.',
+      },
+      {
+        q: 'How do I get my trade business to show up on Google?',
+        a: 'Claim and complete your Google Business Profile, name the suburbs you serve on your website, and collect genuine reviews. A fast, mobile-friendly website with clear page titles for your services and areas helps you rank in local results.',
+      },
+    ],
+  },
+  {
+    slug: 'what-is-ai-assisted-web-design',
+    title: 'What Is AI-Assisted Web Design, and Is It Any Good?',
+    metaTitle: 'What Is AI-Assisted Web Design? An Honest Explanation',
+    metaDescription:
+      'How a web design studio uses AI tools in practice, what is still done by a person, and what it means for the cost, speed and quality of a business website.',
+    category: 'Web Design Advice',
+    readTime: '5 min read',
+    publishedDate: '2026-10-01',
+    excerpt:
+      'AI-assisted web design is not a robot building your website. It is a designer using AI tools to remove the slow parts of the job. Here is what that means in practice.',
+    content: `## Not the same as an AI website builder
+
+When people hear AI and websites together, they usually picture a website builder: type in your business name, press a button, and get a generic site in seconds. That is one use of AI, and it has real limits.
+
+AI-assisted web design is something different. A person still leads the project, makes the design decisions and is responsible for the result. AI tools are used along the way to do the repetitive, time-consuming parts faster.
+
+## What AI actually helps with
+
+In a modern web design studio, AI tools typically speed up:
+
+- Turning a finished design into clean, working code.
+- Drafting first versions of page copy, which a person then rewrites for your business and voice.
+- Checking pages for speed, accessibility and mobile issues.
+- Producing the technical groundwork for search engines, such as page titles, descriptions and structured data.
+- Testing different layouts quickly before settling on one.
+
+None of these are the decisions that make a website good. They are the hours of production work that used to make websites slow and expensive.
+
+## What still needs a person
+
+The parts that decide whether a website brings in business still come down to human judgement:
+
+- Understanding your customers and what makes them choose you.
+- Deciding what the site should say, in what order, and what the visitor should do next.
+- Designing something that fits your brand rather than looking like everyone else.
+- Writing in a voice that sounds like you and makes sense to a South African audience.
+- Checking every detail before it goes live.
+
+This is why two websites built with the same tools can perform completely differently. The tools are not the difference. The thinking behind them is.
+
+## What it means for you
+
+For a business owner, AI-assisted design mostly shows up in two places: speed and cost. Work that used to take a month can be done in days, and because there are fewer hours of production, the price can come down too, without cutting the parts that matter.
+
+## How we use it at Paperclip Studio
+
+We design every website by hand, around your business and your customers, and use AI tools to build it faster. That is how we deliver custom websites in 3 to 7 days. You get a real designer making real decisions, without paying for weeks of manual production. If you want to see the range that makes possible, have a look at our work, from a luxury travel site to editorial and trade concept designs.`,
+    faqs: [
+      {
+        q: 'What is AI-assisted web design?',
+        a: 'It is web design led by a person who uses AI tools to speed up production work such as coding, first-draft copy and technical checks. The design decisions, strategy and final quality control are still done by a human.',
+      },
+      {
+        q: 'Is AI-assisted web design the same as an AI website builder?',
+        a: 'No. An AI website builder generates a site automatically from a short prompt, usually from templates. AI-assisted design is a designer using AI as a tool while still creating a custom site around your business.',
+      },
+      {
+        q: 'Are websites made with AI bad for SEO?',
+        a: 'Not in themselves. Google cares about whether a site is useful, fast and well structured, not which tools were used. Thin, generic content hurts rankings whether a person or AI wrote it, which is why every page should be reviewed and tailored.',
+      },
+      {
+        q: 'Why is AI-assisted web design faster and more affordable?',
+        a: 'Because AI handles much of the repetitive production work that used to take days. Fewer hours on production means a shorter timeline and a lower cost, while the time spent on design and strategy stays the same.',
       },
     ],
   },

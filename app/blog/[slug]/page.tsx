@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { Footer } from '@/components/site/footer'
 import { Navbar } from '@/components/site/navbar'
 import { AUTHOR, SAME_AS } from '@/app/layout'
+import { WHATSAPP_CHAT_LINK } from '@/lib/packages'
 import { getPostBySlug, getPosts } from '@/lib/posts'
 
 type Params = { slug: string }
@@ -176,17 +177,30 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
               {/* CTA box */}
               <aside className="mt-14 border border-[#e0ddda] bg-cream p-8 text-center md:p-10">
                 <h2 className="font-serif text-2xl italic text-charcoal text-balance md:text-3xl">
-                  Need a website for your business?
+                  {post.cta?.title ?? 'Need a website for your business?'}
                 </h2>
                 <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
-                  We design custom websites for South African businesses, live in 3–7 days.
+                  {post.cta?.body ??
+                    'We design custom websites for South African businesses, live in 3–7 days.'}
                 </p>
-                <a
-                  href="/get-a-quote"
-                  className="mt-6 inline-flex items-center gap-2 rounded bg-steel px-6 py-3 text-sm font-semibold text-charcoal transition hover:brightness-95"
-                >
-                  Get a Free Quote &rarr;
-                </a>
+                <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                  <a
+                    href="/get-a-quote"
+                    className="inline-flex items-center gap-2 rounded bg-steel px-6 py-3 text-sm font-semibold text-charcoal transition hover:brightness-95"
+                  >
+                    {post.cta?.button ?? 'Get a Free Quote'} &rarr;
+                  </a>
+                  {post.cta?.whatsapp ? (
+                    <a
+                      href={WHATSAPP_CHAT_LINK}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded border border-charcoal px-6 py-3 text-sm font-medium text-charcoal transition-colors hover:bg-charcoal hover:text-white"
+                    >
+                      Chat on WhatsApp
+                    </a>
+                  ) : null}
+                </div>
               </aside>
             </div>
           </div>
