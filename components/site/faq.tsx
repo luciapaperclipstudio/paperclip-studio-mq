@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: 'What payment methods do you accept?',
-    a: 'We accept EFT, credit/debit card (via PayFast or Yoco), and PayPal for international clients. A 50% deposit is required to start; the balance is due on delivery.',
+    a: 'We are an online studio, so we accept payment by EFT. A 50% deposit is required to start, and the balance is due on delivery.',
   },
 ]
 
