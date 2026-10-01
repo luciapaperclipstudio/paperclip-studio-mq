@@ -531,6 +531,185 @@ Most sites that produce no enquiries do not need a rebuild. They need someone to
       },
     ],
   },
+  {
+    slug: 'why-your-business-needs-an-online-presence',
+    title: 'Why Your Business Needs an Online Presence (Even If Word of Mouth Works)',
+    metaTitle: 'Why Your Business Needs an Online Presence in South Africa',
+    metaDescription:
+      'Why a website, Google Business Profile and reviews matter for South African small businesses, what each one does, and where to start if you have none of them.',
+    category: 'Web Design Advice',
+    readTime: '6 min read',
+    publishedDate: '2026-10-01',
+    excerpt:
+      'Word of mouth still works. But the person who hears your name now checks you online before they call. Here is what they should find, and why each piece matters.',
+    content: `## Word of mouth now goes through Google
+
+Plenty of good South African businesses have run for years on referrals alone. A happy customer tells a neighbour, the neighbour calls, and the work keeps coming. That still happens. What has changed is the step in the middle.
+
+Today, when someone hears your name, they look you up before they pick up the phone. They search your business name, glance at your reviews, check whether you look established, and only then decide whether to call you or the next name on the list.
+
+If that search turns up nothing, an outdated page, or a phone number that no longer works, the referral dies quietly. You never hear about it. That is the real cost of having no online presence: not the customers who never knew you existed, but the ones who were already sent your way and still went elsewhere.
+
+## What an online presence actually means
+
+An online presence is not one thing. It is a small set of places that together answer a customer's questions before they contact you. For most local businesses, three pieces do almost all of the work.
+
+- A Google Business Profile, so you appear on Google Maps and in local search results.
+- A website you own, which explains what you do, shows your work, and makes it easy to enquire.
+- Genuine reviews, which give strangers a reason to trust you.
+
+Social media pages are useful on top of these, but they are not a replacement for any of them.
+
+## Your Google Business Profile: the front door
+
+When someone searches for a service near them, the first thing Google usually shows is a map with three businesses underneath it. Those three get most of the calls.
+
+A Google Business Profile is what puts you in that list. It is free, it shows your hours, location, phone number, photos and reviews, and it lets people call or get directions with one tap. For trades, guesthouses, restaurants, cleaners and most other local services, it often brings in more customers than the website does.
+
+If you have not claimed yours, someone may already have created a basic listing for you, with the wrong hours or an old number. Claiming and completing it is the single fastest improvement most small businesses can make.
+
+## Your website: the place you own
+
+A Google profile gets you noticed. A website does the convincing.
+
+It is the one place online where you control everything: what you say, how your work is shown, what questions get answered, and what the visitor is asked to do next. It cannot be restricted by a platform, it does not show your competitors next to you, and it ranks in Google searches in a way social pages do not.
+
+A website also makes a small business look established. Fair or not, someone deciding who to trust with a job worth thousands of rands takes a proper site more seriously than a Facebook page or a WhatsApp number alone.
+
+It does not need to be large. For most service businesses a clear, fast site that says what you do, where you work, shows real examples and makes contacting you easy will outperform a big site nobody planned properly.
+
+## Reviews: the proof
+
+People trust other customers far more than they trust anything a business says about itself. Reviews on your Google profile do two jobs at once: they reassure the person reading them, and they help Google decide which businesses to show first.
+
+Ask for reviews right after you have done good work, while the customer is happy. Send them a direct link so it takes thirty seconds. Reply to every review, including the occasional bad one, calmly and briefly. Future customers read those replies as closely as the reviews themselves.
+
+## What it costs you to wait
+
+Every month without an online presence is a month of people searching for exactly what you offer and finding someone else. Your competitors are not necessarily better. They are just easier to find and easier to check.
+
+The good news is that this is one of the few areas where a small business can genuinely compete with a large one. A local plumber with a complete Google profile, forty honest reviews and a clear website can outrank a national chain in their own town.
+
+## Where to start
+
+If you have none of this yet, do it in this order:
+
+- Claim and fully complete your Google Business Profile, with real photos and accurate hours.
+- Ask your last ten happy customers for a Google review.
+- Get a simple, mobile-friendly website on your own domain name.
+- Link them all together, so your profile points to your site and your site points back to your reviews.
+
+None of it needs to be perfect on day one. It needs to exist, be accurate, and make it easy for the next person who hears your name to say yes.`,
+    faqs: [
+      {
+        q: 'Why does a small business need an online presence?',
+        a: 'Because almost everyone checks a business online before contacting it, even after a personal recommendation. If they find nothing, or something outdated, many quietly choose someone else. An online presence makes sure the customers you already earned through word of mouth actually reach you.',
+      },
+      {
+        q: 'Is a Google Business Profile enough without a website?',
+        a: 'It is a strong start and often the fastest way to get local enquiries. But a profile has limited space to explain your services, show your work properly or answer questions. A website does that job, and helps your profile rank better too. Most businesses do best with both.',
+      },
+      {
+        q: 'What should a small business website include?',
+        a: 'At minimum: what you do, where you work, real photos or examples of your work, reviews or testimonials, and one clear way to get in touch. It must load quickly and work properly on a phone, because that is where most visitors will see it.',
+      },
+      {
+        q: 'Is social media a replacement for a website?',
+        a: 'No. Social media is useful for staying visible to people who already follow you, but it ranks poorly in Google searches and you do not own the page. A website and Google Business Profile capture people who are actively searching for your service right now.',
+      },
+    ],
+  },
+  {
+    slug: 'who-owns-your-website-domain-and-hosting',
+    title: 'Who Actually Owns Your Website? Domains, Hosting and Logins Explained',
+    metaTitle: 'Who Owns Your Website and Domain? A Guide for SA Businesses',
+    metaDescription:
+      'Many South African businesses discover too late that their web designer owns their domain. How to check who controls your website, and how to protect it.',
+    category: 'Web Design Advice',
+    readTime: '6 min read',
+    publishedDate: '2026-10-01',
+    excerpt:
+      'Plenty of businesses only find out their domain is registered in someone else’s name when something goes wrong. Five minutes now can save you your website and your email.',
+    content: `## The problem nobody checks until it is too late
+
+Here is a situation that is far more common than it should be. A business paid someone to build their website a few years ago. The designer registered the domain, set up the hosting and the email, and everything worked. Then the designer moved on, stopped answering, or the relationship ended badly.
+
+Now the business cannot update its own website. The domain renewal notices go to someone else's inbox. And one day the site and the company email simply stop working, because a renewal nobody saw was never paid.
+
+None of this usually involves anyone acting in bad faith. It happens because nobody explained what the business was supposed to own. This article is that explanation.
+
+## The three things that make up your website
+
+Your website is not one thing you buy. It is three separate things, and you should control all of them.
+
+- The domain name, such as yourbusiness.co.za. This is your address on the internet, and your email usually depends on it too.
+- The hosting, which is the server where your website's files actually live.
+- The website itself, meaning its content, design and the logins used to edit it.
+
+Of the three, the domain matters most. Hosting can be moved and a website can be rebuilt, but if you lose your domain you lose your address, your Google rankings and very often your email, all at once.
+
+## How to check who owns your domain
+
+For a .co.za domain, you can look up the registered owner using the ZACR WHOIS lookup on the registry's website. For .com and other domains, any WHOIS lookup tool will do. Search for your domain and look at the registrant name and email.
+
+The registrant should be your business, or you personally, with an email address you actually check. If it shows your web designer's name, an agency you no longer use, or an email address nobody at your company can access, that is worth fixing now, while everyone is still on good terms.
+
+## What you should have access to
+
+Whoever built your site, you should be able to answer yes to each of these:
+
+- The domain is registered in your business's name.
+- You have your own login to the domain registrar, or at least know who the registrar is.
+- You know when the domain renews, and the renewal reminders reach you.
+- You have a login to your hosting account, or a clear written agreement about who manages it.
+- You have an administrator login to your website, not just an editor account.
+- You have a copy of your website's content and images somewhere you control.
+
+A good web designer will happily hand all of this over. It is perfectly normal for them to manage things day to day on your behalf. It is not normal for you to have no access at all.
+
+## Keep the important logins safe
+
+Once you have the logins, store them somewhere sensible: a password manager is best, and a sealed document in the office safe is better than nothing. Use an email address for the domain and hosting accounts that belongs to the business rather than to one staff member, so access does not walk out the door when someone leaves.
+
+Turn on two-factor authentication wherever it is offered. Domains do get stolen, and a hijacked domain can be used to intercept your email and impersonate you to your customers.
+
+## What to ask before hiring a web designer
+
+Before you sign, ask these questions and get the answers in writing:
+
+- Will the domain be registered in my business's name?
+- Will I get my own login to the domain and hosting?
+- If we stop working together, what exactly will you hand over, and is there a fee for it?
+- Who is responsible for renewing the domain, and who gets the reminders?
+
+Anyone who is reluctant to answer clearly is telling you something important.
+
+## If you are already locked out
+
+Start by asking politely. Most designers will transfer a domain into your name when asked, because it was always yours in their mind too. A .co.za transfer is a fairly routine process between registrars.
+
+If the person cannot be reached, contact the registrar directly with proof that the business is yours, such as your company registration documents and evidence of past payments. It takes longer, but it can usually be resolved. The important thing is to start before the renewal date, not after it.
+
+Five minutes checking today is far cheaper than rebuilding your website, your email and your search rankings from scratch.`,
+    faqs: [
+      {
+        q: 'Who should own my website domain name?',
+        a: 'Your business should be the registered owner, with an email address you control. A web designer can manage it for you, but the domain should be in your name so you never lose your website or email if the relationship ends.',
+      },
+      {
+        q: 'How do I find out who owns my .co.za domain?',
+        a: 'Use the WHOIS lookup on the ZA Central Registry (ZACR) website and search for your domain. It shows the registrant details. If the owner is not your business, ask whoever registered it to transfer it into your name.',
+      },
+      {
+        q: 'What happens if my domain name expires?',
+        a: 'Your website and any email on that domain stop working. If it is not renewed within the grace period, the domain can be released and registered by someone else, including competitors or people who resell expired domains.',
+      },
+      {
+        q: 'Can I move my website away from my web designer?',
+        a: 'Yes. You can transfer the domain to a registrar of your choice and move or rebuild the website elsewhere. It is far easier if the domain is already in your name and you have copies of your content, which is why it is worth checking now.',
+      },
+    ],
+  },
 ]
 
 // Newest first, based on publishedDate.
