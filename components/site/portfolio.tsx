@@ -13,11 +13,6 @@ type Project = {
 
 const projects: Project[] = [
   {
-    label: 'Sea & Salt Events Studio',
-    subLabel: 'Event Planning — Durban',
-    image: '/portfolio/sea-and-salt-desktop.png',
-  },
-  {
     label: 'Eventure Escapes',
     subLabel: 'Luxury Travel — Cape Town',
     url: 'https://eventureescapes.com',
@@ -26,9 +21,10 @@ const projects: Project[] = [
   },
   {
     label: 'KLIPKOP Gallery',
-    subLabel: 'Art Gallery — Cape Town',
+    subLabel: 'Concept Site — Art Gallery, Cape Town',
     url: 'https://luciapaperclipstudio.github.io/klipkop/',
     image: '/portfolio/klipkop-desktop.jpeg',
+    caseStudy: '/work/klipkop',
   },
   {
     label: 'The Harvest Table',
@@ -124,11 +120,11 @@ export function Portfolio() {
             Clean, purposeful, and built to convert.
           </h2>
           <p className="mt-4 max-w-xl text-charcoal/70 leading-relaxed">
-            Real sites we&apos;ve designed and shipped for South African businesses.
+            Sites we&apos;ve designed for South African businesses, plus concept work that shows our range.
           </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((p, i) => (
             <Reveal key={p.label} delay={i * 100}>
               <BrowserCard project={p} />
