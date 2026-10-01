@@ -101,9 +101,9 @@ export function Hero() {
         <Reveal className="md:col-span-2" delay={150}>
           <div className="relative rounded-xl bg-gradient-to-br from-cream to-white p-6 shadow-[0_24px_60px_-24px_rgba(51,51,51,0.35)]">
             <BrowserMock
-              label="Sea & Salt Events Studio · Durban"
+              label="KLIPKOP Gallery · Concept"
               tone="#dce7ef"
-              image="/portfolio/sea-and-salt-desktop.png"
+              image="/portfolio/klipkop-desktop.jpeg"
               className="w-[88%] -rotate-2"
             />
             <BrowserMock
@@ -113,9 +113,9 @@ export function Hero() {
               className="-mt-6 ml-auto w-[82%] rotate-1"
             />
             <BrowserMock
-              label="The Harvest Table · Catering"
+              label="Torque & Co. · Concept"
               tone="#dbe4ee"
-              image="/portfolio/harvest-table-desktop.png"
+              image="/portfolio/torque-and-co-desktop.jpeg"
               className="-mt-6 w-[74%] -rotate-1"
             />
           </div>

@@ -34,6 +34,7 @@ Two rounds of revisions are included.
 
 - [Eventure Escapes](https://www.paperclipstudio.co.za/work/eventure-escapes): Client case study, luxury travel website.
 - [KLIPKOP Gallery](https://www.paperclipstudio.co.za/work/klipkop): Concept project, an editorial website for a fictional Cape Town art gallery.
+- [Torque & Co.](https://www.paperclipstudio.co.za/work/torque-and-co): Concept project, a booking-focused website for a fictional Cape Town mechanic.
 
 ## Locations
 

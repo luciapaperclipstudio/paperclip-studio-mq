@@ -37,10 +37,30 @@ const WHAT_YOU_GET = [
   },
 ]
 
+// Same three projects as the homepage work grid. Concept sites are labelled
+// as such, so a paid visitor is never led to think they are client builds.
 const WORK = [
-  { src: '/portfolio/eventure-escapes-desktop.jpeg', alt: 'Eventure Escapes luxury travel website designed by Paperclip Studio' },
-  { src: '/portfolio/harvest-table-desktop.png', alt: 'The Harvest Table catering website designed by Paperclip Studio' },
-  { src: '/portfolio/sea-and-salt-desktop.png', alt: 'Sea & Salt Events Studio website designed by Paperclip Studio' },
+  {
+    src: '/portfolio/eventure-escapes-desktop.jpeg',
+    alt: 'Eventure Escapes luxury travel website designed by Paperclip Studio',
+    label: 'Eventure Escapes',
+    note: 'Client site · Luxury travel',
+    href: '/work/eventure-escapes',
+  },
+  {
+    src: '/portfolio/klipkop-desktop.jpeg',
+    alt: 'KLIPKOP Gallery concept website designed by Paperclip Studio',
+    label: 'KLIPKOP Gallery',
+    note: 'Concept site · Art gallery',
+    href: '/work/klipkop',
+  },
+  {
+    src: '/portfolio/torque-and-co-desktop.jpeg',
+    alt: 'Torque & Co. concept mechanic website designed by Paperclip Studio',
+    label: 'Torque & Co.',
+    note: 'Concept site · Mechanic',
+    href: '/work/torque-and-co',
+  },
 ]
 
 // Verbatim excerpts from the Google Business Profile reviews. These describe
@@ -57,6 +77,12 @@ const REVIEWS = [
       'Lucia understood my vision from day one — translating my brand into a site that’s as elegant and considered as the trips themselves.',
     name: 'Emma',
     source: 'Eventure Escapes',
+  },
+  {
+    quote:
+      'I have been working with Lucia for over 2 years now and I can confidently say she is the best I have dealt with in 20 years of business.',
+    name: 'Daniel',
+    source: 'Up-cycled',
   },
   {
     quote:
@@ -253,15 +279,19 @@ export default function MetaLandingPage() {
             <div className="mt-10 grid gap-5 md:grid-cols-3">
               {WORK.map((w, i) => (
                 <Reveal key={w.src} delay={i * 100}>
-                  <div className="overflow-hidden border border-[#E0DDDA] bg-white">
-                    <Image
-                      src={w.src}
-                      alt={w.alt}
-                      width={800}
-                      height={600}
-                      className="h-56 w-full object-cover object-top"
-                    />
-                  </div>
+                  <a href={w.href} className="group block">
+                    <div className="overflow-hidden border border-[#E0DDDA] bg-white">
+                      <Image
+                        src={w.src}
+                        alt={w.alt}
+                        width={800}
+                        height={600}
+                        className="h-56 w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                      />
+                    </div>
+                    <p className="mt-3 text-sm font-semibold text-charcoal">{w.label}</p>
+                    <p className="text-xs text-charcoal/55">{w.note}</p>
+                  </a>
                 </Reveal>
               ))}
             </div>
@@ -286,7 +316,7 @@ export default function MetaLandingPage() {
                 </span>
               </div>
             </Reveal>
-            <div className="mt-10 grid gap-6 md:grid-cols-3">
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
               {REVIEWS.map((t, i) => (
                 <Reveal key={t.name} delay={i * 100}>
                   <figure className="flex h-full flex-col justify-between border border-[#E0DDDA] bg-cream p-7">

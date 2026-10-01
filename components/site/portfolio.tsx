@@ -27,9 +27,11 @@ const projects: Project[] = [
     caseStudy: '/work/klipkop',
   },
   {
-    label: 'The Harvest Table',
-    subLabel: 'Event Catering — Johannesburg',
-    image: '/portfolio/harvest-table-desktop.png',
+    label: 'Torque & Co.',
+    subLabel: 'Concept Site — Mechanic, Cape Town',
+    url: 'https://torque-and-co.vercel.app',
+    image: '/portfolio/torque-and-co-desktop.jpeg',
+    caseStudy: '/work/torque-and-co',
   },
 ]
 
