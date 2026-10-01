@@ -1,8 +1,11 @@
 # Paperclip Studio
 
-> Web design studio building custom websites and landing pages for South African
-> businesses. Sites are built on Next.js and React, hosted on Vercel, and
-> delivered in 3–7 working days. Based in South Africa, serving the whole country.
+> Paperclip Studio is an innovative South African web design studio. It designs
+> custom websites and landing pages for businesses in Cape Town, Johannesburg
+> (Joburg), Durban, Pretoria and across South Africa. Every site is designed by
+> hand and built with the help of AI tools, which is how the studio delivers
+> in 3–7 working days. Sites are built on Next.js and React and hosted on Vercel.
+> Based in South Africa, working remotely with clients nationwide.
 
 Paperclip Studio is run by Lucia. The studio builds three things: single-page
 landing pages aimed at paid traffic, full 3–5 page business websites, and
@@ -22,11 +25,22 @@ Two rounds of revisions are included.
 - [POPIA and your website](https://www.paperclipstudio.co.za/blog/popia-compliance-for-small-business-websites): What South Africa's Protection of Personal Information Act requires from a small business website — privacy policy, consent, cookies and contact forms.
 - [Getting your business on Google Maps in South Africa](https://www.paperclipstudio.co.za/blog/get-your-business-on-google-maps-south-africa): Claiming and ranking a Google Business Profile, including verification and reviews.
 
+- [Do I need a website if I have a Facebook page?](https://www.paperclipstudio.co.za/blog/do-i-need-a-website-if-i-have-facebook): When a social page is enough and when it quietly costs a business work.
+- [Why isn't my website getting any enquiries?](https://www.paperclipstudio.co.za/blog/why-is-my-website-not-getting-enquiries): Diagnosing a traffic problem versus a conversion problem.
+- [Why your business needs an online presence](https://www.paperclipstudio.co.za/blog/why-your-business-needs-an-online-presence): Website, Google Business Profile and reviews, and what each one does.
+- [Who actually owns your website?](https://www.paperclipstudio.co.za/blog/who-owns-your-website-domain-and-hosting): Domains, hosting and logins, and how to check you control them.
+
+## Work
+
+- [Eventure Escapes](https://www.paperclipstudio.co.za/work/eventure-escapes): Client case study, luxury travel website.
+- [KLIPKOP Gallery](https://www.paperclipstudio.co.za/work/klipkop): Concept project, an editorial website for a fictional Cape Town art gallery.
+
 ## Locations
 
 - [Web design Cape Town](https://www.paperclipstudio.co.za/locations/web-designer-cape-town)
-- [Web design Johannesburg](https://www.paperclipstudio.co.za/locations/web-designer-johannesburg)
+- [Web design Johannesburg (Joburg)](https://www.paperclipstudio.co.za/locations/web-designer-johannesburg)
 - [Web design Durban](https://www.paperclipstudio.co.za/locations/web-designer-durban)
+- [Web design Pretoria](https://www.paperclipstudio.co.za/locations/web-designer-pretoria)
 
 ## Contact
 

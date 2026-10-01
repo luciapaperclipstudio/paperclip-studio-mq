@@ -60,24 +60,42 @@ export default async function LocationPage({
     notFound()
   }
 
+  const url = `https://www.paperclipstudio.co.za/locations/${location.slug}`
+
+  // A service offered in this city, not a business located in it. We work
+  // remotely, so a PostalAddress per city would claim offices that don't
+  // exist. The provider points at the site-wide Organization entity.
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'Paperclip Studio',
+    '@type': 'Service',
+    name: `Web Design ${location.city}`,
+    serviceType: 'Web Design',
     description: location.metaDescription,
-    url: `https://www.paperclipstudio.co.za/locations/${location.slug}`,
-    email: 'hello@paperclipstudio.co.za',
-    telephone: '+27 78 442 9357',
-    areaServed: {
-      '@type': 'City',
-      name: location.city,
-    },
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: location.city,
-      addressCountry: 'ZA',
-    },
-    serviceType: ['Web Design', 'Landing Page Design', 'AI Website Development'],
+    url,
+    provider: { '@id': 'https://www.paperclipstudio.co.za/#organization' },
+    areaServed: [
+      {
+        '@type': 'City',
+        name: location.city,
+        alternateName: location.alternateNames,
+        containedInPlace: { '@type': 'Country', name: 'South Africa' },
+      },
+      ...location.areas.map((name) => ({ '@type': 'Place', name })),
+    ],
+  }
+
+  // One FAQPage covering both the city questions and the general FAQ, since
+  // both are visible on this page.
+  const cityFaqJsonLd = {
+    ...faqJsonLd,
+    mainEntity: [
+      ...location.faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.q,
+        acceptedAnswer: { '@type': 'Answer', text: faq.a },
+      })),
+      ...faqJsonLd.mainEntity,
+    ],
   }
 
   return (
@@ -258,6 +276,10 @@ export default async function LocationPage({
               <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-relaxed text-white/70">
                 {location.cityBlurb}
               </p>
+              <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/50">
+                Serving {[location.city, ...location.alternateNames.slice(0, 1)].join(' / ')} and
+                surrounds, including {location.areas.join(', ')}.
+              </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-white/80">
                 {['Found on Google', 'Mobile-first design', 'Delivered in 3–7 days'].map((t) => (
                   <span key={t} className="inline-flex items-center gap-2">
@@ -276,8 +298,26 @@ export default async function LocationPage({
         {/* g) FAQ */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(cityFaqJsonLd) }}
         />
+        <section className="bg-white">
+          <div className="mx-auto max-w-3xl px-6 py-20 md:py-28">
+            <Reveal>
+              <SectionLabel>{location.city} Questions</SectionLabel>
+              <h2 className="mt-4 font-serif text-3xl italic text-charcoal text-balance md:text-4xl">
+                Website design in {location.city}, answered.
+              </h2>
+            </Reveal>
+            <div className="mt-10 flex flex-col divide-y divide-[#e0ddda] border-y border-[#e0ddda]">
+              {location.faqs.map((faq) => (
+                <div key={faq.q} className="py-6">
+                  <h3 className="text-lg font-semibold text-charcoal">{faq.q}</h3>
+                  <p className="mt-2 text-[16px] leading-relaxed text-muted-foreground">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
         <Faq />
 
         {/* h) Footer CTA with city mention */}

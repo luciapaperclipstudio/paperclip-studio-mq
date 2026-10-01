@@ -8,7 +8,7 @@ import { SectionLabel } from '@/components/site/section-label'
 export const metadata: Metadata = {
   title: 'About Paperclip Studio | AI Website Design South Africa',
   description:
-    'Meet the South African studio building AI-powered websites for small businesses. Fast turnaround, honest pricing, real results.',
+    'Meet the innovative South African web design studio behind fast, custom websites for small businesses. Fast turnaround, honest pricing, real results.',
 }
 
 const stats = [

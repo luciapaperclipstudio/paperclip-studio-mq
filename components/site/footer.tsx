@@ -10,8 +10,9 @@ const navLinks = [
 
 const areasWeServe = [
   { label: 'Web Design Cape Town', href: '/locations/web-designer-cape-town' },
-  { label: 'Web Design Johannesburg', href: '/locations/web-designer-johannesburg' },
+  { label: 'Web Design Johannesburg (Joburg)', href: '/locations/web-designer-johannesburg' },
   { label: 'Web Design Durban', href: '/locations/web-designer-durban' },
+  { label: 'Web Design Pretoria', href: '/locations/web-designer-pretoria' },
 ]
 
 export function Footer() {
@@ -32,7 +33,7 @@ export function Footer() {
             }}
           />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
-            AI-powered websites for South African businesses.
+            Innovative web design for South African businesses.
           </p>
         </div>
 

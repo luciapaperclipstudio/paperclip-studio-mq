@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'paperclip studio — AI-powered websites for South African businesses'
+export const alt = 'paperclip studio — innovative web design for South African businesses'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -36,7 +36,7 @@ export default function OgImage() {
           Studio
         </div>
         <div style={{ marginTop: 40, fontSize: 30, color: '#5c5c5c' }}>
-          AI-powered websites for South African businesses
+          Innovative web design for South African businesses
         </div>
       </div>
     ),

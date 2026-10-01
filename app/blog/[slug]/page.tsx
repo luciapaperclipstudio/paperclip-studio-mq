@@ -179,7 +179,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
                   Need a website for your business?
                 </h2>
                 <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
-                  We build AI-powered websites for South African businesses in 3–7 days.
+                  We design custom websites for South African businesses, live in 3–7 days.
                 </p>
                 <a
                   href="/get-a-quote"

@@ -25,18 +25,19 @@ export const metadata: Metadata = {
   // Brand searches find the homepage regardless of the title.
   title: 'Web Design South Africa | Custom Websites in 3–7 Days',
   description:
-    'Professional websites and landing pages for South African businesses. Custom-built with AI, delivered in 3–7 days. Mobile-ready, SEO-optimised, and built to convert.',
+    'Innovative web design studio for South African businesses in Cape Town, Joburg, Durban, Pretoria and nationwide. Custom websites, live in 3–7 days.',
   keywords: [
     'web design South Africa',
-    'professional website South Africa',
-    'landing page design SA',
-    'small business website Johannesburg',
-    'AI website builder South Africa',
+    'website design South Africa',
     'web designer South Africa',
-    'website for small business',
-    'landing page South Africa',
-    'web design agency Johannesburg',
-    'business website South Africa',
+    'web design Cape Town',
+    'web design Johannesburg',
+    'web design Joburg',
+    'web design Durban',
+    'web design Pretoria',
+    'small business website South Africa',
+    'landing page design South Africa',
+    'AI web design South Africa',
   ],
   alternates: {
     canonical: 'https://www.paperclipstudio.co.za',
@@ -56,7 +57,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'paperclip studio | AI Websites · South Africa',
+    title: 'paperclip studio | Web Design Studio · South Africa',
     description:
       'Custom websites delivered in 3–7 days. Built for South African small businesses that are serious about their online presence.',
   },
@@ -115,20 +116,29 @@ const jsonLdBlocks = [
       'query-input': 'required name=search_term_string',
     },
   },
-  // 2. LocalBusiness
+  // 2. LocalBusiness — the main entity. The description is written to be
+  // quoted: AI answers tend to lift an entity's own one-line description, so it
+  // leads with what the studio is ("innovative web design studio") and where it
+  // works, and mentions AI as how it works rather than as the product.
   {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
+    '@id': 'https://www.paperclipstudio.co.za/#organization',
     name: 'Paperclip Studio',
     url: 'https://www.paperclipstudio.co.za',
     email: 'hello@paperclipstudio.co.za',
+    slogan: 'Innovative web design for South African businesses.',
     description:
-      'AI-powered websites and landing pages for South African businesses. Custom-built, mobile-ready, SEO-optimised and delivered in 3–7 days.',
-    areaServed: {
-      '@type': 'Country',
-      name: 'South Africa',
-    },
-    serviceType: ['Web Design', 'Landing Page Design', 'AI Website Development'],
+      'Paperclip Studio is an innovative South African web design studio. It designs custom, mobile-first websites and landing pages for businesses in Cape Town, Johannesburg (Joburg), Durban, Pretoria and across South Africa, combining hands-on design with AI-assisted building so sites go live in 3–7 days.',
+    areaServed: [
+      { '@type': 'Country', name: 'South Africa' },
+      { '@type': 'City', name: 'Cape Town' },
+      { '@type': 'City', name: 'Johannesburg', alternateName: ['Joburg', 'Jozi'] },
+      { '@type': 'City', name: 'Durban' },
+      { '@type': 'City', name: 'Pretoria', alternateName: 'Tshwane' },
+    ],
+    serviceType: ['Web Design', 'Website Design', 'Landing Page Design', 'Website Redesign', 'AI-Assisted Web Development'],
+    knowsAbout: ['Web design', 'Search engine optimisation', 'Conversion rate optimisation', 'AI-assisted web development', 'POPIA compliance', 'Google Business Profile'],
     image: 'https://www.paperclipstudio.co.za/opengraph-image',
     sameAs: SAME_AS,
     hasMap: GOOGLE_MAPS_URL,
@@ -148,7 +158,7 @@ const jsonLdBlocks = [
     '@context': 'https://schema.org',
     '@type': 'Service',
     serviceType: 'Starter Landing Page',
-    provider: { '@type': 'LocalBusiness', name: 'Paperclip Studio' },
+    provider: { '@id': 'https://www.paperclipstudio.co.za/#organization' },
     description:
       'A single-page website built to convert visitors into leads. Mobile-first, SEO-optimised and delivered fast.',
   },
@@ -157,16 +167,16 @@ const jsonLdBlocks = [
     '@context': 'https://schema.org',
     '@type': 'Service',
     serviceType: 'Business Website',
-    provider: { '@type': 'LocalBusiness', name: 'Paperclip Studio' },
+    provider: { '@id': 'https://www.paperclipstudio.co.za/#organization' },
     description:
-      'A multi-section business website with portfolio, services, and contact — built with AI and delivered in under a week.',
+      'A multi-section business website with portfolio, services, and contact — designed by hand, built with AI-assisted tools, and delivered in under a week.',
   },
   // 3. Service — Premium + Ads-Ready Website
   {
     '@context': 'https://schema.org',
     '@type': 'Service',
     serviceType: 'Premium + Ads-Ready Website',
-    provider: { '@type': 'LocalBusiness', name: 'Paperclip Studio' },
+    provider: { '@id': 'https://www.paperclipstudio.co.za/#organization' },
     description:
       'Full premium website with Google Ads and Meta Ads integration, conversion tracking, and advanced SEO.',
   },

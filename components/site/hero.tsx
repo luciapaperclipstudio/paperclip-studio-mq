@@ -49,14 +49,30 @@ export function Hero() {
         <Reveal className="md:col-span-3">
           <SectionLabel>Web Design Studio · South Africa</SectionLabel>
           <h1 className="mt-5 font-serif text-[2.75rem] italic leading-[1.05] tracking-tight text-charcoal text-balance md:text-6xl">
-            AI-Powered Websites for South African Businesses
+            Web Design for South African Businesses
           </h1>
           <p className="mt-4 font-serif text-xl italic font-light leading-snug text-charcoal/70 text-balance md:text-2xl">
             Built to convert. Delivered in 3–7 days.
           </p>
           <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-muted-foreground">
-            We build clean, fast, and mobile-first websites for South African businesses — powered
-            by AI, delivered in days.
+            An innovative web design studio building clean, fast, mobile-first websites for
+            businesses in{' '}
+            <a href="/locations/web-designer-cape-town" className="underline-offset-2 hover:underline">
+              Cape Town
+            </a>
+            ,{' '}
+            <a href="/locations/web-designer-johannesburg" className="underline-offset-2 hover:underline">
+              Joburg
+            </a>
+            ,{' '}
+            <a href="/locations/web-designer-durban" className="underline-offset-2 hover:underline">
+              Durban
+            </a>
+            ,{' '}
+            <a href="/locations/web-designer-pretoria" className="underline-offset-2 hover:underline">
+              Pretoria
+            </a>{' '}
+            and across South Africa. Designed by hand, built faster with AI.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
