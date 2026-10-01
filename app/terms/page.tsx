@@ -42,7 +42,7 @@ Prices are quoted in South African Rand (ZAR). Unless stated otherwise, quotes r
 
 - A deposit of 50% of the total project fee is payable before we begin work.
 - The remaining balance is payable on completion, before final delivery or handover of the website.
-- We accept payment by EFT, card (via our payment providers), and PayPal for international clients.
+- We are an online studio and accept payment by EFT.
 
 Ownership of the final website and its files transfers to you once payment has been received in full.`,
   },
@@ -106,7 +106,7 @@ export default function TermsPage() {
     <LegalPage
       title="Terms & Conditions"
       intro="These terms govern your use of our website and services. Please read them carefully. They are drafted in line with South African law, including ECTA and the Consumer Protection Act."
-      lastUpdated="1 November 2024"
+      lastUpdated="1 October 2026"
       sections={sections}
     />
   )

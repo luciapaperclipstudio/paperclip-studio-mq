@@ -176,7 +176,7 @@ Just reply to this email, or message me on WhatsApp and we can start this week.
 ${button('https://wa.me/message/HACG5W5RQCDMJ1', 'Chat on WhatsApp')}
 
 <p style="margin:22px 0 0;font-size:12px;color:${LIGHTGREY};line-height:1.6;">
-This quote holds until ${validUntil} (${QUOTE_VALID_DAYS} days). Payment is 50% to start and 50% on delivery — EFT, card via PayFast or Yoco, or PayPal. Domain and hosting are excluded unless listed above.
+This quote holds until ${validUntil} (${QUOTE_VALID_DAYS} days). Payment is by EFT: 50% to start and 50% on delivery. Domain and hosting are excluded unless listed above.
 </p>
 `
   return {
