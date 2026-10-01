@@ -25,6 +25,12 @@ const projects: Project[] = [
     caseStudy: '/work/eventure-escapes',
   },
   {
+    label: 'KLIPKOP Gallery',
+    subLabel: 'Art Gallery — Cape Town',
+    url: 'https://luciapaperclipstudio.github.io/klipkop/',
+    image: '/portfolio/klipkop-desktop.jpeg',
+  },
+  {
     label: 'The Harvest Table',
     subLabel: 'Event Catering — Johannesburg',
     image: '/portfolio/harvest-table-desktop.png',
@@ -122,7 +128,7 @@ export function Portfolio() {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {projects.map((p, i) => (
             <Reveal key={p.label} delay={i * 100}>
               <BrowserCard project={p} />
