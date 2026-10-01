@@ -15,12 +15,6 @@ const testimonials = [
     name: 'Daniel',
     role: 'Up-cycled',
   },
-  {
-    quote:
-      'Our catering business had zero online presence. Now we get enquiries through the site every week.',
-    name: 'Zanele D.',
-    role: 'Catering Company, Johannesburg',
-  },
 ]
 
 export function Testimonials() {
@@ -34,7 +28,7 @@ export function Testimonials() {
           </h2>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid max-w-4xl gap-6 md:grid-cols-2">
           {testimonials.map((t, i) => (
             <Reveal key={t.name} delay={i * 100}>
               <blockquote className="flex h-full flex-col rounded-lg border border-[#e0e0e0] bg-cream p-7">
