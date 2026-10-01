@@ -11,9 +11,9 @@ const testimonials = [
   },
   {
     quote:
-      'Finally a web designer who delivers on time and doesn\u2019t overcomplicate everything.',
-    name: 'Thabo K.',
-    role: 'Electrical Contractor, Pretoria',
+      'I have been working with Lucia for over 2 years now and I can confidently say she is the best I have dealt with in 20 years of business.',
+    name: 'Daniel',
+    role: 'Up-cycled',
   },
   {
     quote:
