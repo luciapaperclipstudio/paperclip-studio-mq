@@ -29,8 +29,23 @@ export async function generateMetadata({
   }
 }
 
+// Inline "**text**" -> <strong>. The split keeps the captured bold runs at
+// odd indices, so alternating segments are plain and bold.
+function InlineText({ text }: { text: string }) {
+  return text.split(/\*\*(.+?)\*\*/g).map((part, i) =>
+    i % 2 === 1 ? (
+      <strong key={i} className="font-semibold text-charcoal">
+        {part}
+      </strong>
+    ) : (
+      part
+    ),
+  )
+}
+
 // Renders the post content convention into semantic HTML:
 // "## " -> <h2>, consecutive "- " lines -> <ul>, everything else -> <p>.
+// Paragraphs and list items support inline "**bold**".
 function ArticleBody({ content }: { content: string }) {
   const blocks = content.trim().split(/\n{2,}/)
 
@@ -57,7 +72,9 @@ function ArticleBody({ content }: { content: string }) {
               {items.map((item, j) => (
                 <li key={j} className="flex items-start gap-2.5">
                   <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-steel" />
-                  <span>{item}</span>
+                  <span>
+                    <InlineText text={item} />
+                  </span>
                 </li>
               ))}
             </ul>
@@ -66,7 +83,7 @@ function ArticleBody({ content }: { content: string }) {
 
         return (
           <p key={i} className="mt-5">
-            {trimmed}
+            <InlineText text={trimmed} />
           </p>
         )
       })}

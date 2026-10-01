@@ -18,7 +18,8 @@ export type Post = {
 
 // Post content lives here. Add entries to this array to publish.
 // Content convention: lines starting with "## " become <h2>, lines starting
-// with "- " become list items, everything else is a paragraph.
+// with "- " become list items, everything else is a paragraph. Wrap text in
+// **double asterisks** for bold, inside paragraphs and list items.
 const posts: Post[] = [
   {
     slug: 'ai-website-builder-vs-hiring-web-designer-south-africa',
