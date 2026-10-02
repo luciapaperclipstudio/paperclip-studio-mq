@@ -5,6 +5,7 @@ import { Footer } from '@/components/site/footer'
 import { GoogleLeadEvent } from '@/components/site/google-lead-event'
 import { MetaLeadEvent } from '@/components/site/meta-lead-event'
 import { Navbar } from '@/components/site/navbar'
+import { QuoteSummary, ThankYouGreeting } from '@/components/site/quote-summary'
 
 export const metadata: Metadata = {
   title: 'Thank You — paperclip studio',
@@ -12,27 +13,9 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 }
 
-type SearchParams = Promise<{
-  name?: string
-  business?: string
-  whatsapp?: string
-  email?: string
-  package?: string
-  addons?: string
-}>
-
-export default async function ThankYouPage({ searchParams }: { searchParams: SearchParams }) {
-  const { name, business, whatsapp, email, package: pkg, addons } = await searchParams
-
-  const rows = [
-    ['Package', pkg || '—'],
-    ['Add-ons', addons || 'None selected'],
-    ['Name', name || ''],
-    ['Business', business || ''],
-    ['WhatsApp', whatsapp || ''],
-    ['Email', email || ''],
-  ].filter(([, value]) => value !== '')
-
+// Details come from sessionStorage (see components/site/quote-summary.tsx),
+// never the query string, so they stay out of analytics and ad tags.
+export default function ThankYouPage() {
   return (
     <>
       <MetaLeadEvent />
@@ -48,32 +31,14 @@ export default async function ThankYouPage({ searchParams }: { searchParams: Sea
               Quote request received
             </p>
             <h1 className="mb-2 font-serif text-3xl italic leading-tight text-charcoal md:text-4xl">
-              You&apos;re all set{name ? `, ${name.split(' ')[0]}` : ''}.
+              <ThankYouGreeting />
             </h1>
             <p className="mx-auto mb-8 max-w-md text-sm leading-relaxed text-[#888888]">
               We&apos;ll review your selections and send a custom quote to your email and WhatsApp
               within 24 hours.
             </p>
 
-            {rows.length ? (
-              <div className="mx-auto mb-8 max-w-md border border-[#E0DDDA] bg-[#F7F6F2] p-5 text-left">
-                <p className="mb-3.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-steel">
-                  Your selections
-                </p>
-                {rows.map(([k, v], i) => (
-                  <div
-                    key={k}
-                    className={`flex items-start gap-2.5 py-2 text-[13.5px] ${
-                      i < rows.length - 1 ? 'border-b border-[#E0DDDA]' : ''
-                    }`}
-                  >
-                    <span className="mt-[5px] h-1.5 w-1.5 shrink-0 rounded-full bg-steel" />
-                    <span className="w-20 shrink-0 font-semibold text-charcoal">{k}</span>
-                    <span className="min-w-0 flex-1 break-words text-[#888888]">{v}</span>
-                  </div>
-                ))}
-              </div>
-            ) : null}
+            <QuoteSummary />
 
             <div className="mt-6">
               <Link href="/" className="text-[13px] text-charcoal underline transition hover:text-charcoal/70">

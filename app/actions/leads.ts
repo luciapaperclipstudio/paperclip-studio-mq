@@ -1,10 +1,7 @@
 'use server'
 
-import { randomBytes } from 'node:crypto'
 import { db } from '@/lib/db'
 import { leads, type SelectedAddon } from '@/lib/db/schema'
-import { ownerEmail, sendEmail, siteUrl } from '@/lib/email'
-import { ownerReviewEmail } from '@/lib/emails'
 import {
   addons,
   getPackage,
@@ -129,10 +126,9 @@ function toAddonId(value: string): string | null {
 
 // Handles the multi-step "Get a Quote" quiz submission.
 //
-// Prices the quote server-side and emails it to Lucia for review. The client is
-// not contacted here — that only happens when she approves it on the review
-// page. If the notification fails to send the lead is still saved; losing a
-// paid lead over an email hiccup would be far worse than a missed alert.
+// Saves the lead with a server-side price breakdown for reference in /admin.
+// Nothing is emailed from here: Lucia gets the Formspree alert sent by the form
+// and writes each quote to the client herself.
 export async function submitQuote(payload: QuotePayload): Promise<ActionResult> {
   const name = payload.name?.trim()
   const email = payload.email?.trim().toLowerCase()
@@ -162,8 +158,6 @@ export async function submitQuote(payload: QuotePayload): Promise<ActionResult> 
       .filter((l) => l.id !== packageId)
       .map((l) => ({ id: l.id, label: l.label, price: l.price })) ?? []
 
-  const reviewToken = randomBytes(24).toString('hex')
-
   try {
     const [row] = await db
       .insert(leads)
@@ -186,29 +180,12 @@ export async function submitQuote(payload: QuotePayload): Promise<ActionResult> 
         message: payload.source ? `Found us via: ${payload.source}` : null,
         source: 'quote',
         status: 'new',
-        reviewToken,
         completed: true,
       })
       .returning({ id: leads.id })
 
-    if (quote) {
-      const reviewUrl = `${siteUrl()}/quote/${row.id}?t=${reviewToken}`
-      const mail = ownerReviewEmail(
-        { id: row.id, name, email, phone: whatsapp, businessName: business },
-        quote,
-        reviewUrl,
-      )
-      const sent = await sendEmail({
-        to: ownerEmail(),
-        subject: mail.subject,
-        html: mail.html,
-        replyTo: email,
-      })
-      if (!sent.ok) {
-        console.error('[leads] lead', row.id, 'saved but notification failed:', sent.error)
-      }
-    } else {
-      console.error('[leads] lead', row.id, 'saved without a quote — unknown package:', payload.selectedPackage)
+    if (!quote) {
+      console.error('[leads] lead', row.id, 'saved without a price — unknown package:', payload.selectedPackage)
     }
 
     return { ok: true, id: row.id }

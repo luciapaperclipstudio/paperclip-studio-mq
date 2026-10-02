@@ -1,6 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
+import { QUOTE_SUMMARY_KEY } from './quote-summary'
 import { useRef, useState } from 'react'
 import {
   Check,
@@ -222,17 +223,27 @@ export function QuoteQuiz({ source }: { source?: string } = {}) {
       return
     }
 
-    // Redirect to the dedicated thank-you page, carrying the submitted details
-    // so they can be shown back to the user.
-    const params = new URLSearchParams({
-      name,
-      business,
-      whatsapp,
-      email,
-      package: packageLabel,
-      addons: addonLabels.length ? addonLabels.join(', ') : 'None selected',
-    })
-    router.push(`/thank-you?${params.toString()}`)
+    // Hand the submitted details to the thank-you page through sessionStorage,
+    // not the URL. Analytics, Google Ads and the Meta Pixel all record the full
+    // page address, so a query string would send every lead's name, email and
+    // WhatsApp number to them.
+    try {
+      sessionStorage.setItem(
+        QUOTE_SUMMARY_KEY,
+        JSON.stringify({
+          name,
+          business,
+          whatsapp,
+          email,
+          package: packageLabel,
+          addons: addonLabels.length ? addonLabels.join(', ') : 'None selected',
+        }),
+      )
+    } catch {
+      // Storage blocked (private mode etc.): the page still confirms, just
+      // without echoing the selections back.
+    }
+    router.push('/thank-you')
   }
 
   const inputClass =
