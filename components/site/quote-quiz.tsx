@@ -104,8 +104,10 @@ function packageNudge(pkg: PackageId | null, addons: string[]) {
 
 // Qualifying questions asked before anything else, so people who aren't ready
 // or can't afford a site don't fill in the whole form for nothing.
-// "Just browsing" is sent back to the home page; "Under R2,500" sees a polite
-// stop screen. Neither is saved or counted as a lead.
+// "Just browsing" is sent back to the home page; a budget under the Starter
+// price sees a polite stop screen. Neither is saved or counted as a lead.
+// The R2,950 cut-off matches the Starter package in lib/packages; change both
+// together if the starting price moves.
 const TIMELINES = [
   { id: 'asap', label: 'As soon as possible', note: 'I’m ready to get started' },
   { id: 'month', label: 'Within the next month', note: 'Planning to start soon' },
@@ -113,8 +115,8 @@ const TIMELINES = [
 ] as const
 
 const BUDGETS = [
-  { id: 'under-2500', label: 'Under R2,500' },
-  { id: '2500-5000', label: 'R2,500 – R5,000' },
+  { id: 'under-2950', label: 'Under R2,950' },
+  { id: '2950-5000', label: 'R2,950 – R5,000' },
   { id: '5000-10000', label: 'R5,000 – R10,000' },
   { id: '10000-plus', label: 'R10,000+' },
 ] as const
@@ -193,7 +195,7 @@ export function QuoteQuiz({ source }: { source?: string } = {}) {
       router.push('/')
       return
     }
-    if (budget === 'under-2500') {
+    if (budget === 'under-2950') {
       go(BUDGET_STOP_STEP)
       return
     }
