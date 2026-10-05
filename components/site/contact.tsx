@@ -16,7 +16,7 @@ export function Contact() {
             Let&apos;s get your business online.
           </h2>
           <p className="mx-auto mt-5 max-w-md text-[17px] leading-relaxed text-muted-foreground">
-            Answer three quick questions and we&apos;ll come back to you with a confirmed quote
+            Answer a few quick questions and we&apos;ll come back to you with a confirmed quote
             within 24 hours.
           </p>
 

@@ -102,6 +102,8 @@ type QuotePayload = {
   selectedPackage: string
   addons: string[]
   domainChoice?: string
+  timeline?: string
+  budget?: string
 }
 
 // The quiz used to submit display labels rather than ids. Accept both so a
@@ -177,7 +179,16 @@ export async function submitQuote(payload: QuotePayload): Promise<ActionResult> 
         deposit: quote?.deposit ?? null,
         validUntil: quote?.validUntil ?? null,
         estimateTotal: quote?.onceOffTotal ?? null,
-        message: payload.source ? `Found us via: ${payload.source}` : null,
+        // No dedicated columns for these, so they ride along in the message,
+        // which /admin already shows.
+        message:
+          [
+            payload.timeline && `Timeline: ${payload.timeline}`,
+            payload.budget && `Budget: ${payload.budget}`,
+            payload.source && `Found us via: ${payload.source}`,
+          ]
+            .filter(Boolean)
+            .join(' · ') || null,
         source: 'quote',
         status: 'new',
         completed: true,

@@ -127,7 +127,7 @@ const TECH = [
 ]
 
 const STEPS = [
-  { n: '01', title: 'Fill in the form', body: 'Three quick questions. Takes under a minute.' },
+  { n: '01', title: 'Fill in the form', body: 'A few quick questions. Takes about a minute.' },
   { n: '02', title: 'Get your quote', body: 'A fixed price by email and WhatsApp, usually within a few hours.' },
   { n: '03', title: 'We build it', body: 'Live in 3–7 days from the moment we have your content.' },
 ]
@@ -367,7 +367,7 @@ export default function MetaLandingPage() {
               Ready for a website that brings in work?
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-[17px] leading-relaxed text-white/70">
-              Answer three quick questions and we&apos;ll send a fixed-price quote to your email and
+              Answer a few quick questions and we&apos;ll send a fixed-price quote to your email and
               WhatsApp.
             </p>
             <a

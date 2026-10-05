@@ -6,7 +6,7 @@ import { QuoteQuiz } from '@/components/site/quote-quiz'
 export const metadata: Metadata = {
   title: 'Get a Quote — paperclip studio',
   description:
-    'Answer three quick questions and get a custom website quote from paperclip studio within 24 hours.',
+    'Answer a few quick questions and get a custom website quote from paperclip studio within 24 hours.',
 }
 
 export default function GetAQuotePage() {
@@ -23,7 +23,7 @@ export default function GetAQuotePage() {
               Let&apos;s build your website.
             </h1>
             <p className="mx-auto mt-3 max-w-md text-charcoal/70 leading-relaxed">
-              Three quick questions — we&apos;ll send a tailored quote to your email and WhatsApp
+              A few quick questions — we&apos;ll send a tailored quote to your email and WhatsApp
               within 24 hours.
             </p>
           </div>
