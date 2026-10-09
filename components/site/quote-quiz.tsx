@@ -102,18 +102,11 @@ function packageNudge(pkg: PackageId | null, addons: string[]) {
   return null
 }
 
-// Qualifying questions asked before anything else, so people who aren't ready
-// or can't afford a site don't fill in the whole form for nothing.
-// "Just browsing" is sent back to the home page; a budget under the Starter
-// price sees a polite stop screen. Neither is saved or counted as a lead.
+// Budget question asked before anything else, so people who can't afford a
+// site don't fill in the whole form for nothing. A budget under the Starter
+// price sees a polite stop screen; it is not saved or counted as a lead.
 // The R2,950 cut-off matches the Starter package in lib/packages; change both
 // together if the starting price moves.
-const TIMELINES = [
-  { id: 'asap', label: 'As soon as possible', note: 'I’m ready to get started' },
-  { id: 'month', label: 'Within the next month', note: 'Planning to start soon' },
-  { id: 'browsing', label: 'Just looking around for now', note: 'Not planning to start yet' },
-] as const
-
 const BUDGETS = [
   { id: 'under-2950', label: 'Under R2,950' },
   { id: '2950-5000', label: 'R2,950 – R5,000' },
@@ -121,7 +114,6 @@ const BUDGETS = [
   { id: '10000-plus', label: 'R10,000+' },
 ] as const
 
-type TimelineId = (typeof TIMELINES)[number]['id']
 type BudgetId = (typeof BUDGETS)[number]['id']
 
 const STEP_LABELS = ['About You', 'Package', 'Add-ons', 'Your Details']
@@ -134,7 +126,6 @@ const BUDGET_STOP_STEP = 99
 export function QuoteQuiz({ source }: { source?: string } = {}) {
   const router = useRouter()
   const [step, setStep] = useState(1)
-  const [timeline, setTimeline] = useState<TimelineId | null>(null)
   const [budget, setBudget] = useState<BudgetId | null>(null)
   const [pkg, setPkg] = useState<PackageId | null>(null)
   const [addons, setAddons] = useState<string[]>([])
@@ -187,12 +178,8 @@ export function QuoteQuiz({ source }: { source?: string } = {}) {
   }
 
   function nextFromQualify() {
-    if (!timeline || !budget) {
-      setError('Please answer both questions to continue.')
-      return
-    }
-    if (timeline === 'browsing') {
-      router.push('/')
+    if (!budget) {
+      setError('Please choose a budget to continue.')
       return
     }
     if (budget === 'under-2950') {
@@ -235,7 +222,6 @@ export function QuoteQuiz({ source }: { source?: string } = {}) {
       addons,
       domainChoice: domain,
       source: detectSource(source),
-      timeline: TIMELINES.find((t) => t.id === timeline)?.label,
       budget: BUDGETS.find((b) => b.id === budget)?.label,
     })
 
@@ -254,7 +240,6 @@ export function QuoteQuiz({ source }: { source?: string } = {}) {
           package: packageLabel,
           addons: addonLabels.length ? addonLabels.join(', ') : 'None selected',
           domain: domainChoices.find((d) => d.id === domain)?.label ?? '',
-          timeline: TIMELINES.find((t) => t.id === timeline)?.label ?? '',
           budget: BUDGETS.find((b) => b.id === budget)?.label ?? '',
           _subject: `New quote request from ${name} (${business})`,
         }),
@@ -332,21 +317,12 @@ export function QuoteQuiz({ source }: { source?: string } = {}) {
               Step 1 of 4
             </p>
             <h1 className="mb-1.5 font-serif text-[28px] italic leading-tight text-charcoal">
-              First, two quick questions.
+              First, a quick question.
             </h1>
             <p className="mb-7 text-sm leading-relaxed text-[#888888]">
               So we can make sure we&apos;re the right fit before you go any further.
             </p>
 
-            <ChoiceGroup
-              title="When are you looking to get your website?"
-              options={TIMELINES}
-              value={timeline}
-              onChange={(id) => {
-                setTimeline(id)
-                setError('')
-              }}
-            />
             <ChoiceGroup
               title="What is your budget for the website?"
               options={BUDGETS}

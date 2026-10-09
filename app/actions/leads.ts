@@ -102,7 +102,6 @@ type QuotePayload = {
   selectedPackage: string
   addons: string[]
   domainChoice?: string
-  timeline?: string
   budget?: string
 }
 
@@ -179,11 +178,10 @@ export async function submitQuote(payload: QuotePayload): Promise<ActionResult> 
         deposit: quote?.deposit ?? null,
         validUntil: quote?.validUntil ?? null,
         estimateTotal: quote?.onceOffTotal ?? null,
-        // No dedicated columns for these, so they ride along in the message,
+        // No dedicated column for budget, so it rides along in the message,
         // which /admin already shows.
         message:
           [
-            payload.timeline && `Timeline: ${payload.timeline}`,
             payload.budget && `Budget: ${payload.budget}`,
             payload.source && `Found us via: ${payload.source}`,
           ]
