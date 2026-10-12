@@ -2,10 +2,11 @@
 // the Meta landing page so they never drift apart. Update the rating here when
 // new Google reviews come in.
 
-// Verbatim excerpts from the Google Business Profile reviews. These describe
+// Verbatim excerpts from the Google Business Profile reviews. Some describe
 // marketing work rather than websites, so the section is headed "about working
-// with us" and never implies the web build itself has been reviewed.
-export const GOOGLE_RATING = { score: '5.0', count: 3 }
+// with us". Check the profile now and then: reviews get edited and the count
+// below needs to match.
+export const GOOGLE_RATING = { score: '5.0', count: 5 }
 
 // `source` drives the attribution label, kept separate from the star display:
 // Emma's is a client testimonial, not a Google review, so it is never labelled
@@ -24,8 +25,11 @@ export const REVIEWS = [
     source: 'Up-cycled',
   },
   {
+    // Edited by George on Google in October 2026; this is the current text,
+    // trimmed where Google truncates it for signed-out visitors. "[for]" fills
+    // a word missing in the original.
     quote:
-      'They came in with a clear plan on what to film, how to structure the content, and how to stay consistent without it feeling forced… The difference has been huge. Our reach increased by 217%.',
+      'Paperclip Studio built the website [for] us. They finished it in record time: we went from first chat to a live site in 5 days. The site is beautifully designed and looks exactly like our brand. Communication was easy the whole way through…',
     name: 'George Kappatos',
     source: 'Google review',
   },
