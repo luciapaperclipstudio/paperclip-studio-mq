@@ -297,6 +297,14 @@ export const faqJsonLd = {
       },
       {
         '@type': 'Question',
+        name: 'What if I don’t like my website?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'If you’re unhappy with the first full preview of your website, we refund your deposit in full. Just let us know within 7 days of receiving the preview, before requesting changes. Otherwise, 2 rounds of changes are included to get it right. Full terms are on our Terms page.',
+        },
+      },
+      {
+        '@type': 'Question',
         name: 'What payment methods do you accept?',
         acceptedAnswer: {
           '@type': 'Answer',

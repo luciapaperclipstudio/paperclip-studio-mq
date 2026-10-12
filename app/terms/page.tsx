@@ -73,30 +73,43 @@ We retain ownership of any underlying tools, frameworks, code libraries, and pre
   },
   {
     heading: '10. Cancellations and refunds',
-    body: `If you cancel a project after work has begun, the deposit is non-refundable, as it covers work already carried out and reserved capacity. Where work has progressed beyond the value of the deposit, we may invoice you for the additional work completed up to the date of cancellation.
+    body: `Apart from our money-back guarantee (section 11), if you cancel a project after work has begun, the deposit is non-refundable, as it covers work already carried out and reserved capacity. Where work has progressed beyond the value of the deposit, we may invoice you for the additional work completed up to the date of cancellation.
 
 Nothing in these Terms limits any rights you may have under the Consumer Protection Act, 68 of 2008 ("CPA"), where it applies to you.`,
   },
   {
-    heading: '11. Warranties and disclaimers',
+    heading: '11. Money-back guarantee',
+    id: 'money-back-guarantee',
+    body: `If you're unhappy with the first full preview of your website, we'll refund your deposit in full. These terms apply:
+
+- How to claim: let us know by email or WhatsApp within 7 days of receiving your first preview link, and before you request any changes.
+- Your refund: we refund the full 50% deposit by EFT within 7 working days of your claim.
+- Not refundable: costs we've paid to third parties on your behalf with your agreement, such as domain registration (the domain remains yours), and any add-on you've already approved separately, such as a finished logo.
+- The work: the preview is taken down, and the design, copy and code we created remain the property of Paperclip Studio and may not be used. Anything you supplied, such as photos, logos and text, remains yours.
+- Limits: one claim per business. The guarantee doesn't apply once your website has launched or the balance has been paid, or where the content we requested wasn't provided.
+
+This guarantee is in addition to, and does not limit, your rights under the Consumer Protection Act.`,
+  },
+  {
+    heading: '12. Warranties and disclaimers',
     body: `We provide our Services with reasonable skill and care. Other than as expressly stated in these Terms or required by law (including the CPA where applicable), our Services and website are provided "as is", and we do not guarantee that the website will be uninterrupted, error-free, or that it will achieve any particular commercial result, such as specific search rankings or sales.`,
   },
   {
-    heading: '12. Limitation of liability',
+    heading: '13. Limitation of liability',
     body: `To the maximum extent permitted by law, we will not be liable for any indirect, incidental, or consequential loss, or loss of profits, revenue, or data, arising from your use of our website or Services. Our total liability arising from or in connection with a project will not exceed the total fees you have paid us for that project.
 
 Nothing in these Terms excludes or limits liability that cannot lawfully be excluded or limited, including under the CPA.`,
   },
   {
-    heading: '13. Privacy',
+    heading: '14. Privacy',
     body: `We process your personal information in accordance with our Privacy Policy and the Protection of Personal Information Act (POPIA). Please review our Privacy Policy to understand how we handle your information.`,
   },
   {
-    heading: '14. Governing law',
+    heading: '15. Governing law',
     body: `These Terms are governed by and interpreted in accordance with the laws of the Republic of South Africa, and you agree to the jurisdiction of the South African courts in relation to any dispute arising from them.`,
   },
   {
-    heading: '15. Changes to these Terms',
+    heading: '16. Changes to these Terms',
     body: `We may update these Terms from time to time. The latest version will always be available on this page, with the "last updated" date shown above. Your continued use of our website or Services after changes are posted constitutes acceptance of the updated Terms.`,
   },
 ]
@@ -106,7 +119,7 @@ export default function TermsPage() {
     <LegalPage
       title="Terms & Conditions"
       intro="These terms govern your use of our website and services. Please read them carefully. They are drafted in line with South African law, including ECTA and the Consumer Protection Act."
-      lastUpdated="1 October 2026"
+      lastUpdated="12 October 2026"
       sections={sections}
     />
   )

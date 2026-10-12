@@ -28,6 +28,10 @@ const faqs = [
     a: 'We can register your domain and set up hosting as an add-on, or deliver the files to host on your own server. Either way it is priced in your quote.',
   },
   {
+    q: 'What if I don’t like my website?',
+    a: 'If you’re unhappy with the first full preview of your website, we refund your deposit in full. Just let us know within 7 days of receiving the preview, before requesting changes. Otherwise, 2 rounds of changes are included to get it right. Full terms are on our Terms page.',
+  },
+  {
     q: 'What payment methods do you accept?',
     a: 'We are an online studio, so we accept payment by EFT. A 50% deposit is required to start, and the balance is due on delivery.',
   },

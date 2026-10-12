@@ -1,4 +1,4 @@
-import { BadgeCheck, Eye, KeyRound, RefreshCw } from 'lucide-react'
+import { BadgeCheck, KeyRound, RefreshCw, ShieldCheck } from 'lucide-react'
 import { REVISION_ROUNDS } from '@/lib/packages'
 import { Reveal } from './reveal'
 import { SectionLabel } from './section-label'
@@ -16,9 +16,10 @@ const promises = [
     body: 'Your quote is a fixed price for a clear scope. 50% to start, 50% when your site is ready. No surprise invoices.',
   },
   {
-    icon: Eye,
-    title: 'See it before you pay the balance',
-    body: 'You review a live preview of your finished website before the final payment is due.',
+    icon: ShieldCheck,
+    title: 'Unhappy? Get your deposit back',
+    body: 'If you’re not happy with the first preview of your website, we refund your deposit in full.',
+    link: { href: '/terms#money-back-guarantee', label: 'Terms apply' },
   },
   {
     icon: RefreshCw,
@@ -47,6 +48,14 @@ export function Promises() {
                 </span>
                 <h3 className="mt-5 text-base font-semibold text-charcoal">{p.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
+                {'link' in p && p.link ? (
+                  <a
+                    href={p.link.href}
+                    className="mt-3 text-[13px] font-semibold text-charcoal underline underline-offset-2 hover:text-charcoal/70"
+                  >
+                    {p.link.label}
+                  </a>
+                ) : null}
               </article>
             </Reveal>
           ))}

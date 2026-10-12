@@ -3,6 +3,8 @@ import { Navbar } from '@/components/site/navbar'
 
 export type LegalSection = {
   heading: string
+  // Optional anchor so other pages can link straight to this section.
+  id?: string
   // Content convention: lines starting with "- " become list items,
   // everything else is a paragraph. Blank lines separate blocks.
   body: string
@@ -75,7 +77,7 @@ export function LegalPage({
           <div className="mx-auto max-w-3xl px-6 py-16 md:py-20">
             <div className="text-[16px] leading-relaxed text-muted-foreground">
               {sections.map((section, i) => (
-                <section key={i} className={i === 0 ? '' : 'mt-12'}>
+                <section key={i} id={section.id} className={`scroll-mt-28 ${i === 0 ? '' : 'mt-12'}`}>
                   <h2 className="font-serif text-2xl italic text-charcoal text-balance md:text-3xl">
                     {section.heading}
                   </h2>
