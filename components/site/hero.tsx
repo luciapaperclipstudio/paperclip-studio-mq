@@ -16,7 +16,7 @@ export function Hero() {
           </p>
           <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-relaxed text-muted-foreground">
             An innovative web design studio building clean, fast, mobile-first websites for
-            businesses in{' '}
+            service businesses in{' '}
             <a href="/locations/web-designer-cape-town" className="underline-offset-2 hover:underline">
               Cape Town
             </a>

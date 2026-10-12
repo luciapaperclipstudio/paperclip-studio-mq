@@ -6,8 +6,10 @@ import { SectionLabel } from '@/components/site/section-label'
 import { getPosts } from '@/lib/posts'
 
 export const metadata: Metadata = {
-  title: 'Resources & Guides | Paperclip Studio',
-  description: 'Practical advice for South African businesses going online.',
+  title: 'Website Advice for Service Businesses | Paperclip Studio Blog',
+  description:
+    'Practical guides for South African service businesses on websites, Google, enquiries, pricing and getting found online. Written by Lucia at Paperclip Studio.',
+  alternates: { canonical: '/blog' },
 }
 
 export default function BlogPage() {

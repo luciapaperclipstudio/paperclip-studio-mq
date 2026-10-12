@@ -23,10 +23,13 @@ export const metadata: Metadata = {
   // weight and gets shown before truncation (~60 chars), so it goes to the
   // term people actually search rather than a brand name they don't know yet.
   // Brand searches find the homepage regardless of the title.
-  title: 'Web Design South Africa | Custom Websites in 3–7 Days',
+  title: 'Web Design South Africa | Websites for Service Businesses',
   description:
-    'Innovative web design studio for South African businesses in Cape Town, Joburg, Durban, Pretoria and nationwide. Custom websites, live in 3–7 days.',
+    'Websites for service businesses in Cape Town, Joburg, Durban, Pretoria and across South Africa. Custom, mobile-first sites that bring in enquiries, live in 3–7 days.',
   keywords: [
+    'websites for service businesses',
+    'service business website South Africa',
+    'website design for small service businesses',
     'web design South Africa',
     'website design South Africa',
     'web designer South Africa',
@@ -39,15 +42,16 @@ export const metadata: Metadata = {
     'landing page design South Africa',
     'AI web design South Africa',
   ],
-  alternates: {
-    canonical: 'https://www.paperclipstudio.co.za',
-  },
+  // No canonical here: the root layout's metadata is inherited by every page,
+  // so a canonical set here told Google that every blog post, the about page
+  // and the legal pages were duplicates of the homepage. Each page declares
+  // its own instead (relative to metadataBase).
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: 'paperclip studio | Websites for South African Businesses',
+    title: 'paperclip studio | Websites for South African Service Businesses',
     description:
       'A professional, mobile-ready website — delivered in 3–7 days. Custom-built for SA businesses. From salons to contractors, we build sites that work.',
     type: 'website',
@@ -129,7 +133,12 @@ const jsonLdBlocks = [
     email: 'hello@paperclipstudio.co.za',
     slogan: 'Innovative web design for South African businesses.',
     description:
-      'Paperclip Studio is an innovative South African web design studio. It designs custom, mobile-first websites and landing pages for businesses in Cape Town, Johannesburg (Joburg), Durban, Pretoria and across South Africa, combining hands-on design with AI-assisted building so sites go live in 3–7 days.',
+      'Paperclip Studio is an innovative South African web design studio that builds websites for service-based businesses. It designs custom, mobile-first websites and landing pages for trades, salons, consultants, guesthouses and other service businesses in Cape Town, Johannesburg (Joburg), Durban, Pretoria and across South Africa, combining hands-on design with AI-assisted building so sites go live in 3–7 days. It does not build e-commerce stores.',
+    audience: {
+      '@type': 'BusinessAudience',
+      audienceType: 'Service-based businesses',
+      geographicArea: { '@type': 'Country', name: 'South Africa' },
+    },
     areaServed: [
       { '@type': 'Country', name: 'South Africa' },
       { '@type': 'City', name: 'Cape Town' },
@@ -138,7 +147,7 @@ const jsonLdBlocks = [
       { '@type': 'City', name: 'Pretoria', alternateName: 'Tshwane' },
     ],
     serviceType: ['Web Design', 'Website Design', 'Landing Page Design', 'Website Redesign', 'AI-Assisted Web Development'],
-    knowsAbout: ['Web design', 'Search engine optimisation', 'Conversion rate optimisation', 'AI-assisted web development', 'POPIA compliance', 'Google Business Profile'],
+    knowsAbout: ['Web design', 'Websites for service businesses', 'Search engine optimisation', 'Conversion rate optimisation', 'AI-assisted web development', 'POPIA compliance', 'Google Business Profile'],
     image: 'https://www.paperclipstudio.co.za/opengraph-image',
     sameAs: SAME_AS,
     hasMap: GOOGLE_MAPS_URL,

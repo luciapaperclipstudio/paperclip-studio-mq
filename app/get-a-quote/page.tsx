@@ -4,9 +4,10 @@ import { Navbar } from '@/components/site/navbar'
 import { QuoteQuiz } from '@/components/site/quote-quiz'
 
 export const metadata: Metadata = {
-  title: 'Get a Quote — paperclip studio',
+  title: 'Get a Website Quote | Paperclip Studio',
   description:
-    'Answer a few quick questions and get a custom website quote from paperclip studio within 24 hours.',
+    'Answer a few quick questions and get a fixed-price website quote for your service business within 24 hours. Free and no obligation.',
+  alternates: { canonical: '/get-a-quote' },
 }
 
 export default function GetAQuotePage() {

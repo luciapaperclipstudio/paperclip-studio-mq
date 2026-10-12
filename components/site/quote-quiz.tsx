@@ -316,9 +316,9 @@ export function QuoteQuiz({ source }: { source?: string } = {}) {
             <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-steel">
               Step 1 of 4
             </p>
-            <h1 className="mb-1.5 font-serif text-[28px] italic leading-tight text-charcoal">
+            <h2 className="mb-1.5 font-serif text-[28px] italic leading-tight text-charcoal">
               First, a quick question.
-            </h1>
+            </h2>
             <p className="mb-7 text-sm leading-relaxed text-[#888888]">
               So we can make sure we&apos;re the right fit before you go any further.
             </p>

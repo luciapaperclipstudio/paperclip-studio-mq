@@ -12,7 +12,7 @@ const SITE_URL = 'https://torque-and-co.vercel.app'
 export const metadata: Metadata = {
   title: 'Torque & Co. Mechanic (Concept) | Paperclip Studio',
   description:
-    'A concept website for a fictional Cape Town mechanic, built by Paperclip Studio to show a conversion-focused local service website: WhatsApp booking, clear pricing and local SEO.',
+    'A concept website for a fictional Cape Town mechanic, built by Paperclip Studio to show a booking-focused service business website with local SEO.',
   alternates: { canonical: 'https://www.paperclipstudio.co.za/work/torque-and-co' },
 }
 

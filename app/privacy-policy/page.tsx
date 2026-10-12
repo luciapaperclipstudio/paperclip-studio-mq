@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'Privacy Policy | Paperclip Studio',
   description:
     'How Paperclip Studio collects, uses, and protects your personal information in accordance with the Protection of Personal Information Act (POPIA).',
+  alternates: { canonical: '/privacy-policy' },
 }
 
 const sections: LegalSection[] = [

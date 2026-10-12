@@ -37,5 +37,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  return [...staticPages, ...locationPages, ...postPages]
+  const workPages: MetadataRoute.Sitemap = ['eventure-escapes', 'klipkop', 'torque-and-co'].map(
+    (slug) => ({
+      url: `${BASE}/work/${slug}`,
+      lastModified,
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    }),
+  )
+
+  return [...staticPages, ...locationPages, ...postPages, ...workPages]
 }

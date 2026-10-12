@@ -35,14 +35,14 @@ export const locations: LocationPage[] = [
     areas: ['City Bowl', 'Southern Suburbs', 'Northern Suburbs', 'Atlantic Seaboard', 'Winelands', 'West Coast'],
     h1: 'Web Design in Cape Town',
     heroSubheading:
-      'Custom websites for Cape Town businesses — designed to stand out, built to bring in enquiries, and live in 3–7 days.',
+      'Custom websites for Cape Town service businesses — designed to stand out, built to bring in enquiries, and live in 3–7 days.',
     servicesIntro:
       'The same honest packages we offer every Cape Town business — clear scope, no agency markup, and a site that is live within the week.',
     cityBlurb:
       "Cape Town has one of the most competitive small business markets in South Africa, especially in tourism, hospitality, food and creative services. Whether you're in the City Bowl, the Southern or Northern Suburbs, the Atlantic Seaboard or the Winelands, your website has to look the part and turn visitors into enquiries. We're an innovative web design studio: we design every site by hand and use AI tools to speed up the build, so you get a premium website without the agency price tag or the months-long wait.",
-    metaTitle: 'Web Design Cape Town | Website Designer, Live in 3–7 Days',
+    metaTitle: 'Web Design Cape Town | Websites for Service Businesses',
     metaDescription:
-      'Website design for Cape Town businesses. Custom, mobile-first websites that get found on Google, delivered in 3–7 days. Free quote within 24 hours.',
+      'Website design for Cape Town service businesses, from trades to salons and guesthouses. Custom, mobile-first sites that get found on Google, live in 3–7 days.',
     faqs: [
       {
         q: 'How much does website design cost in Cape Town?',
@@ -65,14 +65,14 @@ export const locations: LocationPage[] = [
     areas: ['Sandton', 'Rosebank', 'Randburg', 'Midrand', 'Fourways', 'Soweto', 'Roodepoort', 'East Rand'],
     h1: 'Web Design in Johannesburg (Joburg)',
     heroSubheading:
-      'Websites for Joburg businesses — fast, professional, built to convert, and live in 3–7 days.',
+      'Websites for Joburg service businesses — fast, professional, built to convert, and live in 3–7 days.',
     servicesIntro:
       'Straightforward packages for Joburg businesses that need to move fast — fixed scope, quick turnaround, and no drawn-out agency process.',
     cityBlurb:
       'Joburg moves fast, and so should your website. From Sandton and Rosebank to Midrand, Fourways and Soweto, businesses across Johannesburg need an online presence that works as hard as they do. We are an innovative web design studio that pairs hands-on design with AI-assisted building, which cuts build time and cost without cutting corners. You get a professional Joburg website in days, not months, and without paying agency rates.',
-    metaTitle: 'Web Design Johannesburg (Joburg) | Websites in 3–7 Days',
+    metaTitle: 'Web Design Johannesburg (Joburg) | Service Business Websites',
     metaDescription:
-      'Website design for Joburg and Johannesburg businesses, from Sandton to Soweto. Custom, mobile-first sites delivered in 3–7 days. Free quote in 24 hours.',
+      'Website design for Joburg service businesses, from Sandton to Soweto. Custom, mobile-first sites that bring in enquiries, live in 3–7 days. Free quote in 24 hours.',
     faqs: [
       {
         q: 'How much does a website cost in Joburg?',
@@ -95,14 +95,14 @@ export const locations: LocationPage[] = [
     areas: ['Umhlanga', 'Ballito', 'Berea', 'Westville', 'Pinetown', 'Durban North', 'South Coast'],
     h1: 'Web Design in Durban',
     heroSubheading:
-      'Durban businesses deserve a website that actually brings in work. We build yours in 3–7 days.',
+      'Durban service businesses deserve a website that actually brings in work. We build yours in 3–7 days.',
     servicesIntro:
       'Websites built for Durban businesses — from the beachfront to Umhlanga — with a professional site delivered in days, not months.',
     cityBlurb:
       "Durban's business community is growing fast, from the beachfront hospitality strip and the Berea to Umhlanga, Ballito, Westville and Pinetown. If your business doesn't have a professional website yet, you're handing enquiries to competitors who do. We're an innovative web design studio that designs every site by hand and uses AI to build faster, so Durban businesses get a site that gets found on Google and turns visitors into leads.",
-    metaTitle: 'Web Design Durban | Website Designer, Live in 3–7 Days',
+    metaTitle: 'Web Design Durban | Websites for Service Businesses',
     metaDescription:
-      'Website design for Durban, Umhlanga and Ballito businesses. Custom, mobile-first websites that get found on Google, delivered in 3–7 days. Free quote.',
+      'Website design for Durban, Umhlanga and Ballito service businesses. Custom, mobile-first sites that get found on Google, live in 3–7 days. Free quote.',
     faqs: [
       {
         q: 'How much does website design cost in Durban?',
@@ -125,14 +125,14 @@ export const locations: LocationPage[] = [
     areas: ['Centurion', 'Menlyn', 'Hatfield', 'Brooklyn', 'Waterkloof', 'Montana', 'Midrand'],
     h1: 'Web Design in Pretoria',
     heroSubheading:
-      'Professional websites for Pretoria and Centurion businesses — designed to convert, and live in 3–7 days.',
+      'Professional websites for Pretoria and Centurion service businesses — designed to convert, and live in 3–7 days.',
     servicesIntro:
       'Clear packages for Pretoria businesses — a fixed scope, an honest price, and a professional website live within the week.',
     cityBlurb:
       'Pretoria is full of established professional practices, trades and family businesses that still rely on word of mouth, which makes a strong website a real advantage. From Centurion and Menlyn to Hatfield, Brooklyn and Montana, we help Tshwane businesses look as credible online as they are in person. We are an innovative web design studio: every site is designed by hand and built with the help of AI tools, so you get a polished, fast website in days rather than months.',
-    metaTitle: 'Web Design Pretoria | Website Designer, Live in 3–7 Days',
+    metaTitle: 'Web Design Pretoria | Websites for Service Businesses',
     metaDescription:
-      'Website design for Pretoria and Centurion businesses. Custom, mobile-first websites that get found on Google, delivered in 3–7 days. Free quote in 24 hours.',
+      'Website design for Pretoria and Centurion service businesses. Custom, mobile-first sites that get found on Google, live in 3–7 days. Free quote in 24 hours.',
     faqs: [
       {
         q: 'How much does a website cost in Pretoria?',

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { Contact } from '@/components/site/contact'
 import { faqJsonLd } from '@/app/layout'
 import { Faq } from '@/components/site/faq'
@@ -12,6 +13,10 @@ import { Testimonials } from '@/components/site/testimonials'
 import { Promises } from '@/components/site/promises'
 import { WhoWeBuildFor } from '@/components/site/who-we-build-for'
 import { TrustStrip } from '@/components/site/trust-strip'
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+}
 
 export default function Page() {
   return (

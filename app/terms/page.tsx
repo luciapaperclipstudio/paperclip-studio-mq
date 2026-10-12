@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'Terms & Conditions | Paperclip Studio',
   description:
     'The terms and conditions governing your use of the Paperclip Studio website and web design services, in accordance with South African law.',
+  alternates: { canonical: '/terms' },
 }
 
 const sections: LegalSection[] = [

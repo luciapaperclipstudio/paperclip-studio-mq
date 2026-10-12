@@ -6,9 +6,10 @@ import { Reveal } from '@/components/site/reveal'
 import { SectionLabel } from '@/components/site/section-label'
 
 export const metadata: Metadata = {
-  title: 'About Paperclip Studio | AI Website Design South Africa',
+  title: 'About Paperclip Studio | Web Design for Service Businesses',
   description:
-    'Meet the innovative South African web design studio behind fast, custom websites for small businesses. Fast turnaround, honest pricing, real results.',
+    'Meet the innovative South African web design studio behind fast, custom websites for service businesses. Fast turnaround, honest pricing, real results.',
+  alternates: { canonical: '/about' },
 }
 
 const stats = [

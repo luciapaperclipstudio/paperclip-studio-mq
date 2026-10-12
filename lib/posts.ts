@@ -28,7 +28,7 @@ const posts: Post[] = [
   {
     slug: 'ai-website-builder-vs-hiring-web-designer-south-africa',
     title: 'AI Website Builder vs Hiring a Web Designer: Which is Right for Your Business?',
-    metaTitle: 'AI Website Builder vs Web Designer South Africa: Which Should You Choose?',
+    metaTitle: 'AI Website Builder vs Web Designer in SA: Which Is Right?',
     metaDescription:
       'Comparing AI website builders to hiring a web designer in South Africa — cost, quality, turnaround time, and which option actually makes sense for a small business.',
     category: 'Web Design Advice',
@@ -117,8 +117,8 @@ If you would like a straight answer about which route fits your business, we are
   },
   {
     slug: 'how-much-does-a-website-cost-in-south-africa',
-    title: 'How Much Does a Website Cost in South Africa in 2024?',
-    metaTitle: 'How Much Does a Website Cost in South Africa? (2024 Pricing Guide)',
+    title: 'How Much Does a Website Cost in South Africa?',
+    metaTitle: 'How Much Does a Website Cost in South Africa? Pricing Guide',
     metaDescription:
       "From R500 DIY builders to R80,000 agency sites — here's what South African businesses actually pay for a website, and what you get at each price point.",
     category: 'Pricing & Budgeting',
@@ -212,7 +212,7 @@ If you want a fast, professionally built site without the agency price tag, get 
     title: 'POPIA and Your Website: What South African Businesses Actually Need',
     metaTitle: 'POPIA Website Compliance in South Africa: What Your Site Needs',
     metaDescription:
-      'A plain-English guide to what POPIA requires from a small business website in South Africa — privacy policy, consent, contact forms, and the mistakes that catch people out.',
+      'A plain-English guide to what POPIA requires from a small business website in South Africa: privacy policy, consent, cookies and contact forms.',
     category: 'Compliance & Legal',
     readTime: '5 min read',
     publishedDate: '2026-07-28',
