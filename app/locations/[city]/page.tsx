@@ -11,7 +11,7 @@ import { Navbar } from '@/components/site/navbar'
 import { QuoteCta } from '@/components/site/quote-cta'
 import { Reveal } from '@/components/site/reveal'
 import { SectionLabel } from '@/components/site/section-label'
-import { plans } from '@/components/site/services'
+import { planPrice, plans } from '@/components/site/services'
 import { Testimonials } from '@/components/site/testimonials'
 import { TrustStrip } from '@/components/site/trust-strip'
 import { getLocationBySlug, locations } from '@/lib/locations'
@@ -201,15 +201,18 @@ export default async function LocationPage({
                       </p>
                       <hr className="my-5 border-t border-[#e0ddda]" />
 
-                      <div className="flex items-end gap-3">
+                      <div className="flex items-end justify-between gap-3">
                         <div>
                           <span className="block text-xs uppercase tracking-wider text-muted-foreground">
-                            Delivered in
+                            From
                           </span>
                           <span className="font-serif text-3xl italic text-charcoal">
-                            {plan.delivery}
+                            {planPrice(plan)}
                           </span>
                         </div>
+                        <span className="mb-1 inline-block bg-charcoal px-2.5 py-1 text-[11px] font-medium text-white">
+                          {plan.delivery}
+                        </span>
                       </div>
 
                       <ul className="mt-6 flex flex-col gap-2.5">

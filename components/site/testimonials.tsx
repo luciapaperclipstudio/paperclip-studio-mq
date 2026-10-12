@@ -1,36 +1,43 @@
 import { Star } from 'lucide-react'
+import { GOOGLE_MAPS_URL } from '@/app/layout'
+import { GOOGLE_RATING, REVIEWS } from '@/lib/reviews'
 import { Reveal } from './reveal'
 import { SectionLabel } from './section-label'
 
-const testimonials = [
-  {
-    quote:
-      'Lucia understood my vision from day one — translating my brand into a site that\u2019s as elegant and considered as the trips themselves.',
-    name: 'Emma',
-    role: 'Eventure Escapes',
-  },
-  {
-    quote:
-      'I have been working with Lucia for over 2 years now and I can confidently say she is the best I have dealt with in 20 years of business.',
-    name: 'Daniel',
-    role: 'Up-cycled',
-  },
-]
-
+// Two of the Google reviews describe marketing work rather than a web build,
+// so the heading talks about working with us, not about the websites.
 export function Testimonials() {
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <Reveal>
           <SectionLabel>What Clients Say</SectionLabel>
-          <h2 className="mt-4 font-serif text-3xl italic text-charcoal md:text-4xl">
-            Real results for real businesses.
-          </h2>
+          <div className="mt-4 flex flex-wrap items-end justify-between gap-4">
+            <h2 className="font-serif text-3xl italic text-charcoal md:text-4xl">
+              What clients say about working with us.
+            </h2>
+            <a
+              href={GOOGLE_MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-[#e0e0e0] bg-cream px-4 py-2 text-sm text-charcoal transition hover:border-charcoal"
+            >
+              <span className="flex gap-0.5" aria-hidden="true">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-yellow text-yellow" />
+                ))}
+              </span>
+              <span>
+                <strong className="font-semibold">{GOOGLE_RATING.score}</strong> on Google ·{' '}
+                {GOOGLE_RATING.count} reviews
+              </span>
+            </a>
+          </div>
         </Reveal>
 
-        <div className="mx-auto mt-12 grid max-w-4xl gap-6 md:grid-cols-2">
-          {testimonials.map((t, i) => (
-            <Reveal key={t.name} delay={i * 100}>
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
+          {REVIEWS.map((t, i) => (
+            <Reveal key={t.name} delay={(i % 2) * 100}>
               <blockquote className="flex h-full flex-col rounded-lg border border-[#e0e0e0] bg-cream p-7">
                 <div className="flex gap-1" aria-label="5 out of 5 stars">
                   {Array.from({ length: 5 }).map((_, s) => (
@@ -42,7 +49,7 @@ export function Testimonials() {
                 </p>
                 <footer className="mt-6 text-sm text-charcoal">
                   <span className="font-semibold">{t.name}</span>
-                  <span className="text-charcoal/60"> — {t.role}</span>
+                  <span className="text-charcoal/60"> — {t.source}</span>
                 </footer>
               </blockquote>
             </Reveal>

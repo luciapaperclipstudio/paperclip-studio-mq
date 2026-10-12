@@ -9,6 +9,8 @@ import { Portfolio } from '@/components/site/portfolio'
 import { QuoteCta } from '@/components/site/quote-cta'
 import { Services } from '@/components/site/services'
 import { Testimonials } from '@/components/site/testimonials'
+import { Promises } from '@/components/site/promises'
+import { WhoWeBuildFor } from '@/components/site/who-we-build-for'
 import { TrustStrip } from '@/components/site/trust-strip'
 
 export default function Page() {
@@ -18,9 +20,11 @@ export default function Page() {
       <main className="scroll-smooth">
         <Hero />
         <TrustStrip />
+        <WhoWeBuildFor />
         <Services />
-        <HowItWorks />
+        <Promises />
         <Portfolio />
+        <HowItWorks />
         <QuoteCta
           variant="band"
           title="Like what you see? Let's build yours."

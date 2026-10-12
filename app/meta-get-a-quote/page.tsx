@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import { ArrowRight, Check, Clock, MessageCircle, ShieldCheck, Star } from 'lucide-react'
 import { Logo } from '@/components/site/logo'
+import { GOOGLE_RATING, REVIEWS } from '@/lib/reviews'
 import { QuoteQuiz } from '@/components/site/quote-quiz'
 import { Reveal } from '@/components/site/reveal'
 
@@ -63,40 +64,6 @@ const WORK = [
   },
 ]
 
-// Verbatim excerpts from the Google Business Profile reviews. These describe
-// marketing work rather than websites, so the section is headed "about working
-// with us" and never implies the web build itself has been reviewed.
-const GOOGLE_RATING = { score: '5.0', count: 3 }
-
-// `source` drives the attribution label, kept separate from the star display:
-// Emma's is a client testimonial, not a Google review, so it is never labelled
-// as one even though her card carries the same five stars.
-const REVIEWS = [
-  {
-    quote:
-      'Lucia understood my vision from day one — translating my brand into a site that’s as elegant and considered as the trips themselves.',
-    name: 'Emma',
-    source: 'Eventure Escapes',
-  },
-  {
-    quote:
-      'I have been working with Lucia for over 2 years now and I can confidently say she is the best I have dealt with in 20 years of business.',
-    name: 'Daniel',
-    source: 'Up-cycled',
-  },
-  {
-    quote:
-      'They came in with a clear plan on what to film, how to structure the content, and how to stay consistent without it feeling forced… The difference has been huge. Our reach increased by 217%.',
-    name: 'George Kappatos',
-    source: 'Google review',
-  },
-  {
-    quote:
-      'It finally feels like everything is working together instead of being all over the place… Overall just really solid, reliable service.',
-    name: 'Eileen van der Schyff',
-    source: 'Google review',
-  },
-]
 
 // Deliberately not a star rating or review count — there are no real ones to
 // cite yet. These are all commitments we actually make, so they survive scrutiny.
