@@ -1,83 +1,12 @@
-import {
-  CalendarCheck,
-  ClipboardList,
-  Code2,
-  Eye,
-  FileText,
-  HeartHandshake,
-  Rocket,
-} from 'lucide-react'
-import {
-  HOSTING_RENEWAL,
-  REVISION_ROUNDS,
-  addons,
-  formatRand,
-} from '@/lib/packages'
+import { ProcessStepper } from './process-stepper'
 import { Reveal } from './reveal'
 import { SectionLabel } from './section-label'
 
-// The whole journey, quote to aftercare, so nobody has to guess what happens
-// next. Timings and payment terms must match the FAQ, Terms and lib/packages.
-const steps = [
-  {
-    icon: FileText,
-    when: 'Day 1',
-    name: 'Get your quote',
-    description:
-      'Answer a few quick questions. We send a fixed-price quote to your email and WhatsApp within 24 hours.',
-  },
-  {
-    icon: CalendarCheck,
-    when: 'When you’re ready',
-    name: 'Confirm and book your slot',
-    description:
-      'Accept your quote and pay the 50% deposit by EFT. We book your build into our schedule.',
-  },
-  {
-    icon: ClipboardList,
-    when: 'Your part',
-    name: 'Send your content',
-    description:
-      'A simple form for your logo, photos, services and contact details. We guide you through it, so it never feels like homework.',
-  },
-  {
-    icon: Code2,
-    when: '3–7 working days',
-    name: 'We design and build',
-    description:
-      'We design your site by hand around your business, and use AI tools to build it fast, without cutting corners.',
-  },
-  {
-    icon: Eye,
-    when: 'Your review',
-    name: 'Preview and changes',
-    description: `You get a live preview link to click through on your phone and computer. ${REVISION_ROUNDS} rounds of changes are included.`,
-  },
-  {
-    icon: Rocket,
-    when: 'Launch day',
-    name: 'Pay the balance and go live',
-    description:
-      'Once you’re happy, pay the balance. We connect your domain, make sure Google can find your site and hand over your logins.',
-  },
-  {
-    icon: HeartHandshake,
-    when: 'After launch',
-    name: 'Stay looked after',
-    description:
-      'Choose an optional care plan below, or take the keys and manage it yourself. Either way, the website is yours.',
-  },
-]
-
-const maintenance = addons.find((a) => a.id === 'maintenance')
-
-// Only prices that exist in lib/packages are shown. Adding a tier here means
-// adding it there first.
+// Prices are deliberately not shown here; they're confirmed in the quote.
 const carePlans = [
   {
     name: 'Self-managed',
-    price: 'R0',
-    period: '',
+    tag: 'Included',
     highlight: false,
     points: [
       'You get every login and file',
@@ -87,19 +16,17 @@ const carePlans = [
   },
   {
     name: 'Hosting',
-    price: formatRand(HOSTING_RENEWAL),
-    period: '/year',
+    tag: 'Optional add-on',
     highlight: false,
     points: [
       'Fast, secure hosting with SSL',
       'First year included when we set up your domain',
-      'Charged yearly from year two',
+      'Renewed yearly from year two',
     ],
   },
   {
     name: 'Monthly Care',
-    price: maintenance ? formatRand(maintenance.price) : '',
-    period: '/month',
+    tag: 'Optional add-on',
     highlight: true,
     points: [
       'Content updates when you need them',
@@ -124,31 +51,7 @@ export function HowItWorks() {
           </p>
         </Reveal>
 
-        {/* Timeline */}
-        <ol className="relative mt-14 max-w-3xl">
-          <span
-            aria-hidden="true"
-            className="absolute bottom-6 left-[21px] top-6 w-px bg-charcoal/15"
-          />
-          {steps.map((s, i) => (
-            <Reveal key={s.name} delay={(i % 4) * 60}>
-              <li className={`relative flex gap-5 ${i < steps.length - 1 ? 'pb-10' : ''}`}>
-                <span className="relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-charcoal/15 bg-white text-charcoal">
-                  <s.icon className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
-                </span>
-                <div className="pt-1">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-steel">
-                    Step {i + 1} · {s.when}
-                  </p>
-                  <h3 className="mt-1 text-lg font-semibold text-charcoal">{s.name}</h3>
-                  <p className="mt-1.5 max-w-xl text-sm leading-relaxed text-muted-foreground">
-                    {s.description}
-                  </p>
-                </div>
-              </li>
-            </Reveal>
-          ))}
-        </ol>
+        <ProcessStepper />
 
         {/* Care plans */}
         <div id="care-plans" className="mt-20">
@@ -157,7 +60,7 @@ export function HowItWorks() {
               Optional care plans
             </h3>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-              Nothing is compulsory. Add a plan when you order, or later on.
+              Nothing is compulsory. Add a plan when you order or any time later, and we&apos;ll include it in your quote.
             </p>
           </Reveal>
 
@@ -175,9 +78,8 @@ export function HowItWorks() {
                     </span>
                   ) : null}
                   <h4 className="text-base font-semibold text-charcoal">{plan.name}</h4>
-                  <p className="mt-3">
-                    <span className="font-serif text-3xl italic text-charcoal">{plan.price}</span>
-                    <span className="text-sm text-muted-foreground">{plan.period}</span>
+                  <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-steel">
+                    {plan.tag}
                   </p>
                   <ul className="mt-5 flex flex-col gap-2.5">
                     {plan.points.map((pt) => (
