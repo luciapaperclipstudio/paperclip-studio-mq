@@ -166,6 +166,30 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
               <h1 className="mt-5 font-serif text-4xl italic leading-[1.1] tracking-tight text-charcoal text-balance md:text-5xl">
                 {post.title}
               </h1>
+              {/* Visible byline. Matches the author in the Article schema above,
+                  which answer engines weight when deciding what to cite. */}
+              <a href="/about" className="mt-7 inline-flex items-center gap-3 group">
+                <img
+                  src="/founder.jpg"
+                  alt="Lucia, founder of Paperclip Studio"
+                  width={40}
+                  height={40}
+                  className="h-10 w-10 rounded-full object-cover"
+                />
+                <span className="text-sm leading-tight">
+                  <span className="block font-semibold text-charcoal group-hover:underline">
+                    By {AUTHOR.name}
+                  </span>
+                  <span className="block text-muted-foreground">
+                    {AUTHOR.jobTitle}, Paperclip Studio ·{' '}
+                    {new Date(post.publishedDate).toLocaleDateString('en-ZA', {
+                      day: 'numeric',
+                      month: 'long',
+                      year: 'numeric',
+                    })}
+                  </span>
+                </span>
+              </a>
             </div>
           </header>
 

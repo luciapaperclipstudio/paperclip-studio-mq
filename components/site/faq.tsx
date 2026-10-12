@@ -8,6 +8,10 @@ import { SectionLabel } from './section-label'
 
 const faqs = [
   {
+    q: 'What kind of businesses do you build websites for?',
+    a: 'Service-based businesses, such as trades, salons, consultants, cleaners, guesthouses, tourism and events companies, and professional practices. Our websites are built to bring in enquiries and bookings for the services you offer. We don’t build e-commerce websites or online shops, so if you need to sell products with a cart and checkout, a dedicated e-commerce platform will suit you better.',
+  },
+  {
     q: 'How long does it take to build my website?',
     a: 'Most projects are completed in 3–7 business days, depending on how quickly we receive your content.',
   },

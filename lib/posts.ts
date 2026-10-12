@@ -993,6 +993,154 @@ We design every website by hand, around your business and your customers, and us
       },
     ],
   },
+  {
+    slug: 'pages-a-service-business-website-needs',
+    title: 'What Pages Does a Service Business Website Need?',
+    metaTitle: 'What Pages Does a Service Business Website Need? (SA Guide)',
+    metaDescription:
+      'The pages a South African service business website actually needs to win enquiries, what goes on each one, and which pages you can safely skip.',
+    category: 'Web Design Advice',
+    readTime: '6 min read',
+    publishedDate: '2026-10-12',
+    excerpt:
+      'Most service businesses need five pages, not fifteen. Here is what each one is for, what to put on it, and the pages that waste your time.',
+    content: `## Fewer pages, each with a job
+
+A service business website does not need to be big. It needs every page to answer a question a customer has before they get in touch. A plumber, a salon, a consultant and a guesthouse all sell different things, but their customers ask the same questions: what do you do, can I trust you, what will it cost, and how do I book.
+
+For most service businesses, five pages answer all of that. Here they are, in order of importance.
+
+## 1. Home
+
+The home page has one job: tell a visitor in a few seconds what you do, where you do it, and what to do next. That means a clear headline (for example, electrician in Pretoria East), one or two lines on why you are the right choice, and a button to get a quote or book.
+
+Below that, give a short preview of everything else: your main services, a few photos of real work, two or three reviews, and the areas you cover. Many visitors never go past the home page, so it should work as a complete pitch on its own.
+
+## 2. Services
+
+List each service you offer in plain language, the way customers describe it. For each one, explain what is included, who it is for, and, if you can, a starting price or price range. If one service brings in most of your work, consider giving it its own page, because a page focused on one service has a much better chance of ranking on Google for that search.
+
+## 3. About
+
+People hire people. The about page is where a stranger decides you are real and trustworthy. Show your face or your team, explain how long you have been doing this, and mention any qualifications, registrations or memberships. Keep it about how you help your customers, not a long company history.
+
+## 4. Work or gallery
+
+Proof beats promises. Show real photos of jobs you have done, before and after shots, or examples of your work with a line of context for each one. Stock photos actively hurt here, because customers can tell, and it makes them wonder what you are hiding.
+
+## 5. Contact
+
+Make getting in touch effortless. Include a short form, your phone number, a WhatsApp button, your email, your operating hours and the areas you serve. If customers visit you, add a map. Ask only for what you need to reply. Every extra field on a form loses enquiries.
+
+## Pages worth adding later
+
+- Frequently asked questions, which answer common worries and help you appear in Google's answer boxes.
+- A page for each area you serve, if you work across several towns or suburbs.
+- A blog, if you will genuinely write useful articles for your customers every month or two.
+
+## Pages you can skip
+
+You do not need a news page you will never update, a separate testimonials page nobody clicks (put reviews on the pages people already visit), or a sitemap page for humans. Each unused page makes the site feel neglected.
+
+## Putting it together
+
+Five well-built pages with clear writing, real photos and an obvious next step will bring in more work than a large site nobody planned. That is exactly the kind of website we build for service businesses at Paperclip Studio, usually live within a week.`,
+    faqs: [
+      {
+        q: 'How many pages should a small business website have?',
+        a: 'Most service businesses need five: Home, Services, About, Work or Gallery, and Contact. Add FAQ, area pages or a blog later only if you will use them properly.',
+      },
+      {
+        q: 'What should be on a service business home page?',
+        a: 'A clear headline saying what you do and where, one clear call to action such as Get a Quote, a summary of your main services, real photos of your work, a few reviews and the areas you serve.',
+      },
+      {
+        q: 'Should each service have its own page?',
+        a: 'For your main services, yes. A page focused on one service has a much better chance of ranking on Google for that search than a single page listing everything.',
+      },
+      {
+        q: 'Do I need a blog on my business website?',
+        a: 'Only if you will publish useful articles regularly. A blog that has not been updated in a year looks neglected. If you will not keep it up, an FAQ section is a better use of your time.',
+      },
+    ],
+  },
+  {
+    slug: 'service-website-vs-ecommerce-store',
+    title: 'Service Website or Online Shop: Which Does Your Business Need?',
+    metaTitle: 'Service Business Website vs E-commerce Store: Which Do You Need?',
+    metaDescription:
+      'The difference between a website for a service business and an e-commerce store, why they are built differently, and how to tell which one your business needs.',
+    category: 'Web Design Advice',
+    readTime: '5 min read',
+    publishedDate: '2026-10-12',
+    excerpt:
+      'A website that books plumbing jobs and a website that sells shoes are built for completely different jobs. Here is how to tell which one you need.',
+    content: `## Two different kinds of website
+
+From the outside, all websites look roughly the same: a menu, some pages, some photos. Underneath, a service business website and an online shop are built for completely different jobs.
+
+A service website exists to start a conversation. Its goal is an enquiry, a booking request or a phone call. The sale happens afterwards, once you have spoken to the customer and agreed on the work.
+
+An e-commerce store exists to complete a sale without any conversation at all. The visitor finds a product, adds it to a cart, pays and waits for delivery.
+
+## What a service website needs
+
+Because the goal is an enquiry, a service website is built around trust and clarity:
+
+- A clear explanation of what you do and the areas you serve.
+- Proof that you are good: real photos, reviews, qualifications.
+- Starting prices or price ranges, so people know roughly what to expect.
+- An easy way to get in touch: a short form, a WhatsApp button, a phone number.
+- Strong local search setup, because most customers search for services near them.
+
+It usually has a handful of pages and changes slowly, because your services do not change every week.
+
+## What an online shop needs
+
+An e-commerce store has a very different list:
+
+- A product catalogue, often with hundreds of items, sizes and variants.
+- A shopping cart and a secure checkout.
+- A payment gateway, such as PayFast, Yoco or Ozow in South Africa.
+- Stock management, shipping rates and delivery tracking.
+- Order emails, returns and refunds.
+
+Running a store is closer to running software than publishing a website. It needs constant updates to products, prices and stock, and the platform carries ongoing monthly costs.
+
+## Which one do you need?
+
+Ask how a customer pays you today.
+
+If you quote, book or agree the work first and get paid after a conversation, you need a service website. That covers trades, salons, consultants, cleaners, photographers, guesthouses, tour operators, event planners and most professional practices.
+
+If customers pick a product and pay up front without speaking to you, you need an online shop.
+
+Some businesses sit in between, for example a salon that also sells a few hair products. In that case, start with a service website that brings in bookings, and add a simple way to order a small number of products later if there is real demand.
+
+## What we build
+
+At Paperclip Studio we build websites for service-based businesses, because that is where we can make the biggest difference: clear, fast sites designed to turn visitors into enquiries and bookings. We do not build e-commerce stores. If you need to sell products online with a full cart and checkout, a dedicated e-commerce platform such as Shopify or WooCommerce, set up by a specialist, will serve you better.
+
+If your business sells a service, we would love to help. Get a free quote and we will come back to you within 24 hours.`,
+    faqs: [
+      {
+        q: 'What is the difference between a service website and an e-commerce website?',
+        a: 'A service website is built to get enquiries and bookings, with the sale agreed afterwards. An e-commerce website is built to sell products directly, with a cart, checkout, payments and stock management.',
+      },
+      {
+        q: 'Does Paperclip Studio build e-commerce websites?',
+        a: 'No. Paperclip Studio builds websites for service-based businesses such as trades, salons, consultants, guesthouses and professional practices. For online shops, a dedicated e-commerce platform and specialist is a better fit.',
+      },
+      {
+        q: 'Do I need an online shop for my service business?',
+        a: 'Usually not. If you quote or book work before getting paid, a service website that makes it easy to enquire will bring in more business than a shop.',
+      },
+      {
+        q: 'Can I add online payments to a service website?',
+        a: 'Simple options such as a payment link for deposits can work alongside a service website. A full cart and checkout for many products is an e-commerce build, which needs a different platform.',
+      },
+    ],
+  },
 ]
 
 // Newest first, based on publishedDate.

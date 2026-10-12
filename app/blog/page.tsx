@@ -55,6 +55,7 @@ export default function BlogPage() {
                           {post.category}
                         </span>
                         <span>{post.readTime}</span>
+                        <span>By Lucia</span>
                       </div>
                       <h2 className="mt-5 font-serif text-2xl italic text-charcoal text-balance">
                         {post.title}

@@ -14,6 +14,10 @@ conversion tracking. Add-on services include logo design, POPIA compliance
 setup, Google Business Profile setup, tracking and pixel installation, domain
 and hosting setup, and monthly maintenance.
 
+The studio works only with service-based businesses (trades, salons,
+consultants, guesthouses, tourism, events, professional practices). It does
+not build e-commerce websites or online shops.
+
 Pricing is quoted per project rather than published. Every quote is a fixed
 price against a defined scope, with a 50% deposit and the balance on delivery.
 Two rounds of revisions are included.
@@ -33,6 +37,8 @@ Two rounds of revisions are included.
 - [Landing page or full website?](https://www.paperclipstudio.co.za/blog/landing-page-vs-website): What each one is for and how businesses use both.
 - [What a tradesperson's website needs to win more jobs](https://www.paperclipstudio.co.za/blog/website-for-tradespeople-south-africa): One-tap contact, services, areas covered and proof, for South African trades.
 - [What is AI-assisted web design?](https://www.paperclipstudio.co.za/blog/what-is-ai-assisted-web-design): How a studio uses AI tools in practice and what is still done by a person.
+- [What pages does a service business website need?](https://www.paperclipstudio.co.za/blog/pages-a-service-business-website-needs): The five pages that win enquiries and what goes on each.
+- [Service website or online shop?](https://www.paperclipstudio.co.za/blog/service-website-vs-ecommerce-store): How service websites and e-commerce stores differ, and which a business needs.
 
 ## Work
 

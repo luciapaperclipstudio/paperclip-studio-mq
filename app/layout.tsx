@@ -257,6 +257,14 @@ export const faqJsonLd = {
     mainEntity: [
       {
         '@type': 'Question',
+        name: 'What kind of businesses do you build websites for?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Service-based businesses, such as trades, salons, consultants, cleaners, guesthouses, tourism and events companies, and professional practices. Our websites are built to bring in enquiries and bookings for the services you offer. We don’t build e-commerce websites or online shops, so if you need to sell products with a cart and checkout, a dedicated e-commerce platform will suit you better.',
+        },
+      },
+      {
+        '@type': 'Question',
         name: 'How long does it take to build my website?',
         acceptedAnswer: {
           '@type': 'Answer',
