@@ -5,7 +5,6 @@ import { Check, CheckCircle2, X } from 'lucide-react'
 import { faqJsonLd } from '@/app/layout'
 import { Faq } from '@/components/site/faq'
 import { Footer } from '@/components/site/footer'
-import { BrowserMock } from '@/components/site/hero'
 import { HowItWorks } from '@/components/site/how-it-works'
 import { Navbar } from '@/components/site/navbar'
 import { QuoteCta } from '@/components/site/quote-cta'
@@ -108,16 +107,16 @@ export default async function LocationPage({
       <main className="scroll-smooth">
         {/* a) Hero */}
         <section className="bg-cream">
-          <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-5 md:py-28">
-            <Reveal className="md:col-span-3">
+          <div className="mx-auto max-w-4xl px-6 py-20 text-center md:py-28">
+            <Reveal>
               <SectionLabel>Web Design Studio · {location.city}</SectionLabel>
               <h1 className="mt-5 font-serif text-[2.75rem] italic leading-[1.05] tracking-tight text-charcoal text-balance md:text-6xl">
                 {location.h1}
               </h1>
-              <p className="mt-4 max-w-xl font-serif text-xl italic font-light leading-snug text-charcoal/70 text-balance md:text-2xl">
+              <p className="mx-auto mt-4 max-w-2xl font-serif text-xl italic font-light leading-snug text-charcoal/70 text-balance md:text-2xl">
                 {location.heroSubheading}
               </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
                 <a
                   href="/get-a-quote"
                   className="rounded bg-steel px-6 py-3 text-center text-sm font-semibold text-charcoal transition-transform hover:-translate-y-0.5 hover:shadow-md"
@@ -131,7 +130,7 @@ export default async function LocationPage({
                   See Packages
                 </a>
               </div>
-              <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
                 {['Delivered in 3–7 days', 'Mobile-first', `Built for ${location.city} businesses`].map(
                   (t) => (
                     <span key={t} className="inline-flex items-center gap-1.5">
@@ -143,28 +142,6 @@ export default async function LocationPage({
               </div>
             </Reveal>
 
-            <Reveal className="md:col-span-2" delay={150}>
-              <div className="relative rounded-xl bg-gradient-to-br from-cream to-white p-6 shadow-[0_24px_60px_-24px_rgba(51,51,51,0.35)]">
-                <BrowserMock
-                  label="KLIPKOP Gallery · Concept"
-                  tone="#dce7ef"
-                  image="/portfolio/klipkop-desktop.jpeg"
-                  className="w-[88%] -rotate-2"
-                />
-                <BrowserMock
-                  label="Eventure Escapes · Luxury Travel"
-                  tone="#f0e7c8"
-                  image="/portfolio/eventure-escapes-desktop.jpeg"
-                  className="-mt-6 ml-auto w-[82%] rotate-1"
-                />
-                <BrowserMock
-                  label="Torque & Co. · Concept"
-                  tone="#dbe4ee"
-                  image="/portfolio/torque-and-co-desktop.jpeg"
-                  className="-mt-6 w-[74%] -rotate-1"
-                />
-              </div>
-            </Reveal>
           </div>
         </section>
 
