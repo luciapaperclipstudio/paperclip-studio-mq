@@ -23,7 +23,8 @@ export type Post = {
 // Post content lives here. Add entries to this array to publish.
 // Content convention: lines starting with "## " become <h2>, lines starting
 // with "- " become list items, everything else is a paragraph. Wrap text in
-// **double asterisks** for bold, inside paragraphs and list items.
+// **double asterisks** for bold and [text](/path) for links to other pages on
+// the site, inside paragraphs and list items.
 const posts: Post[] = [
   {
     slug: 'ai-website-builder-vs-hiring-web-designer-south-africa',
@@ -100,7 +101,7 @@ In practice that means a professional, custom-built site in days rather than wee
 Cutting through all of it, here is a straightforward way to decide.
 
 - If you need something live in the next 24 hours and have zero budget, use a DIY AI builder. It will not be remarkable, but it will get you online today, and you can upgrade later.
-- If you want a genuinely professional result but cannot justify R15,000 or more, an AI-assisted studio is almost certainly your best value. You get the strategy and quality of a designer at a fraction of the traditional cost and timeline.
+- If you want a genuinely professional result but cannot justify R15,000 or more, an [AI-assisted studio](/blog/what-is-ai-assisted-web-design) is almost certainly your best value. You get the strategy and quality of a designer at a fraction of the traditional cost and timeline.
 - If you are a large business with complex needs — multiple stakeholders, custom functionality, a big brand to protect — a traditional agency is worth the higher investment for the capacity and accountability it brings.
 
 Most small South African businesses land squarely in the middle option, and that is not a coincidence. It is the point where quality and affordability finally overlap.
@@ -113,7 +114,7 @@ An AI builder, a freelance designer, an AI-assisted studio, a full agency — th
 
 So do not ask "should I use AI or hire a designer?" Ask "what do I need this website to do, and which option gets me there best?" Answer that honestly, and the decision usually makes itself.
 
-If you would like a straight answer about which route fits your business, we are happy to help — even if that turns out to be a simple builder rather than us. Get a free quote and we will point you in the right direction.`,
+If you would like a straight answer about which route fits your business, we are happy to help — even if that turns out to be a simple builder rather than us. [Get a free quote](/get-a-quote) and we will point you in the right direction.`,
   },
   {
     slug: 'how-much-does-a-website-cost-in-south-africa',
@@ -136,7 +137,7 @@ Below we break down the four main routes South African businesses take, what eac
 
 ## Option 1: DIY website builders (R0–R500/month)
 
-Platforms like Wix, Squarespace, and Weebly let you build a site yourself using drag-and-drop templates. On paper this is the cheapest option, with free tiers and paid plans usually landing between R150 and R500 per month once you add a custom domain and remove the platform branding.
+Platforms like Wix, Squarespace, and Weebly let you build a site yourself using drag-and-drop templates. On paper this is the cheapest option, with free tiers and paid plans usually landing between R150 and R500 per month once you add a [custom domain](/blog/who-owns-your-website-domain-and-hosting) and remove the platform branding.
 
 The appeal is obvious: low upfront cost and full control. The catch is what it costs you in other ways.
 
@@ -149,7 +150,7 @@ DIY works if you are pre-revenue, testing an idea, or genuinely enjoy the tinker
 
 ## Option 2: Freelance web designer (R3,000–R15,000 once-off)
 
-Hiring a freelance web designer is the classic middle ground, and for good reason. Typical South African freelancer rates for a small business site land somewhere between R3,000 and R15,000 as a once-off, depending on the number of pages and the designer's experience.
+Hiring a [freelance web designer](/blog/how-to-choose-a-web-designer-south-africa) is the classic middle ground, and for good reason. Typical South African freelancer rates for a small business site land somewhere between R3,000 and R15,000 as a once-off, depending on the number of pages and the designer's experience.
 
 The upside is a custom-built site and a real human who understands your brief. The trade-off is that quality varies enormously. A great freelancer is worth every rand; a cheap one can leave you with a half-finished site and unanswered WhatsApps.
 
@@ -245,7 +246,7 @@ The practical version: keep a separate, unticked opt-in for marketing, and honou
 
 ## Cookies and analytics
 
-If you run Google Analytics, a Meta Pixel, or any advertising tracking, you are collecting information about visitors before they have typed anything. That needs disclosing in your privacy policy, and in most cases it needs a cookie notice that lets people decline non-essential tracking.
+If you run Google Analytics, a Meta Pixel, or any advertising tracking, you are collecting information about visitors before they have typed anything. That needs disclosing in your privacy policy, and in most cases it needs a [cookie notice](/privacy-policy#cookies) that lets people decline non-essential tracking.
 
 A cookie banner that offers no way to say no is not consent. It is a notification.
 
@@ -263,7 +264,7 @@ We include POPIA setup as an add-on when we build a site, because it is far easi
 
 One caveat worth stating plainly: this article is general guidance, not legal advice. If you process sensitive information, handle children's data, or move personal information outside South Africa, talk to someone qualified.
 
-Get a free quote and we will tell you what your site needs.`,
+[Get a free quote](/get-a-quote) and we will tell you what your site needs.`,
     faqs: [
       {
         q: 'Does POPIA apply to a small business website?',
@@ -340,11 +341,11 @@ Two things to avoid. Do not buy reviews, because Google is good at spotting them
 
 ## Where your website fits in
 
-Your profile links to your website, and Google looks at that site when deciding how much to trust the listing. A site that clearly states where you operate, what you do, and how to contact you reinforces the profile. A site with no location mentioned anywhere gives Google nothing to work with.
+Your profile links to your website, and Google looks at that site when deciding how much to trust the listing. A site that clearly states [where you operate, what you do, and how to contact you](/blog/pages-a-service-business-website-needs) reinforces the profile. A site with no location mentioned anywhere gives Google nothing to work with.
 
 The two work together: the profile wins you the visibility, the website converts it.
 
-We set up and optimise Google Business Profiles as an add-on when we build a site, including the location signals that connect the two. Get a free quote if you would like it handled.`,
+We set up and optimise Google Business Profiles as an add-on when we build a site, including the location signals that connect the two. [Get a free quote](/get-a-quote) if you would like it handled.`,
     faqs: [
       {
         q: 'How do I get my business on Google Maps in South Africa?',
@@ -400,13 +401,13 @@ The trouble is that a page is a room in somebody else's building.
 
 **You do not own it.** Meta decides who sees your posts, and what your page is allowed to say and do. Pages get restricted, mistakenly flagged, or hacked, and there is often no phone number to call. Businesses lose years of content and followers overnight, and the only real defence is having somewhere else that is yours.
 
-**Almost nobody finds you on Google.** This is the big one. When someone types plumber near me or guest house in Hermanus, Google shows websites and Google Business Profiles. Facebook pages rank poorly for those searches, if at all. Every one of those people is ready to buy right now, and they are not seeing you.
+**Almost nobody finds you on Google.** This is the big one. When someone types plumber near me or guest house in Hermanus, Google shows websites and [Google Business Profiles](/blog/get-your-business-on-google-maps-south-africa). Facebook pages rank poorly for those searches, if at all. Every one of those people is ready to buy right now, and they are not seeing you.
 
 **It looks less established.** Fair or not, a company with only a Facebook page reads as smaller and newer than one with a proper site. When someone is deciding who to trust with a job worth thousands of rands, that impression matters.
 
 **You cannot control the journey.** A page puts your phone number next to your competitors adverts, unrelated posts, and whatever the algorithm decides to show next. A website has one job and no distractions.
 
-**You learn almost nothing.** You can see likes and reach. You cannot see that eleven people looked at your pricing and only one enquired, which is the kind of thing that tells you what to fix.
+**You learn almost nothing.** You can see likes and reach. You cannot see that eleven people looked at your pricing and only one enquired, which is the kind of thing that tells you [what to fix](/blog/why-is-my-website-not-getting-enquiries).
 
 ## What changes when you have both
 
@@ -434,7 +435,7 @@ Ask yourself one question: if someone hears your business name from a friend and
 
 If the answer is nothing, or a Facebook page that has not been posted to in three weeks, that is the gap. Every person who does that search and finds nothing is a customer who was already interested and went elsewhere.
 
-You do not need anything elaborate. For most service businesses a single well built page that says what you do, shows the work, proves you are real, and makes it easy to get in touch will do more than a large site nobody planned properly.`,
+You do not need anything elaborate. For most service businesses a [single well built page](/blog/landing-page-vs-website) that says what you do, shows the work, proves you are real, and makes it easy to get in touch will do more than a large site nobody planned properly.`,
     faqs: [
       {
         q: 'Do I need a website if I already have a Facebook page?',
@@ -471,7 +472,7 @@ A website that produces no enquiries has one of two problems, and they need comp
 
 Guessing wastes months. Open Google Analytics, or your hosting dashboard if that is all you have, and look at how many people visited in the last thirty days.
 
-Under roughly a hundred visitors a month is a traffic problem. Several hundred visitors and almost no enquiries is a conversion problem. Fixing the wrong one is why so many businesses redesign a site that was never getting visitors in the first place.
+Under roughly a hundred visitors a month is a traffic problem. Several hundred visitors and almost no enquiries is a conversion problem. Fixing the wrong one is why so many businesses [redesign a site](/blog/signs-your-business-website-needs-a-redesign) that was never getting visitors in the first place.
 
 ## If almost nobody is visiting
 
@@ -510,7 +511,7 @@ If they cannot answer all three, that is your problem, and no amount of traffic 
 In order, because effort should follow impact:
 
 - Make sure Google has indexed the site at all.
-- Claim and complete your Google Business Profile.
+- Claim and complete your [Google Business Profile](/blog/get-your-business-on-google-maps-south-africa).
 - Put one clear action at the top of the home page, visible on a phone without scrolling.
 - Add real photos of real work, and any genuine reviews you have.
 - Cut your enquiry form down to the fields you truly need.
@@ -559,7 +560,7 @@ If that search turns up nothing, an outdated page, or a phone number that no lon
 
 An online presence is not one thing. It is a small set of places that together answer a customer's questions before they contact you. For most local businesses, three pieces do almost all of the work.
 
-- A Google Business Profile, so you appear on Google Maps and in local search results.
+- A [Google Business Profile](/blog/get-your-business-on-google-maps-south-africa), so you appear on Google Maps and in local search results.
 - A website you own, which explains what you do, shows your work, and makes it easy to enquire.
 - Genuine reviews, which give strangers a reason to trust you.
 
@@ -579,7 +580,7 @@ A Google profile gets you noticed. A website does the convincing.
 
 It is the one place online where you control everything: what you say, how your work is shown, what questions get answered, and what the visitor is asked to do next. It cannot be restricted by a platform, it does not show your competitors next to you, and it ranks in Google searches in a way social pages do not.
 
-A website also makes a small business look established. Fair or not, someone deciding who to trust with a job worth thousands of rands takes a proper site more seriously than a Facebook page or a WhatsApp number alone.
+A website also makes a small business look established. Fair or not, someone deciding who to trust with a job worth thousands of rands takes a proper site more seriously than a [Facebook page](/blog/do-i-need-a-website-if-i-have-facebook) or a WhatsApp number alone.
 
 It does not need to be large. For most service businesses a clear, fast site that says what you do, where you work, shows real examples and makes contacting you easy will outperform a big site nobody planned properly.
 
@@ -601,7 +602,7 @@ If you have none of this yet, do it in this order:
 
 - Claim and fully complete your Google Business Profile, with real photos and accurate hours.
 - Ask your last ten happy customers for a Google review.
-- Get a simple, mobile-friendly website on your own domain name.
+- Get a simple, mobile-friendly website on your [own domain name](/blog/who-owns-your-website-domain-and-hosting).
 - Link them all together, so your profile points to your site and your site points back to your reviews.
 
 None of it needs to be perfect on day one. It needs to exist, be accurate, and make it easy for the next person who hears your name to say yes.`,
@@ -651,7 +652,7 @@ Your website is not one thing you buy. It is three separate things, and you shou
 - The hosting, which is the server where your website's files actually live.
 - The website itself, meaning its content, design and the logins used to edit it.
 
-Of the three, the domain matters most. Hosting can be moved and a website can be rebuilt, but if you lose your domain you lose your address, your Google rankings and very often your email, all at once.
+Of the three, the domain matters most. Hosting can be moved and a [website can be rebuilt](/blog/signs-your-business-website-needs-a-redesign), but if you lose your domain you lose your address, your Google rankings and very often your email, all at once.
 
 ## How to check who owns your domain
 
@@ -680,7 +681,7 @@ Turn on two-factor authentication wherever it is offered. Domains do get stolen,
 
 ## What to ask before hiring a web designer
 
-Before you sign, ask these questions and get the answers in writing:
+Before you sign, [ask these questions](/blog/how-to-choose-a-web-designer-south-africa) and get the answers in writing:
 
 - Will the domain be registered in my business's name?
 - Will I get my own login to the domain and hosting?
@@ -762,13 +763,13 @@ If you can see visitors in your analytics but enquiries are rare, the site is lo
 
 ## Fix it or start again?
 
-Not every one of these needs a new website. Out of date information and a missing Google Business Profile can be fixed in an afternoon. But if your site fails on phones, cannot be updated, and was never built with search in mind, patching it usually costs more in the long run than rebuilding it properly.
+Not every one of these needs a new website. Out of date information and a missing [Google Business Profile](/blog/get-your-business-on-google-maps-south-africa) can be fixed in an afternoon. But if your site fails on phones, cannot be updated, and was never built with search in mind, patching it usually costs more in the long run than rebuilding it properly.
 
-A modern rebuild does not have to be a drawn-out project either. A focused business website can be designed, written and launched in about a week, and from day one it will be fast, work properly on phones and be set up to be found on Google.
+A modern rebuild does not have to be a drawn-out project either. A focused business website can be designed, written and [launched in about a week](/blog/how-long-does-it-take-to-build-a-website), and from day one it will be fast, work properly on phones and be set up to be found on Google.
 
 ## The next step
 
-If you recognised your website in this list, it is worth finding out what a fix would actually involve. Tell us a little about your business and we will come back with a clear, fixed-price quote, usually within 24 hours. There is no obligation, and if a small fix is all you need, we will say so.`,
+If you recognised your website in this list, it is worth finding out what a fix would actually involve. Tell us a little about your business and we will come back with a clear, [fixed-price quote](/get-a-quote), usually within 24 hours. There is no obligation, and if a small fix is all you need, we will say so.`,
     faqs: [
       {
         q: 'How do I know if my website needs a redesign?',
@@ -807,7 +808,7 @@ If you recognised your website in this list, it is worth finding out what a fix 
       'A landing page and a website are not small and large versions of the same thing. They do different jobs. Here is how to choose the right one for where your business is now.',
     content: `## Two different jobs
 
-A landing page is a single page with one goal, usually getting the visitor to enquire, book or buy. A full website is several pages that explain your whole business: what you do, who you are, your work, and how to reach you.
+A landing page is a single page with one goal, usually getting the visitor to enquire, book or buy. A [full website](/blog/pages-a-service-business-website-needs) is several pages that explain your whole business: what you do, who you are, your work, and how to reach you.
 
 People often think of a landing page as a cheaper website. It is better to think of it as a different tool. One is built to convert a specific visitor. The other is built to be found and to answer every question a customer might have.
 
@@ -841,7 +842,7 @@ The most effective setup for businesses that advertise is often both together. T
 
 Ask yourself where most of your customers will come from in the next six months. If the answer is adverts, start with a landing page. If it is Google searches, referrals checking you out, or a mix of services, start with a full website. If it is both, plan for both, even if you build one first.
 
-Not sure which fits? When you request a quote, tell us how you find customers now and we will recommend the option that suits you, including the smaller one if that is all you need.`,
+Not sure which fits? When you [request a quote](/get-a-quote), tell us how you find customers now and we will recommend the option that suits you, including the smaller one if that is all you need.`,
     faqs: [
       {
         q: 'What is the difference between a landing page and a website?',
@@ -900,13 +901,13 @@ A short "how it works" section takes the uncertainty out of booking. For example
 
 ## 6. A Google Business Profile that matches
 
-For local trades, your Google Business Profile often brings in more calls than the website itself. Make sure the name, phone number, service areas and hours match your website exactly, and keep asking happy customers for reviews.
+For local trades, your [Google Business Profile](/blog/get-your-business-on-google-maps-south-africa) often brings in more calls than the website itself. Make sure the name, phone number, service areas and hours match your website exactly, and keep asking happy customers for reviews.
 
 ## Seeing it in practice
 
-To show what this looks like, we designed a concept website for a fictional mechanic in Cape Town called Torque & Co. Every feature on this list is built in, from the WhatsApp booking button to the service prices and the suburbs covered. You can see it in our Torque & Co. case study on the Our Work page.
+To show what this looks like, we designed a concept website for a fictional mechanic in Cape Town called [Torque & Co.](/work/torque-and-co) Every feature on this list is built in, from the WhatsApp booking button to the service prices and the suburbs covered. You can see it in our Torque & Co. case study on the Our Work page.
 
-If you run a trade business and your website is not bringing in jobs, we build sites like this for South African tradespeople, usually live within a week.`,
+If you run a trade business and your website is [not bringing in jobs](/blog/why-is-my-website-not-getting-enquiries), we build sites like this for South African tradespeople, usually live within a week.`,
     faqs: [
       {
         q: 'Does a tradesperson need a website?',
@@ -939,7 +940,7 @@ If you run a trade business and your website is not bringing in jobs, we build s
       'AI-assisted web design is not a robot building your website. It is a designer using AI tools to remove the slow parts of the job. Here is what that means in practice.',
     content: `## Not the same as an AI website builder
 
-When people hear AI and websites together, they usually picture a website builder: type in your business name, press a button, and get a generic site in seconds. That is one use of AI, and it has real limits.
+When people hear AI and websites together, they usually picture a [website builder](/blog/ai-website-builder-vs-hiring-web-designer-south-africa): type in your business name, press a button, and get a generic site in seconds. That is one use of AI, and it has real limits.
 
 AI-assisted web design is something different. A person still leads the project, makes the design decisions and is responsible for the result. AI tools are used along the way to do the repetitive, time-consuming parts faster.
 
@@ -973,7 +974,7 @@ For a business owner, AI-assisted design mostly shows up in two places: speed an
 
 ## How we use it at Paperclip Studio
 
-We design every website by hand, around your business and your customers, and use AI tools to build it faster. That is how we deliver custom websites in 3 to 7 days. You get a real designer making real decisions, without paying for weeks of manual production. If you want to see the range that makes possible, have a look at our work, from a luxury travel site to editorial and trade concept designs.`,
+We design every website by hand, around your business and your customers, and use AI tools to build it faster. That is how we deliver custom websites in [3 to 7 days](/blog/how-long-does-it-take-to-build-a-website). You get a real designer making real decisions, without paying for weeks of manual production. If you want to see the range that makes possible, [have a look at our work](/work), from a luxury travel site to editorial and trade concept designs.`,
     faqs: [
       {
         q: 'What is AI-assisted web design?',
@@ -1018,7 +1019,7 @@ Below that, give a short preview of everything else: your main services, a few p
 
 ## 2. Services
 
-List each service you offer in plain language, the way customers describe it. For each one, explain what is included, who it is for, and, if you can, a starting price or price range. If one service brings in most of your work, consider giving it its own page, because a page focused on one service has a much better chance of ranking on Google for that search.
+List each service you offer in plain language, the way customers describe it. For each one, explain what is included, who it is for, and, if you can, a starting price or [price range](/blog/how-much-does-a-website-cost-in-south-africa). If one service brings in most of your work, consider giving it its own page, because a page focused on one service has a much better chance of ranking on Google for that search.
 
 ## 3. About
 
@@ -1035,7 +1036,7 @@ Make getting in touch effortless. Include a short form, your phone number, a Wha
 ## Pages worth adding later
 
 - Frequently asked questions, which answer common worries and help you appear in Google's answer boxes.
-- A page for each area you serve, if you work across several towns or suburbs.
+- A page for each area you serve (like our [Cape Town](/locations/web-designer-cape-town) page), if you work across several towns or suburbs.
 - A blog, if you will genuinely write useful articles for your customers every month or two.
 
 ## Pages you can skip
@@ -1044,7 +1045,7 @@ You do not need a news page you will never update, a separate testimonials page 
 
 ## Putting it together
 
-Five well-built pages with clear writing, real photos and an obvious next step will bring in more work than a large site nobody planned. That is exactly the kind of website we build for service businesses at Paperclip Studio, usually live within a week.`,
+Five well-built pages with clear writing, real photos and an obvious next step will bring in more work than a large site nobody planned. That is exactly the kind of website we build for [service businesses](/get-a-quote) at Paperclip Studio, usually live within a week.`,
     faqs: [
       {
         q: 'How many pages should a small business website have?',
@@ -1089,9 +1090,9 @@ Because the goal is an enquiry, a service website is built around trust and clar
 
 - A clear explanation of what you do and the areas you serve.
 - Proof that you are good: real photos, reviews, qualifications.
-- Starting prices or price ranges, so people know roughly what to expect.
+- Starting prices or [price ranges](/blog/how-much-does-a-website-cost-in-south-africa), so people know roughly what to expect.
 - An easy way to get in touch: a short form, a WhatsApp button, a phone number.
-- Strong local search setup, because most customers search for services near them.
+- Strong [local search setup](/blog/get-your-business-on-google-maps-south-africa), because most customers search for services near them.
 
 It usually has a handful of pages and changes slowly, because your services do not change every week.
 
@@ -1121,7 +1122,7 @@ Some businesses sit in between, for example a salon that also sells a few hair p
 
 At Paperclip Studio we build websites for service-based businesses, because that is where we can make the biggest difference: clear, fast sites designed to turn visitors into enquiries and bookings. We do not build e-commerce stores. If you need to sell products online with a full cart and checkout, a dedicated e-commerce platform such as Shopify or WooCommerce, set up by a specialist, will serve you better.
 
-If your business sells a service, we would love to help. Get a free quote and we will come back to you within 24 hours.`,
+If your business sells a service, we would love to help. [Get a free quote](/get-a-quote) and we will come back to you within 24 hours.`,
     faqs: [
       {
         q: 'What is the difference between a service website and an e-commerce website?',
@@ -1154,7 +1155,7 @@ If your business sells a service, we would love to help. Get a free quote and we
       'Anything from a weekend to three months. The real answer depends on who builds it and how ready your content is. Here is what to expect.',
     content: `## The short answer
 
-A small service business website in South Africa usually takes between **one week and three months** to build. A focused studio can deliver a one-page or five-page site in 3 to 7 working days once it has your content. Larger agencies typically take 4 to 12 weeks, and a DIY builder takes as long as your free evenings allow.
+A small service business website in South Africa usually takes between **one week and three months** to build. A focused studio can deliver a one-page or five-page site in 3 to 7 working days once it has your content. Larger agencies typically take 4 to 12 weeks, and a [DIY builder](/blog/ai-website-builder-vs-hiring-web-designer-south-africa) takes as long as your free evenings allow.
 
 The biggest factor is rarely the design or the code. It is how quickly the content arrives: your logo, photos, service details and the words on each page.
 
@@ -1177,7 +1178,7 @@ None of these is wrong. A large site with booking systems and many pages genuine
 
 **Endless revision rounds.** Changes are normal, but a process with a fixed number of rounds keeps things moving.
 
-**Domain and email problems.** Not knowing who controls your domain, or waiting for a previous designer to hand it over, can hold up launch day.
+**Domain and email problems.** Not knowing [who controls your domain](/blog/who-owns-your-website-domain-and-hosting), or waiting for a previous designer to hand it over, can hold up launch day.
 
 ## How can you get your website built faster?
 
@@ -1185,11 +1186,11 @@ None of these is wrong. A large site with booking systems and many pages genuine
 - Write down the questions customers always ask you. They make excellent website copy.
 - Decide on one person who approves the work.
 - Know who controls your domain name and have the login ready.
-- Choose a designer with a clear, written process and timeline.
+- [Choose a designer](/blog/how-to-choose-a-web-designer-south-africa) with a clear, written process and timeline.
 
 ## Is a fast website a worse website?
 
-Not necessarily. Speed comes from process, not shortcuts. A studio that builds websites for service businesses every week already knows what pages you need, what to put on them and how to set them up for Google. Modern tools, including AI-assisted building, remove a lot of the slow production work, while the design decisions are still made by a person.
+Not necessarily. Speed comes from process, not shortcuts. A studio that builds websites for service businesses every week already knows what pages you need, what to put on them and how to set them up for Google. Modern tools, including [AI-assisted building](/blog/what-is-ai-assisted-web-design), remove a lot of the slow production work, while the design decisions are still made by a person.
 
 What matters is that the site is designed around your business, works properly on phones, loads quickly and is set up to be found on Google. A good site in a week beats a perfect site in six months that you were losing enquiries without.
 
@@ -1228,7 +1229,7 @@ Most of our websites go live within 3 to 7 working days of receiving your conten
       'Most bad website experiences could have been avoided with a few questions before signing. Here are the ten to ask, and the answers you want to hear.',
     content: `## The short answer
 
-To choose a web designer in South Africa, compare more than price. Ask to see work for businesses like yours, confirm who will own your domain and website, get a fixed price and timeline in writing, and check what happens after launch. A good designer answers all of this clearly and without hesitation.
+To choose a web designer in South Africa, compare more than price. Ask to see work for businesses like yours, confirm [who will own your domain](/blog/who-owns-your-website-domain-and-hosting) and website, get a fixed price and timeline in writing, and check what happens after launch. A good designer answers all of this clearly and without hesitation.
 
 Here are the ten questions that separate a good choice from an expensive mistake.
 
@@ -1262,7 +1263,7 @@ Most of your visitors will be on a phone. Every page should be designed for smal
 
 ## 8. Will it be set up to be found on Google?
 
-Ask what search engine basics are included: page titles and descriptions, a sitemap, fast loading, and wording that mentions your services and the areas you work in. Ask whether they can help with your Google Business Profile, which often brings in more local customers than the website itself.
+Ask what search engine basics are included: page titles and descriptions, a sitemap, fast loading, and wording that mentions your services and the areas you work in. Ask whether they can help with your [Google Business Profile](/blog/get-your-business-on-google-maps-south-africa), which often brings in more local customers than the website itself.
 
 ## 9. What happens after launch?
 
@@ -1283,7 +1284,7 @@ A confident designer will have an answer, whether it's a set number of revisions
 
 ## How Paperclip Studio answers these questions
 
-We build websites for service businesses across South Africa. Your domain is registered in your name and you get every login. Your quote is a fixed price, with 50% to start and 50% when your site is ready. Most sites go live in 3 to 7 working days, with two rounds of changes included. Maintenance is an optional add-on, never a requirement. And if you're unhappy with the first preview of your website, you get your deposit back.`,
+We build websites for service businesses across South Africa. Your domain is registered in your name and you get every login. Your quote is a fixed price, with 50% to start and 50% when your site is ready. Most sites go live in 3 to 7 working days, with two rounds of changes included. Maintenance is an optional add-on, never a requirement. And if you're unhappy with the first preview of your website, you get your [deposit back](/terms#money-back-guarantee).`,
     faqs: [
       {
         q: 'What should I ask a web designer before hiring them?',

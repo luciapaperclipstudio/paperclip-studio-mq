@@ -40,23 +40,41 @@ export async function generateMetadata({
   }
 }
 
-// Inline "**text**" -> <strong>. The split keeps the captured bold runs at
-// odd indices, so alternating segments are plain and bold.
+// Inline markup inside paragraphs and list items:
+//   **text**           -> <strong>
+//   [text](/some/path) -> internal link
+// Kept deliberately small; anything else renders as plain text.
+const INLINE = /(\*\*.+?\*\*|\[[^\]]+\]\([^)\s]+\))/g
+
 function InlineText({ text }: { text: string }) {
-  return text.split(/\*\*(.+?)\*\*/g).map((part, i) =>
-    i % 2 === 1 ? (
-      <strong key={i} className="font-semibold text-charcoal">
-        {part}
-      </strong>
-    ) : (
-      part
-    ),
-  )
+  return text.split(INLINE).map((part, i) => {
+    const bold = part.match(/^\*\*(.+)\*\*$/)
+    if (bold) {
+      return (
+        <strong key={i} className="font-semibold text-charcoal">
+          {bold[1]}
+        </strong>
+      )
+    }
+    const link = part.match(/^\[([^\]]+)\]\(([^)\s]+)\)$/)
+    if (link) {
+      return (
+        <a
+          key={i}
+          href={link[2]}
+          className="font-medium text-charcoal underline decoration-steel decoration-2 underline-offset-[3px] transition-colors hover:decoration-charcoal"
+        >
+          {link[1]}
+        </a>
+      )
+    }
+    return part
+  })
 }
 
 // Renders the post content convention into semantic HTML:
 // "## " -> <h2>, consecutive "- " lines -> <ul>, everything else -> <p>.
-// Paragraphs and list items support inline "**bold**".
+// Paragraphs and list items support inline **bold** and [links](/path).
 function ArticleBody({ content }: { content: string }) {
   const blocks = content.trim().split(/\n{2,}/)
 
