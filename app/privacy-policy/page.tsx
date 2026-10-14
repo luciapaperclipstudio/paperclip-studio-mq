@@ -53,10 +53,19 @@ We also collect certain information automatically through cookies and similar te
     body: `We process your personal information on one or more of the following lawful bases recognised under POPIA: with your consent; because it is necessary to conclude or perform a contract with you; to comply with a legal obligation; or because it is necessary to pursue our legitimate interests (such as running and improving our business), provided these are not overridden by your rights.`,
   },
   {
-    heading: '7. Cookies and analytics',
-    body: `Our website uses cookies and similar technologies to help it function, remember your preferences, and understand how visitors use the site.
+    heading: '7. Cookies, analytics and advertising',
+    id: 'cookies',
+    body: `Our website uses cookies and similar technologies to understand how visitors use the site and to measure our advertising. We only use these once you click "Accept" in our cookie banner. If you click "Decline", we don't set analytics or advertising cookies.
 
-We use Google Analytics to measure website traffic and the Meta (Facebook) Pixel to measure and improve our advertising. These tools may set cookies and collect information such as your IP address and browsing activity. You can control or disable cookies through your browser settings, although some parts of the site may not work as intended if you do.`,
+The tools we use, with your consent, are:
+
+- Google Analytics, to measure website traffic and how pages are used.
+- Google Ads, to measure which adverts lead to enquiries and to show our adverts to people who have visited our site.
+- The Meta (Facebook and Instagram) Pixel, to measure and improve our advertising on Meta platforms.
+
+These tools may collect information such as your IP address, device and browser details, and the pages you visit. When you decline, Google may still receive limited, cookieless signals (without identifiers) that help it estimate advert performance; Meta receives nothing. We also use Vercel Web Analytics, which counts page visits without cookies or personal identifiers.
+
+You can change your choice at any time using the "Cookie settings" link at the bottom of every page, or by clearing cookies in your browser.`,
   },
   {
     heading: '8. Sharing your information',
@@ -108,7 +117,7 @@ export default function PrivacyPolicyPage() {
     <LegalPage
       title="Privacy Policy"
       intro="Your privacy matters to us. This policy explains how we collect, use, and protect your personal information in accordance with South Africa's Protection of Personal Information Act (POPIA)."
-      lastUpdated="1 November 2024"
+      lastUpdated="14 October 2026"
       sections={sections}
     />
   )

@@ -1,3 +1,4 @@
+import { CookieSettingsLink } from './cookie-banner'
 
 const navLinks = [
   { label: 'Services', href: '/#services' },
@@ -93,6 +94,7 @@ export function Footer() {
             <a href="/terms" className="transition-colors hover:text-white">
               Terms &amp; Conditions
             </a>
+            <CookieSettingsLink className="transition-colors hover:text-white" />
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { DM_Sans, Playfair_Display } from 'next/font/google'
 import Script from 'next/script'
+import { CookieBanner } from '@/components/site/cookie-banner'
 import './globals.css'
 
 const dmSans = DM_Sans({
@@ -207,6 +208,7 @@ export default function RootLayout({
           />
         ))}
         {children}
+        <CookieBanner />
         {process.env.NODE_ENV === 'production' && <Analytics />}
         {/* Google tag (gtag.js). One loader, two destinations: GA4 for
             analytics and Google Ads for conversion tracking. Google's snippet
@@ -221,6 +223,26 @@ export default function RootLayout({
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
+            // Consent Mode: denied until the visitor accepts in the cookie
+            // banner (components/site/cookie-banner.tsx, lib/consent.ts).
+            gtag('consent', 'default', {
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied',
+              analytics_storage: 'denied',
+              wait_for_update: 500
+            });
+            gtag('set', 'ads_data_redaction', true);
+            try {
+              if (localStorage.getItem('pc_cookie_consent') === 'granted') {
+                gtag('consent', 'update', {
+                  ad_storage: 'granted',
+                  ad_user_data: 'granted',
+                  ad_personalization: 'granted',
+                  analytics_storage: 'granted'
+                });
+              }
+            } catch (e) {}
             gtag('js', new Date());
             gtag('config', 'G-DE22GSB30T');
             gtag('config', 'AW-18253779955');
@@ -237,19 +259,14 @@ export default function RootLayout({
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
+            // Nothing is sent to Meta until the visitor accepts cookies.
+            var pcConsent = null;
+            try { pcConsent = localStorage.getItem('pc_cookie_consent'); } catch (e) {}
+            fbq('consent', pcConsent === 'granted' ? 'grant' : 'revoke');
             fbq('init', '1966914974191354');
             fbq('track', 'PageView');
           `}
         </Script>
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: 'none' }}
-            src="https://www.facebook.com/tr?id=1966914974191354&ev=PageView&noscript=1"
-            alt=""
-          />
-        </noscript>
       </body>
     </html>
   )
