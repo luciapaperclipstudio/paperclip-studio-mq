@@ -1141,6 +1141,168 @@ If your business sells a service, we would love to help. Get a free quote and we
       },
     ],
   },
+  {
+    slug: 'how-long-does-it-take-to-build-a-website',
+    title: 'How Long Does It Take to Build a Website in South Africa?',
+    metaTitle: 'How Long Does It Take to Build a Website? (South Africa)',
+    metaDescription:
+      'Realistic timelines for building a small business website in South Africa, from DIY builders to agencies, plus what speeds a project up and what slows it down.',
+    category: 'Web Design Advice',
+    readTime: '5 min read',
+    publishedDate: '2026-10-14',
+    excerpt:
+      'Anything from a weekend to three months. The real answer depends on who builds it and how ready your content is. Here is what to expect.',
+    content: `## The short answer
+
+A small service business website in South Africa usually takes between **one week and three months** to build. A focused studio can deliver a one-page or five-page site in 3 to 7 working days once it has your content. Larger agencies typically take 4 to 12 weeks, and a DIY builder takes as long as your free evenings allow.
+
+The biggest factor is rarely the design or the code. It is how quickly the content arrives: your logo, photos, service details and the words on each page.
+
+## How long does each option take?
+
+- **DIY website builder:** a basic site can go up in a weekend, but most business owners take two to six weeks of evenings to finish one they are happy with.
+- **Freelancer:** usually two to six weeks, depending on their workload and how many rounds of changes you go through.
+- **Small studio with a set process:** 3 to 7 working days for a landing page or five-page site, because the steps, templates and checks are already in place.
+- **Agency:** often 4 to 12 weeks, with discovery workshops, multiple approval stages and more people involved.
+
+None of these is wrong. A large site with booking systems and many pages genuinely needs longer. But a service business that needs a clear, professional site to start bringing in enquiries rarely needs months.
+
+## What actually slows a website down?
+
+**Waiting for content.** This is the number one delay. A designer can be ready to build and spend two weeks waiting for photos or a list of services.
+
+**Too many decision-makers.** Every extra person who needs to approve a page adds days. Agree who has the final say before you start.
+
+**Unclear scope.** "Can we just add a booking system?" halfway through can double a timeline. Decide what the site needs up front.
+
+**Endless revision rounds.** Changes are normal, but a process with a fixed number of rounds keeps things moving.
+
+**Domain and email problems.** Not knowing who controls your domain, or waiting for a previous designer to hand it over, can hold up launch day.
+
+## How can you get your website built faster?
+
+- Gather your logo, 10 to 20 good photos of your work and a list of your services before you start.
+- Write down the questions customers always ask you. They make excellent website copy.
+- Decide on one person who approves the work.
+- Know who controls your domain name and have the login ready.
+- Choose a designer with a clear, written process and timeline.
+
+## Is a fast website a worse website?
+
+Not necessarily. Speed comes from process, not shortcuts. A studio that builds websites for service businesses every week already knows what pages you need, what to put on them and how to set them up for Google. Modern tools, including AI-assisted building, remove a lot of the slow production work, while the design decisions are still made by a person.
+
+What matters is that the site is designed around your business, works properly on phones, loads quickly and is set up to be found on Google. A good site in a week beats a perfect site in six months that you were losing enquiries without.
+
+## How long does it take with Paperclip Studio?
+
+Most of our websites go live within 3 to 7 working days of receiving your content: about 3 to 5 days for a Starter Landing Page and 5 to 7 days for a full Business Website. You see a live preview before paying the balance, and two rounds of changes are included.`,
+    faqs: [
+      {
+        q: 'How long does it take to build a small business website?',
+        a: 'Anywhere from one week to three months, depending on who builds it. A focused studio can deliver a one-page or five-page site in 3 to 7 working days once it has your content. Agencies typically take 4 to 12 weeks.',
+      },
+      {
+        q: 'What is the biggest cause of website delays?',
+        a: 'Waiting for content. Logos, photos, service details and page copy that arrive late are the most common reason a website takes longer than planned.',
+      },
+      {
+        q: 'Can a website be built in a week?',
+        a: 'Yes. A landing page or five-page service business website can be designed, built and launched in about a week by a studio with a clear process, provided your content is ready.',
+      },
+      {
+        q: 'How long does a website redesign take?',
+        a: 'Usually about the same as a new build of the same size. Redesigns can be faster when the existing content and photos can be reused.',
+      },
+    ],
+  },
+  {
+    slug: 'how-to-choose-a-web-designer-south-africa',
+    title: 'How to Choose a Web Designer in South Africa: 10 Questions to Ask',
+    metaTitle: 'How to Choose a Web Designer in South Africa: 10 Questions',
+    metaDescription:
+      'The 10 questions to ask before hiring a web designer in South Africa, what good answers sound like, and the red flags that should make you walk away.',
+    category: 'Web Design Advice',
+    readTime: '7 min read',
+    publishedDate: '2026-10-14',
+    excerpt:
+      'Most bad website experiences could have been avoided with a few questions before signing. Here are the ten to ask, and the answers you want to hear.',
+    content: `## The short answer
+
+To choose a web designer in South Africa, compare more than price. Ask to see work for businesses like yours, confirm who will own your domain and website, get a fixed price and timeline in writing, and check what happens after launch. A good designer answers all of this clearly and without hesitation.
+
+Here are the ten questions that separate a good choice from an expensive mistake.
+
+## 1. Can I see websites you've built for businesses like mine?
+
+A portfolio shows taste and skill, but relevance matters more. A designer who builds websites for service businesses will understand what a plumber, salon or guesthouse needs to win enquiries. Ask for live links, not just screenshots, and open them on your phone.
+
+## 2. Will the domain be registered in my name?
+
+This is the most important question on the list. Your domain is your web address, and your email usually depends on it. It should be registered to your business, with you able to log in. Walk away from anyone who registers it in their own name and treats it as theirs.
+
+## 3. Will I own the website when it's finished?
+
+Once you've paid in full, you should own the finished website and its content, and have the logins to edit it. Ask what happens if you stop working together: can you take the site elsewhere?
+
+## 4. Is the price fixed, and what exactly is included?
+
+Get a written quote that lists what is included: number of pages, forms, Google setup, revisions and anything else. Ask what costs extra, such as a logo, extra pages or copywriting, so there are no surprise invoices later.
+
+## 5. How long will it take, and what do you need from me?
+
+A good designer gives you a realistic timeline and a clear list of what they need from you, such as photos, a logo and service details. Vague answers here usually mean a project that drags on for months.
+
+## 6. How many rounds of changes are included?
+
+Changes are part of the process. Two rounds is common. Ask what happens if you need more, and how much it costs.
+
+## 7. Will the website work properly on phones?
+
+Most of your visitors will be on a phone. Every page should be designed for small screens first, with buttons that are easy to tap and a quick way to call or WhatsApp you.
+
+## 8. Will it be set up to be found on Google?
+
+Ask what search engine basics are included: page titles and descriptions, a sitemap, fast loading, and wording that mentions your services and the areas you work in. Ask whether they can help with your Google Business Profile, which often brings in more local customers than the website itself.
+
+## 9. What happens after launch?
+
+Websites need occasional updates, security and backups. Find out whether the designer offers ongoing maintenance, what it costs, and whether it's optional. You shouldn't be forced into a monthly contract to keep your own website online.
+
+## 10. What happens if I'm not happy?
+
+A confident designer will have an answer, whether it's a set number of revisions, a preview before final payment, or a refund policy. "We'll see" is not an answer.
+
+## Red flags to watch out for
+
+- No live examples of real work.
+- Refusing to put the domain in your name.
+- No written quote or timeline.
+- Full payment up front for a new client, with no deposit-and-balance structure.
+- Locking you into a long contract for hosting or maintenance.
+- Pressure to decide quickly.
+
+## How Paperclip Studio answers these questions
+
+We build websites for service businesses across South Africa. Your domain is registered in your name and you get every login. Your quote is a fixed price, with 50% to start and 50% when your site is ready. Most sites go live in 3 to 7 working days, with two rounds of changes included. Maintenance is an optional add-on, never a requirement. And if you're unhappy with the first preview of your website, you get your deposit back.`,
+    faqs: [
+      {
+        q: 'What should I ask a web designer before hiring them?',
+        a: 'Ask to see work for similar businesses, whether the domain will be in your name, whether you will own the finished site, what the fixed price includes, how long it will take, how many revisions are included, and what happens after launch.',
+      },
+      {
+        q: 'Should my web designer own my domain name?',
+        a: 'No. Your domain should be registered in your business name with you able to log in. A designer can manage it for you, but you should always own it.',
+      },
+      {
+        q: 'How do I know if a web designer is good?',
+        a: 'Look at live websites they have built for businesses like yours, check them on your phone, read reviews from real clients, and notice how clearly they answer questions about price, timeline and ownership.',
+      },
+      {
+        q: 'What are red flags when hiring a web designer?',
+        a: 'No live examples, refusing to register the domain in your name, no written quote or timeline, demanding full payment up front, long lock-in contracts, and pressure to decide quickly.',
+      },
+    ],
+  },
 ]
 
 // Newest first, based on publishedDate.
