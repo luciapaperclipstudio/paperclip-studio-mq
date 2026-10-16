@@ -76,6 +76,41 @@ export default function WorkPage() {
 
             <Reveal delay={100}>
               <a
+                href="/work/the-khanya-collective"
+                className="group mt-10 grid overflow-hidden rounded-xl border border-[#e0ddda] bg-cream transition-shadow hover:shadow-[0_24px_60px_-24px_rgba(51,51,51,0.35)] md:grid-cols-2"
+              >
+                <div className="overflow-hidden border-b border-[#e0ddda] md:border-b-0 md:border-r">
+                  <Image
+                    src="/portfolio/khanya-collective-desktop.jpeg"
+                    alt="The Khanya Collective website, designed by Paperclip Studio"
+                    width={1440}
+                    height={1080}
+                    className="block h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+                </div>
+                <div className="flex flex-col justify-center p-8 md:p-12">
+                  <span className="text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/50">
+                    Multi-Service Collective · Johannesburg
+                  </span>
+                  <h2 className="mt-3 font-serif text-3xl italic text-charcoal text-balance md:text-4xl">
+                    The Khanya Collective
+                  </h2>
+                  <p className="mt-4 text-[16px] leading-relaxed text-muted-foreground">
+                    A website bringing printing, design, career development and product sourcing
+                    together under one clear brand, built and launched in 5–7 days.
+                  </p>
+                  <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-charcoal">
+                    View Case Study
+                    <ArrowRight
+                      className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                      aria-hidden="true"
+                    />
+                  </span>
+                </div>
+              </a>
+            </Reveal>
+            <Reveal delay={100}>
+              <a
                 href="/work/klipkop"
                 className="group mt-10 grid overflow-hidden rounded-xl border border-[#e0ddda] bg-cream transition-shadow hover:shadow-[0_24px_60px_-24px_rgba(51,51,51,0.35)] md:grid-cols-2"
               >

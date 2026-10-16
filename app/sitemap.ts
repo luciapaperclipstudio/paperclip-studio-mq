@@ -37,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  const workPages: MetadataRoute.Sitemap = ['eventure-escapes', 'klipkop', 'torque-and-co'].map(
+  const workPages: MetadataRoute.Sitemap = ['eventure-escapes', 'the-khanya-collective', 'klipkop', 'torque-and-co'].map(
     (slug) => ({
       url: `${BASE}/work/${slug}`,
       lastModified,

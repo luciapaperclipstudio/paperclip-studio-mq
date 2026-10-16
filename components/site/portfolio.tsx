@@ -20,11 +20,11 @@ const projects: Project[] = [
     caseStudy: '/work/eventure-escapes',
   },
   {
-    label: 'KLIPKOP Gallery',
-    subLabel: 'Concept Site — Art Gallery, Cape Town',
-    url: 'https://luciapaperclipstudio.github.io/klipkop/',
-    image: '/portfolio/klipkop-desktop.jpeg',
-    caseStudy: '/work/klipkop',
+    label: 'The Khanya Collective',
+    subLabel: 'Multi-Service Collective — Johannesburg',
+    url: 'https://thekhanyacollective.co.za/',
+    image: '/portfolio/khanya-collective-desktop.jpeg',
+    caseStudy: '/work/the-khanya-collective',
   },
   {
     label: 'Torque & Co.',
@@ -34,6 +34,11 @@ const projects: Project[] = [
     caseStudy: '/work/torque-and-co',
   },
 ]
+
+// "the Eventure Escapes website", but not "the The Khanya Collective website".
+function withThe(label: string) {
+  return label.startsWith('The ') ? label : `the ${label}`
+}
 
 function BrowserCard({ project }: { project: Project }) {
   return (
@@ -48,7 +53,7 @@ function BrowserCard({ project }: { project: Project }) {
         {project.image ? (
           <img
             src={project.image || '/placeholder.svg'}
-            alt={`Desktop preview of the ${project.label} website`}
+            alt={`Desktop preview of ${withThe(project.label)} website`}
             className="block aspect-[4/3] w-full object-cover object-top"
             loading="lazy"
           />
@@ -76,7 +81,7 @@ function BrowserCard({ project }: { project: Project }) {
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`Open the ${project.label} website in a new tab`}
+            aria-label={`Open ${withThe(project.label)} website in a new tab`}
             className="shrink-0 rounded-full border border-charcoal/15 p-2 text-charcoal/70 transition hover:bg-steel hover:text-charcoal"
           >
             <ExternalLink size={14} aria-hidden="true" />

@@ -45,6 +45,7 @@ Two rounds of revisions are included.
 ## Work
 
 - [Eventure Escapes](https://www.paperclipstudio.co.za/work/eventure-escapes): Client case study, luxury travel website.
+- [The Khanya Collective](https://www.paperclipstudio.co.za/work/the-khanya-collective): Client case study, multi-service website (printing, design, career development, product sourcing) for a Fourways, Johannesburg business, built in 5–7 days.
 - [KLIPKOP Gallery](https://www.paperclipstudio.co.za/work/klipkop): Concept project, an editorial website for a fictional Cape Town art gallery.
 - [Torque & Co.](https://www.paperclipstudio.co.za/work/torque-and-co): Concept project, a booking-focused website for a fictional Cape Town mechanic.
 

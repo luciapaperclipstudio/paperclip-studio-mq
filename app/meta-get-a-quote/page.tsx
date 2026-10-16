@@ -49,11 +49,11 @@ const WORK = [
     href: '/work/eventure-escapes',
   },
   {
-    src: '/portfolio/klipkop-desktop.jpeg',
-    alt: 'KLIPKOP Gallery concept website designed by Paperclip Studio',
-    label: 'KLIPKOP Gallery',
-    note: 'Concept site · Art gallery',
-    href: '/work/klipkop',
+    src: '/portfolio/khanya-collective-desktop.jpeg',
+    alt: 'The Khanya Collective website designed by Paperclip Studio',
+    label: 'The Khanya Collective',
+    note: 'Client site · Multi-service collective',
+    href: '/work/the-khanya-collective',
   },
   {
     src: '/portfolio/torque-and-co-desktop.jpeg',
