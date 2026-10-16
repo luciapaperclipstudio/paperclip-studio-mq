@@ -42,18 +42,18 @@ const WHAT_YOU_GET = [
 // as such, so a paid visitor is never led to think they are client builds.
 const WORK = [
   {
-    src: '/portfolio/eventure-escapes-desktop.jpeg',
-    alt: 'Eventure Escapes luxury travel website designed by Paperclip Studio',
-    label: 'Eventure Escapes',
-    note: 'Client site · Luxury travel',
-    href: '/work/eventure-escapes',
-  },
-  {
     src: '/portfolio/khanya-collective-desktop.jpeg',
     alt: 'The Khanya Collective website designed by Paperclip Studio',
     label: 'The Khanya Collective',
     note: 'Client site · Multi-service collective',
     href: '/work/the-khanya-collective',
+  },
+  {
+    src: '/portfolio/eventure-escapes-desktop.jpeg',
+    alt: 'Eventure Escapes luxury travel website designed by Paperclip Studio',
+    label: 'Eventure Escapes',
+    note: 'Client site · Luxury travel',
+    href: '/work/eventure-escapes',
   },
   {
     src: '/portfolio/torque-and-co-desktop.jpeg',

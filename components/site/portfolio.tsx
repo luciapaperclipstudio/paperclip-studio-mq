@@ -13,18 +13,18 @@ type Project = {
 
 const projects: Project[] = [
   {
-    label: 'Eventure Escapes',
-    subLabel: 'Luxury Travel — Cape Town',
-    url: 'https://eventureescapes.com',
-    image: '/portfolio/eventure-escapes-desktop.jpeg',
-    caseStudy: '/work/eventure-escapes',
-  },
-  {
     label: 'The Khanya Collective',
     subLabel: 'Multi-Service Collective — Johannesburg',
     url: 'https://thekhanyacollective.co.za/',
     image: '/portfolio/khanya-collective-desktop.jpeg',
     caseStudy: '/work/the-khanya-collective',
+  },
+  {
+    label: 'Eventure Escapes',
+    subLabel: 'Luxury Travel — Cape Town',
+    url: 'https://eventureescapes.com',
+    image: '/portfolio/eventure-escapes-desktop.jpeg',
+    caseStudy: '/work/eventure-escapes',
   },
   {
     label: 'Torque & Co.',
