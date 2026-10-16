@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import { ArrowRight, Check, Clock, MessageCircle, ShieldCheck, Star } from 'lucide-react'
 import { Logo } from '@/components/site/logo'
-import { GOOGLE_RATING, REVIEWS } from '@/lib/reviews'
+import { FEATURED_REVIEWS, GOOGLE_RATING, REVIEWS } from '@/lib/reviews'
 import { QuoteQuiz } from '@/components/site/quote-quiz'
 import { Reveal } from '@/components/site/reveal'
 
@@ -284,7 +284,7 @@ export default function MetaLandingPage() {
               </div>
             </Reveal>
             <div className="mt-10 grid gap-6 md:grid-cols-2">
-              {REVIEWS.map((t, i) => (
+              {FEATURED_REVIEWS.map((t, i) => (
                 <Reveal key={t.name} delay={i * 100}>
                   <figure className="flex h-full flex-col justify-between border border-[#E0DDDA] bg-cream p-7">
                     <div>

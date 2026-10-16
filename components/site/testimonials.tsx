@@ -1,6 +1,6 @@
 import { Star } from 'lucide-react'
 import { GOOGLE_MAPS_URL } from '@/app/layout'
-import { GOOGLE_RATING, REVIEWS } from '@/lib/reviews'
+import { FEATURED_REVIEWS, GOOGLE_RATING } from '@/lib/reviews'
 import { Reveal } from './reveal'
 import { SectionLabel } from './section-label'
 
@@ -36,7 +36,7 @@ export function Testimonials() {
         </Reveal>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {REVIEWS.map((t, i) => (
+          {FEATURED_REVIEWS.map((t, i) => (
             <Reveal key={t.name} delay={(i % 2) * 100}>
               <blockquote className="flex h-full flex-col rounded-lg border border-[#e0e0e0] bg-cream p-7">
                 <div className="flex gap-1" aria-label="5 out of 5 stars">

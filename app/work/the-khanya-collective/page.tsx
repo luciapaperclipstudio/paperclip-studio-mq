@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { Layers, MessageCircle, ShoppingBag } from 'lucide-react'
+import { Layers, MessageCircle, Quote, ShoppingBag } from 'lucide-react'
 
 import { Footer } from '@/components/site/footer'
 import { Navbar } from '@/components/site/navbar'
@@ -192,8 +192,31 @@ export default function KhanyaCollectiveCaseStudy() {
           </div>
         </section>
 
-        {/* f) Client testimonial: add Khanya's Google review here once it arrives
-            (and to lib/reviews.ts so it shows on the homepage too). */}
+        {/* f) Client testimonial. Verbatim excerpts from Ash Moodley's Google
+            review (October 2026); the short version is in lib/reviews.ts. */}
+        <section className="bg-white">
+          <div className="mx-auto max-w-4xl px-6 py-20 text-center md:py-28">
+            <Reveal>
+              <Quote
+                className="mx-auto h-12 w-12 text-steel"
+                strokeWidth={1.5}
+                aria-hidden="true"
+              />
+              <blockquote className="mt-8 font-serif text-2xl italic leading-relaxed text-charcoal text-balance md:text-[2rem] md:leading-[1.4]">
+                &ldquo;Working with Lucia and Paperclip Studio has been an exceptional experience from
+                the very beginning. What stood out most was Lucia&apos;s willingness to genuinely
+                understand the vision behind The Khanya Collective rather than simply build a
+                website from a brief… What I appreciated most is that Paperclip did not just give
+                us a website. Lucia helped us think more clearly about our brand, our positioning
+                and how the different parts of the business should come together.&rdquo;
+              </blockquote>
+              <p className="mt-8 text-sm font-semibold uppercase tracking-[0.15em] text-charcoal/60">
+                — Ash Moodley, The Khanya Collective
+              </p>
+              <p className="mt-2 text-xs text-muted-foreground">Google review · 5 stars</p>
+            </Reveal>
+          </div>
+        </section>
 
         {/* g) Bottom CTA */}
         <section className="bg-charcoal">
