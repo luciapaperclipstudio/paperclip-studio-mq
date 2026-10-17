@@ -16,11 +16,12 @@ import {
   Zap,
 } from 'lucide-react'
 import { submitQuote } from '@/app/actions/leads'
-// Prices are deliberately not imported here. The quiz collects selections only;
-// the rate card stays server-side so it isn't readable from the public page.
+// The quiz collects selections only; full quotes are priced server-side. The
+// one price shown here is the starting price, which is public on the site.
 import {
   addonsFor,
   domainChoices,
+  getPackage,
   packages,
   type DomainChoiceId,
   type PackageId,
@@ -102,36 +103,23 @@ function packageNudge(pkg: PackageId | null, addons: string[]) {
   return null
 }
 
-// Budget question asked before anything else, so people who can't afford a
-// site don't fill in the whole form for nothing. A budget under the Starter
-// price sees a polite stop screen; it is not saved or counted as a lead.
-// The R2,950 cut-off matches the Starter package in lib/packages; change both
-// together if the starting price moves.
-const BUDGETS = [
-  { id: 'under-2950', label: 'Under R2,950' },
-  { id: '2950-5000', label: 'R2,950 – R5,000' },
-  { id: '5000-10000', label: 'R5,000 – R10,000' },
-  { id: '10000-plus', label: 'R10,000+' },
-] as const
+// "R2,950": the Starter package price, shown above the form so people know
+// where pricing starts before they fill anything in.
+const STARTING_PRICE = `R${(getPackage('starter')?.price ?? 0).toLocaleString('en-US')}`
 
-type BudgetId = (typeof BUDGETS)[number]['id']
-
-const STEP_LABELS = ['About You', 'Package', 'Add-ons', 'Your Details']
-const PROGRESS = ['5%', '30%', '55%', '80%']
-// Shown instead of the form when the budget is below the starting price.
-const BUDGET_STOP_STEP = 99
+const STEP_LABELS = ['Package', 'Add-ons', 'Your Details']
+const PROGRESS = ['5%', '38%', '70%']
 
 // `source` is recorded on the lead so paid traffic is distinguishable from
 // organic in the review email and the admin list.
 export function QuoteQuiz({ source }: { source?: string } = {}) {
   const router = useRouter()
   const [step, setStep] = useState(1)
-  const [budget, setBudget] = useState<BudgetId | null>(null)
   const [pkg, setPkg] = useState<PackageId | null>(null)
   const [addons, setAddons] = useState<string[]>([])
   const [domain, setDomain] = useState<DomainChoiceId>('none')
   const [dismissedNudges, setDismissedNudges] = useState<string[]>([])
-  const [form, setForm] = useState({ name: '', business: '', whatsapp: '', email: '' })
+  const [form, setForm] = useState({ name: '', business: '', whatsapp: '', email: '', about: '' })
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const rootRef = useRef<HTMLDivElement>(null)
@@ -157,7 +145,7 @@ export function QuoteQuiz({ source }: { source?: string } = {}) {
     // Drop any selection the new package doesn't offer.
     const allowed = addonsFor(value).map((a) => a.id)
     setAddons((prev) => prev.filter((id) => allowed.includes(id)))
-    setTimeout(() => go(3), 380)
+    setTimeout(() => go(2), 380)
   }
 
   function toggleAddon(value: string) {
@@ -177,29 +165,17 @@ export function QuoteQuiz({ source }: { source?: string } = {}) {
     setAddons((prev) => prev.filter((id) => allowed.includes(id)))
   }
 
-  function nextFromQualify() {
-    if (!budget) {
-      setError('Please choose a budget to continue.')
-      return
-    }
-    if (budget === 'under-2950') {
-      go(BUDGET_STOP_STEP)
-      return
-    }
-    go(2)
-  }
-
   function nextFromPkg() {
     if (!pkg) {
       setError('Please select a package before continuing.')
       return
     }
-    go(3)
+    go(2)
   }
 
   async function handleSubmit() {
-    const { name, business, whatsapp, email } = form
-    if (!name.trim() || !business.trim() || !whatsapp.trim() || !email.trim()) {
+    const { name, business, whatsapp, email, about } = form
+    if (!name.trim() || !business.trim() || !whatsapp.trim() || !email.trim() || !about.trim()) {
       setError('Please fill in all required fields marked with *')
       return
     }
@@ -222,7 +198,7 @@ export function QuoteQuiz({ source }: { source?: string } = {}) {
       addons,
       domainChoice: domain,
       source: detectSource(source),
-      budget: BUDGETS.find((b) => b.id === budget)?.label,
+      about: about.trim(),
     })
 
     // Also email the request via Formspree. A failure here shouldn't block the
@@ -240,7 +216,7 @@ export function QuoteQuiz({ source }: { source?: string } = {}) {
           package: packageLabel,
           addons: addonLabels.length ? addonLabels.join(', ') : 'None selected',
           domain: domainChoices.find((d) => d.id === domain)?.label ?? '',
-          budget: BUDGETS.find((b) => b.id === budget)?.label ?? '',
+          about: about.trim(),
           _subject: `New quote request from ${name} (${business})`,
         }),
       })
@@ -282,8 +258,19 @@ export function QuoteQuiz({ source }: { source?: string } = {}) {
 
   return (
     <div ref={rootRef} className="mx-auto w-full max-w-[480px] scroll-mt-24">
+      {/* Starting price, so people know where pricing starts before filling anything in */}
+      {step <= 3 ? (
+        <div className="mb-6 flex items-center justify-center gap-2 border border-[#E0DDDA] bg-white px-4 py-3 text-center">
+          <span className="text-[13px] text-charcoal/70">Websites start from</span>
+          <span className="font-serif text-xl italic leading-none text-charcoal">
+            {STARTING_PRICE}
+          </span>
+          <span className="text-[13px] text-charcoal/70">once-off</span>
+        </div>
+      ) : null}
+
       {/* Progress */}
-      {step <= 4 ? (
+      {step <= 3 ? (
         <div className="mb-6 px-1">
           <div className="mb-2.5 flex justify-between">
             {STEP_LABELS.map((label, i) => {
@@ -310,74 +297,11 @@ export function QuoteQuiz({ source }: { source?: string } = {}) {
 
       {/* Card */}
       <div className="relative overflow-hidden border border-[#E0DDDA] bg-white px-6 py-8">
-        {/* STEP 1 — Qualify */}
+        {/* STEP 1 — Package */}
         {step === 1 ? (
           <div>
             <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-steel">
-              Step 1 of 4
-            </p>
-            <h2 className="mb-1.5 font-serif text-[28px] italic leading-tight text-charcoal">
-              First, a quick question.
-            </h2>
-            <p className="mb-7 text-sm leading-relaxed text-[#888888]">
-              So we can make sure we&apos;re the right fit before you go any further.
-            </p>
-
-            <ChoiceGroup
-              title="What is your budget for the website?"
-              options={BUDGETS}
-              value={budget}
-              onChange={(id) => {
-                setBudget(id)
-                setError('')
-              }}
-            />
-
-            {error ? <p className="mb-3 text-xs text-[#B03A2E]">{error}</p> : null}
-
-            <button
-              type="button"
-              onClick={nextFromQualify}
-              className="w-full border-2 border-steel bg-steel px-5 py-3.5 text-sm font-semibold text-charcoal transition hover:border-[#8FAEC5] hover:bg-[#8FAEC5]"
-            >
-              Next →
-            </button>
-          </div>
-        ) : null}
-
-        {/* Budget below the starting price */}
-        {step === BUDGET_STOP_STEP ? (
-          <div className="text-center">
-            <h2 className="mb-2 font-serif text-[28px] italic leading-tight text-charcoal">
-              We might not be the right fit just yet.
-            </h2>
-            <p className="mx-auto mb-7 max-w-sm text-sm leading-relaxed text-[#888888]">
-              Your budget is below our starting prices, so we can&apos;t quote on this project
-              right now. If your budget changes, we&apos;d love to hear from you.
-            </p>
-            <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center">
-              <a
-                href="/"
-                className="border-2 border-steel bg-steel px-5 py-3.5 text-sm font-semibold text-charcoal transition hover:border-[#8FAEC5] hover:bg-[#8FAEC5]"
-              >
-                Back to home
-              </a>
-              <button
-                type="button"
-                onClick={() => go(1)}
-                className="border border-[#E0DDDA] px-5 py-3.5 text-sm font-semibold text-charcoal transition hover:border-charcoal"
-              >
-                Change my answers
-              </button>
-            </div>
-          </div>
-        ) : null}
-
-        {/* STEP 2 — Package */}
-        {step === 2 ? (
-          <div>
-            <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-steel">
-              Step 2 of 4
+              Step 1 of 3
             </p>
             <h2 className="mb-1.5 font-serif text-[28px] italic leading-tight text-charcoal">
               What do you need built?
@@ -425,30 +349,21 @@ export function QuoteQuiz({ source }: { source?: string } = {}) {
 
             {error ? <p className="mb-3 text-xs text-[#B03A2E]">{error}</p> : null}
 
-            <div className="flex gap-2.5">
-              <button
-                type="button"
-                onClick={() => go(1)}
-                className="border border-[#E0DDDA] px-5 py-3.5 text-sm font-semibold text-charcoal transition hover:border-charcoal"
-              >
-                ← Back
-              </button>
-              <button
-                type="button"
-                onClick={nextFromPkg}
-                className="flex-1 border-2 border-steel bg-steel px-5 py-3.5 text-sm font-semibold text-charcoal transition hover:border-[#8FAEC5] hover:bg-[#8FAEC5]"
-              >
-                Next →
-              </button>
-            </div>
+            <button
+              type="button"
+              onClick={nextFromPkg}
+              className="w-full border-2 border-steel bg-steel px-5 py-3.5 text-sm font-semibold text-charcoal transition hover:border-[#8FAEC5] hover:bg-[#8FAEC5]"
+            >
+              Next →
+            </button>
           </div>
         ) : null}
 
-        {/* STEP 3 — Add-ons */}
-        {step === 3 ? (
+        {/* STEP 2 — Add-ons */}
+        {step === 2 ? (
           <div>
             <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-steel">
-              Step 3 of 4
+              Step 2 of 3
             </p>
             <h2 className="mb-1.5 font-serif text-[28px] italic leading-tight text-charcoal">
               Anything extra?
@@ -557,7 +472,7 @@ export function QuoteQuiz({ source }: { source?: string } = {}) {
             <div className="mb-5 text-center">
               <button
                 type="button"
-                onClick={() => go(4)}
+                onClick={() => go(3)}
                 className="p-1 text-[13px] text-[#888888] underline"
               >
                 Skip — I don&apos;t need any add-ons
@@ -567,14 +482,14 @@ export function QuoteQuiz({ source }: { source?: string } = {}) {
             <div className="flex gap-2.5">
               <button
                 type="button"
-                onClick={() => go(2)}
+                onClick={() => go(1)}
                 className="border border-[#E0DDDA] px-5 py-3.5 text-sm font-semibold text-charcoal transition hover:border-charcoal"
               >
                 ← Back
               </button>
               <button
                 type="button"
-                onClick={() => go(4)}
+                onClick={() => go(3)}
                 className="flex-1 border-2 border-steel bg-steel px-5 py-3.5 text-sm font-semibold text-charcoal transition hover:border-[#8FAEC5] hover:bg-[#8FAEC5]"
               >
                 Next →
@@ -583,11 +498,11 @@ export function QuoteQuiz({ source }: { source?: string } = {}) {
           </div>
         ) : null}
 
-        {/* STEP 4 — Details */}
-        {step === 4 ? (
+        {/* STEP 3 — Details */}
+        {step === 3 ? (
           <div>
             <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-steel">
-              Step 4 of 4
+              Step 3 of 3
             </p>
             <h2 className="mb-1.5 font-serif text-[28px] italic leading-tight text-charcoal">
               Almost done.
@@ -597,6 +512,15 @@ export function QuoteQuiz({ source }: { source?: string } = {}) {
             </p>
 
             <div className="flex flex-col gap-[18px]">
+              <Field label="What does your business do, and what do you need the website for? *">
+                <textarea
+                  className={`${inputClass} min-h-[96px] resize-y`}
+                  value={form.about}
+                  onChange={(e) => setForm({ ...form, about: e.target.value })}
+                  placeholder="e.g. I run a plumbing business in Randburg and need a website so people can find me on Google and send enquiries."
+                  maxLength={600}
+                />
+              </Field>
               <Field label="Your Name *">
                 <input
                   className={inputClass}
@@ -644,7 +568,7 @@ export function QuoteQuiz({ source }: { source?: string } = {}) {
             <div className="mt-2 flex gap-2.5">
               <button
                 type="button"
-                onClick={() => go(3)}
+                onClick={() => go(2)}
                 className="border border-[#E0DDDA] px-5 py-3.5 text-sm font-semibold text-charcoal transition hover:border-charcoal"
               >
                 ← Back
@@ -678,57 +602,5 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
       </span>
       {children}
     </label>
-  )
-}
-
-function ChoiceGroup<T extends string>({
-  title,
-  options,
-  value,
-  onChange,
-}: {
-  title: string
-  options: readonly { id: T; label: string; note?: string }[]
-  value: T | null
-  onChange: (id: T) => void
-}) {
-  return (
-    <fieldset className="mb-6">
-      <legend className="mb-2 text-[12.5px] font-semibold text-charcoal">{title}</legend>
-      <div className="flex flex-col gap-1.5">
-        {options.map((o) => {
-          const selected = value === o.id
-          return (
-            <button
-              key={o.id}
-              type="button"
-              onClick={() => onChange(o.id)}
-              aria-pressed={selected}
-              className={`flex items-center gap-3 border p-3 text-left transition ${
-                selected
-                  ? 'border-2 border-charcoal bg-steel'
-                  : 'border-[1.5px] border-[#E0DDDA] hover:border-steel'
-              }`}
-            >
-              <span
-                className={`flex h-[17px] w-[17px] shrink-0 items-center justify-center rounded-full border-[1.5px] transition ${
-                  selected ? 'border-charcoal bg-charcoal text-white' : 'border-[#E0DDDA]'
-                }`}
-              >
-                {selected ? <Check size={10} strokeWidth={3} /> : null}
-              </span>
-              <span className="flex-1">
-                <span className="block text-[12.5px] font-semibold leading-tight text-charcoal">
-                  {o.label}
-                </span>
-                {o.note ? (
-                  <span className="block text-[11px] leading-snug text-[#888888]">{o.note}</span>
-                ) : null}
-              </span>
-            </button>
-          )
-        })}
-      </div>
-    </fieldset>
   )
 }

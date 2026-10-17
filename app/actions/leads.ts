@@ -102,7 +102,9 @@ type QuotePayload = {
   selectedPackage: string
   addons: string[]
   domainChoice?: string
-  budget?: string
+  // Free-text answer to "What does your business do, and what do you need the
+  // website for?". Capped so a pasted essay can't bloat the row.
+  about?: string
 }
 
 // The quiz used to submit display labels rather than ids. Accept both so a
@@ -178,11 +180,11 @@ export async function submitQuote(payload: QuotePayload): Promise<ActionResult> 
         deposit: quote?.deposit ?? null,
         validUntil: quote?.validUntil ?? null,
         estimateTotal: quote?.onceOffTotal ?? null,
-        // No dedicated column for budget, so it rides along in the message,
+        // No dedicated column for this, so it rides along in the message,
         // which /admin already shows.
         message:
           [
-            payload.budget && `Budget: ${payload.budget}`,
+            payload.about && `About: ${payload.about.trim().slice(0, 600)}`,
             payload.source && `Found us via: ${payload.source}`,
           ]
             .filter(Boolean)
