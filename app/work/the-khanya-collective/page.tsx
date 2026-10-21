@@ -120,7 +120,8 @@ export default function KhanyaCollectiveCaseStudy() {
                     offering has a home while the whole site stays searchable. We set up their Google
                     Business Profile, recommended a plan for collecting reviews from their clients,
                     and guided them on keeping the site easy for everyone to use, with room to show
-                    their values as a company. From brief to launch took 5–7 days.
+                    their values as a company. We also refreshed their logo for a more minimal,
+                    professional look. From brief to launch took 5–7 days.
                   </p>
                 </div>
               </div>
@@ -194,6 +195,67 @@ export default function KhanyaCollectiveCaseStudy() {
                   </article>
                 </Reveal>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Logo refresh: before and after */}
+        <section className="bg-white">
+          <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+            <Reveal>
+              <SectionLabel>Logo Refresh</SectionLabel>
+              <h2 className="mt-4 max-w-2xl font-serif text-3xl italic text-charcoal text-balance md:text-4xl">
+                A more minimal, professional look.
+              </h2>
+              <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-muted-foreground">
+                Khanya wanted a logo that felt more minimal and professional. We kept the heart of
+                the original, Africa and the idea of light, and stripped everything else back: a
+                clean wordmark with Africa forming part of the name, a single ochre accent, and a
+                simple icon that works just as well on a website as it does printed, embroidered or
+                shrunk down to a tiny app icon.
+              </p>
+            </Reveal>
+
+            <div className="mt-12 grid gap-6 md:grid-cols-2">
+              <Reveal>
+                <figure className="flex h-full flex-col">
+                  <div className="overflow-hidden border border-[#e0ddda] bg-black">
+                    <Image
+                      src="/work/khanya-logo-before.jpg"
+                      alt="The Khanya Collective's original logo: a gold sunburst with Africa on a globe, blue roots and blue and gold lettering"
+                      width={800}
+                      height={800}
+                      className="mx-auto block aspect-square h-auto w-full max-w-[420px] object-contain"
+                    />
+                  </div>
+                  <figcaption className="mt-3 text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/50">
+                    Before
+                  </figcaption>
+                </figure>
+              </Reveal>
+              <Reveal delay={100}>
+                <figure className="flex h-full flex-col">
+                  <div className="flex aspect-square flex-col items-center justify-center gap-10 border border-[#e0ddda] bg-[#f7f6f2] px-8 md:aspect-auto md:h-full">
+                    <Image
+                      src="/work/khanya-logo-mark.png"
+                      alt="The Khanya Collective's new icon: a white Africa silhouette in a black circle"
+                      width={256}
+                      height={256}
+                      className="h-24 w-24 md:h-28 md:w-28"
+                    />
+                    <Image
+                      src="/work/khanya-logo-after.png"
+                      alt="The Khanya Collective's refreshed wordmark: KHANYA in black with Africa in ochre forming part of the name, and COLLECTIVE beside it"
+                      width={1363}
+                      height={140}
+                      className="h-auto w-full max-w-[420px]"
+                    />
+                  </div>
+                  <figcaption className="mt-3 text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/50">
+                    After
+                  </figcaption>
+                </figure>
+              </Reveal>
             </div>
           </div>
         </section>
