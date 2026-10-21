@@ -96,8 +96,9 @@ export default function WorkPage() {
                     The Khanya Collective
                   </h2>
                   <p className="mt-4 text-[16px] leading-relaxed text-muted-foreground">
-                    A website bringing printing, design, career development and product sourcing
-                    together under one clear brand, built and launched in 5–7 days.
+                    From no online presence to a full website and Google Business Profile, bringing
+                    printing, design, career development and product sourcing under one brand in
+                    5–7 days.
                   </p>
                   <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-charcoal">
                     View Case Study

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { Layers, MessageCircle, Quote, ShoppingBag } from 'lucide-react'
+import { Accessibility, Heart, Layers, MapPin, MessageCircle, Quote, Search } from 'lucide-react'
 
 import { Footer } from '@/components/site/footer'
 import { Navbar } from '@/components/site/navbar'
@@ -10,7 +10,7 @@ import { SectionLabel } from '@/components/site/section-label'
 export const metadata: Metadata = {
   title: 'The Khanya Collective | Paperclip Studio Case Study',
   description:
-    'How Paperclip Studio built a multi-service website for The Khanya Collective in Fourways, Johannesburg, in 5–7 days, bringing three service lines together under one brand.',
+    'How Paperclip Studio took The Khanya Collective from no online presence to a full website and Google Business Profile in 5–7 days, bringing three service lines together under one brand.',
   alternates: { canonical: 'https://www.paperclipstudio.co.za/work/the-khanya-collective' },
 }
 
@@ -25,20 +25,35 @@ const jsonLd = {
     url: 'https://www.paperclipstudio.co.za',
   },
   description:
-    'Case study: a multi-service website for The Khanya Collective, a printing, design, career development and product sourcing business in Fourways, Johannesburg, built in 5–7 days.',
+    'Case study: The Khanya Collective, a printing, design, career development and product sourcing business in Fourways, Johannesburg, had no website or Google Business Profile. Paperclip Studio built both from scratch in 5–7 days.',
   url: 'https://www.paperclipstudio.co.za/work/the-khanya-collective',
 }
 
 const features = [
   {
-    icon: Layers,
-    title: 'Three pillars, one clear structure',
-    body: 'Professional development, creative and design work, and product sourcing each get their own page, so visitors find their service quickly without the brand feeling scattered.',
+    icon: MapPin,
+    title: 'An online presence from zero',
+    body: 'Khanya had no website and no Google Business Profile. We set the profile up so they appear on Google Maps and in local searches, and recommended they ask every client for a Google review to build trust from day one.',
   },
   {
-    icon: ShoppingBag,
-    title: 'A collection that sells the possibilities',
-    body: 'Apparel, drinkware, gifts and corporate and event pieces are shown as a browsable collection, so customers can picture their own branded products before they ask.',
+    icon: Layers,
+    title: 'Three pillars, one clear structure',
+    body: 'Professional development, creative and design work, and product sourcing each have their own page, so visitors find their service quickly without the brand feeling scattered.',
+  },
+  {
+    icon: Search,
+    title: 'Every offering, still easy to find',
+    body: 'Fitting this many services onto one site can bury them. Each pillar is written and structured around what people actually search for, so the whole range can be found on Google, not just the headline service.',
+  },
+  {
+    icon: Accessibility,
+    title: 'Easy for everyone to use',
+    body: 'We guided Khanya on keeping the site user-friendly for all: clear navigation, readable text, a layout that works on any phone, and no guesswork about what to do next.',
+  },
+  {
+    icon: Heart,
+    title: 'Their values, front and centre',
+    body: 'Khanya is more than a list of services. The site makes room for what the collective stands for, so people understand who they are buying from, not just what.',
   },
   {
     icon: MessageCircle,
@@ -49,7 +64,7 @@ const features = [
 
 const stats = [
   { value: '5–7', label: 'Days from brief to launch' },
-  { value: '3', label: 'Service lines, one website' },
+  { value: '3', label: 'Service pillars, one website' },
 ]
 
 export default function KhanyaCollectiveCaseStudy() {
@@ -70,8 +85,9 @@ export default function KhanyaCollectiveCaseStudy() {
                 The Khanya Collective
               </h1>
               <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-relaxed text-muted-foreground text-pretty">
-                A website that brings three very different service lines together under one clear,
-                trustworthy brand, built and launched in 5–7 days.
+                From no online presence at all to a full website and Google Business Profile, with
+                three very different service lines under one clear, trustworthy brand. Built from
+                scratch in 5–7 days.
               </p>
             </Reveal>
           </div>
@@ -89,9 +105,10 @@ export default function KhanyaCollectiveCaseStudy() {
                   <p className="mt-4 text-[16px] leading-relaxed text-charcoal/80">
                     The Khanya Collective started with custom printing and personalised products, and
                     grew into a collective spanning creative and design services, professional and
-                    business development, and product sourcing and supply. They needed one website
-                    that could explain all of that without confusing visitors, and make it easy for
-                    both individuals and corporate clients to ask for a quote.
+                    business development, and product sourcing and supply. Despite all that, they had
+                    no online presence at all: no website and not even a Google Business Profile.
+                    They needed to be found, and they needed one place that could explain everything
+                    they do without confusing people.
                   </p>
                 </div>
                 <div className="bg-cream p-8 md:p-10">
@@ -99,10 +116,11 @@ export default function KhanyaCollectiveCaseStudy() {
                     The Solution
                   </h2>
                   <p className="mt-4 text-[16px] leading-relaxed text-charcoal/80">
-                    We built the site around their three pillars, each with its own page, plus a
-                    product collection, a portfolio of recent work and a simple four-step process.
-                    Every page leads to a quote request or a WhatsApp message. The whole site went
-                    from brief to launch in 5–7 days.
+                    We built the website fully from scratch around their three pillars, so every
+                    offering has a home while the whole site stays searchable. We set up their Google
+                    Business Profile, recommended a plan for collecting reviews from their clients,
+                    and guided them on keeping the site easy for everyone to use, with room to show
+                    their values as a company. From brief to launch took 5–7 days.
                   </p>
                 </div>
               </div>
@@ -158,11 +176,11 @@ export default function KhanyaCollectiveCaseStudy() {
             <Reveal>
               <SectionLabel>What We Built</SectionLabel>
               <h2 className="mt-4 max-w-2xl font-serif text-3xl italic text-charcoal text-balance md:text-4xl">
-                One brand, many services, no confusion.
+                From invisible online to easy to find.
               </h2>
             </Reveal>
 
-            <div className="mt-12 grid gap-6 md:grid-cols-3">
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {features.map((feature, i) => (
                 <Reveal key={feature.title} delay={i * 100}>
                   <article className="flex h-full flex-col border border-[#e0ddda] bg-white p-8">
