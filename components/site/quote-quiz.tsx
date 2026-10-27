@@ -103,7 +103,7 @@ function packageNudge(pkg: PackageId | null, addons: string[]) {
   return null
 }
 
-// "R2,950": the Starter package price, shown above the form so people know
+// "R2,200": the Starter package price, shown above the form so people know
 // where pricing starts before they fill anything in.
 const STARTING_PRICE = `R${(getPackage('starter')?.price ?? 0).toLocaleString('en-US')}`
 

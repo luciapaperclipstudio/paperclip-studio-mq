@@ -37,7 +37,7 @@ export const packages: PackageOption[] = [
     name: 'Starter Landing Page',
     short: '1 page · Fast · Mobile-ready',
     desc: 'One powerful page — great for ads, lead capture, or simply getting found online.',
-    price: 2950,
+    price: 2200,
     timeline: '3–5 working days',
     includes: [
       'Single-page website, designed around one clear action',
@@ -53,7 +53,7 @@ export const packages: PackageOption[] = [
     name: 'Business Website',
     short: '3–5 pages · Full site · WhatsApp',
     desc: 'A full 3–5 page website — Home, About, Services, Gallery, and Contact.',
-    price: 5000,
+    price: 3800,
     timeline: '5–7 working days',
     includes: [
       'Up to 5 pages — Home, About, Services, Gallery, Contact',
@@ -69,7 +69,7 @@ export const packages: PackageOption[] = [
     name: 'Premium + Ads-Ready',
     short: 'Full site + landing page · Ads setup',
     desc: 'Full website plus a dedicated landing page set up for Google or Meta ad campaigns.',
-    price: 8500,
+    price: 5300,
     timeline: 'Priority — 5–7 working days',
     includes: [
       'Everything in the Business Website',

@@ -72,7 +72,7 @@ export const plans: Plan[] = [
   },
 ]
 
-// "From R2,950" etc. Shown as a starting price because add-ons and domain
+// "From R2,200" etc. Shown as a starting price because add-ons and domain
 // choices change the final quote.
 export function planPrice(plan: Plan): string {
   const price = getPackage(plan.packageId)?.price
